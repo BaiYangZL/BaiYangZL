@@ -4,37 +4,373 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>
-白羊的染·钟楼谜团
-</title>
+<title>白羊的染·钟楼谜团</title>
 
-<link rel="stylesheet" href="style.css">
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+
+body{
+
+    margin:0;
+
+    min-height:100vh;
+
+
+    background:
+
+    linear-gradient(
+        rgba(20,12,8,.78),
+        rgba(8,5,3,.92)
+    ),
+
+    radial-gradient(
+        circle at top,
+        #594126,
+        #120b07 70%
+    );
+
+
+    color:#e8d5a3;
+
+    font-family:
+    "Microsoft YaHei",
+    "Songti SC",
+    serif;
+
+
+}
+
+
+
+/* 顶部 */
+
+
+.header{
+
+    text-align:center;
+
+    padding:70px 20px 45px;
+
+}
+
+
+.candle{
+
+    font-size:38px;
+
+}
+
+
+.header h1{
+
+    margin:25px 0 15px;
+
+
+    font-size:48px;
+
+
+    letter-spacing:12px;
+
+
+    color:#d8b56a;
+
+
+    text-shadow:
+
+    0 0 25px rgba(216,181,106,.5);
+
+
+}
+
+
+
+.subtitle{
+
+    letter-spacing:5px;
+
+    color:#a78b58;
+
+    font-size:18px;
+
+}
+
+
+
+.divider{
+
+    width:260px;
+
+    height:1px;
+
+    background:#b58b48;
+
+    margin:35px auto;
+
+
+}
+
+
+
+.desc{
+
+    color:#8f7954;
+
+    letter-spacing:4px;
+
+}
+
+
+
+/* 书架 */
+
+
+.library{
+
+
+    max-width:1300px;
+
+    margin:auto;
+
+    padding:20px 40px 80px;
+
+
+}
+
+
+
+.books{
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(4,1fr);
+
+
+    gap:55px 45px;
+
+
+}
+
+
+
+
+/* 单本书 */
+
+
+.book{
+
+
+    text-align:center;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.book a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+
+
+.cover{
+
+
+    width:230px;
+
+    height:330px;
+
+
+    object-fit:cover;
+
+
+    border-radius:5px;
+
+
+    border:
+
+    8px solid #352116;
+
+
+    box-shadow:
+
+    0 20px 40px rgba(0,0,0,.8);
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.book:hover .cover{
+
+
+    transform:
+
+    translateY(-12px);
+
+
+}
+
+
+
+
+.book-name{
+
+
+    margin-top:20px;
+
+
+    font-size:20px;
+
+
+    letter-spacing:4px;
+
+
+    color:#e8c978;
+
+
+}
+
+
+
+
+.number{
+
+
+    margin-top:8px;
+
+
+    font-size:12px;
+
+
+    letter-spacing:3px;
+
+
+    color:#796344;
+
+
+}
+
+
+
+
+
+.footer{
+
+
+    text-align:center;
+
+    padding:40px;
+
+    color:#766247;
+
+    border-top:
+
+    1px solid rgba(255,255,255,.1);
+
+}
+
+
+
+
+@media(max-width:900px){
+
+
+.books{
+
+grid-template-columns:
+
+repeat(2,1fr);
+
+}
+
+
+
+.cover{
+
+width:150px;
+
+height:220px;
+
+}
+
+
+
+.header h1{
+
+font-size:30px;
+
+letter-spacing:6px;
+
+}
+
+
+}
+
+
+
+</style>
 
 </head>
+
 
 
 <body>
 
 
+
 <header class="header">
 
 
-<div class="symbol">
-✦
+<div class="candle">
+
+🕯
+
 </div>
 
 
 <h1>
+
 白羊的染·钟楼谜团
+
 </h1>
 
 
-<p>
-剧本资料整理与收藏
-</p>
+<div class="subtitle">
+
+THE CLOCKTOWER SCRIPT ARCHIVE
+
+</div>
+
+
+<div class="divider"></div>
+
+
+<div class="desc">
+
+终焉剧本收藏馆
+
+</div>
 
 
 </header>
@@ -42,83 +378,72 @@
 
 
 
-
-<main class="container">
-
-
-<h2>
-剧本大厅
-</h2>
-
+<section class="library">
 
 
 <div class="books">
 
 
 
-<div class="book"
-onclick="openBook('yebankuanghuan')">
+<!-- 001 -->
 
 
-<img src="night-01.jpg">
+<div class="book">
+
+<a href="暗流涌动.html">
 
 
-<h3>
-夜半狂欢
-</h3>
+<img class="cover" src="new-01.jpg">
 
 
-<p>
-作者：Zets
-</p>
+<div class="book-name">
 
-
-</div>
-
-
-
-
-
-
-<div class="book"
-onclick="openBook('anliuyongdong')">
-
-
-<img src="new-01.jpg">
-
-
-<h3>
 暗流涌动
-</h3>
+
+</div>
 
 
-<p>
-作者：官方
-</p>
+<div class="number">
 
+ARCHIVE 001
+
+</div>
+
+
+</a>
 
 </div>
 
 
 
 
+<!-- 002 -->
 
 
-<div class="book"
-onclick="openBook('anyuechusheng')">
+<div class="book">
 
 
-<img src="new-03.jpg">
+<a href="黯月初生.html">
 
 
-<h3>
+<img class="cover" src="new-03.jpg">
+
+
+<div class="book-name">
+
 黯月初生
-</h3>
+
+</div>
 
 
-<p>
-作者：官方
-</p>
+<div class="number">
+
+ARCHIVE 002
+
+</div>
+
+
+</a>
 
 
 </div>
@@ -127,22 +452,33 @@ onclick="openBook('anyuechusheng')">
 
 
 
-
-<div class="book"
-onclick="openBook('mengyun')">
+<!-- 003 -->
 
 
-<img src="new-05.jpg">
+<div class="book">
 
 
-<h3>
+<a href="梦陨春宵.html">
+
+
+<img class="cover" src="new-05.jpg">
+
+
+<div class="book-name">
+
 梦陨春宵
-</h3>
+
+</div>
 
 
-<p>
-作者：官方
-</p>
+<div class="number">
+
+ARCHIVE 003
+
+</div>
+
+
+</a>
 
 
 </div>
@@ -151,22 +487,33 @@ onclick="openBook('mengyun')">
 
 
 
-
-<div class="book"
-onclick="openBook('qieqiesiyu')">
+<!-- 004 -->
 
 
-<img src="7.jpg">
+<div class="book">
 
 
-<h3>
+<a href="窃窃私语.html">
+
+
+<img class="cover" src="7.jpg">
+
+
+<div class="book-name">
+
 窃窃私语
-</h3>
+
+</div>
 
 
-<p>
-作者：官方
-</p>
+<div class="number">
+
+ARCHIVE 004
+
+</div>
+
+
+</a>
 
 
 </div>
@@ -175,22 +522,27 @@ onclick="openBook('qieqiesiyu')">
 
 
 
-
-<div class="book"
-onclick="openBook('wushangyuyue')">
+<!-- 005 -->
 
 
-<img src="9.jpg">
+<div class="book">
 
 
-<h3>
+<img class="cover" src="9.jpg">
+
+
+<div class="book-name">
+
 无上愉悦
-</h3>
+
+</div>
 
 
-<p>
-作者：官方
-</p>
+<div class="number">
+
+ARCHIVE 005
+
+</div>
 
 
 </div>
@@ -199,23 +551,27 @@ onclick="openBook('wushangyuyue')">
 
 
 
+<!-- 006 -->
 
 
-<div class="book"
-onclick="openBook('lvxingzhe')">
+<div class="book">
 
 
-<img src="11.jpg">
+<img class="cover" src="11.jpg">
 
 
-<h3>
+<div class="book-name">
+
 旅行者
-</h3>
+
+</div>
 
 
-<p>
-作者：官方
-</p>
+<div class="number">
+
+ARCHIVE 006
+
+</div>
 
 
 </div>
@@ -224,23 +580,27 @@ onclick="openBook('lvxingzhe')">
 
 
 
+<!-- 007 -->
 
 
-<div class="book"
-onclick="openBook('chuanqijuese')">
+<div class="book">
 
 
-<img src="13.jpg">
+<img class="cover" src="13.jpg">
 
 
-<h3>
+<div class="book-name">
+
 传奇角色
-</h3>
+
+</div>
 
 
-<p>
-作者：官方
-</p>
+<div class="number">
+
+ARCHIVE 007
+
+</div>
 
 
 </div>
@@ -249,182 +609,196 @@ onclick="openBook('chuanqijuese')">
 
 
 
+<!-- 后续继续接 -->
 
-<div class="book"
-onclick="openBook('huadengchushang')">
+<div class="book">
+
+<img class="cover" src="15.jpg">
 
 
-<img src="15.jpg">
+<div class="book-name">
 
-
-<h3>
 华灯初上
-</h3>
+
+</div>
 
 
-<p>
-作者：官方
-</p>
+<div class="number">
+
+ARCHIVE 008
+
+</div>
 
 
 </div>
 
 
 
+<div class="book">
+
+<img class="cover" src="17.jpg">
 
 
+<div class="book-name">
 
-
-<div class="book"
-onclick="openBook('shanyuyulai')">
-
-
-<img src="17.jpg">
-
-
-<h3>
 山雨欲来
-</h3>
+
+</div>
 
 
-<p>
-作者：官方
-</p>
+<div class="number">
+
+ARCHIVE 009
+
+</div>
 
 
 </div>
 
 
 
+<div class="book">
+
+<img class="cover" src="night-01.jpg">
+
+
+<div class="book-name">
+
+夜半狂欢
+
+</div>
+
+
+<div class="number">
+
+ARCHIVE 010
+
+</div>
+
+
+</div>
 
 
 
+<div class="book">
 
-<div class="book"
-onclick="openBook('wafuleiming')">
-
-
-<img src="19.jpg">
+<img class="cover" src="19.jpg">
 
 
-<h3>
+<div class="book-name">
+
 瓦釜雷鸣
-</h3>
+
+</div>
 
 
-<p>
-作者：Emily
-</p>
+<div class="number">
+
+ARCHIVE 011
+
+</div>
 
 
 </div>
 
 
 
+<div class="book">
+
+<img class="cover" src="21.jpg">
 
 
+<div class="book-name">
 
-<div class="book"
-onclick="openBook('jiangchengjue')">
-
-
-<img src="21.jpg">
-
-
-<h3>
 江城·决
-</h3>
+
+</div>
 
 
-<p>
-作者：际尘
-</p>
+<div class="number">
+
+ARCHIVE 012
+
+</div>
 
 
 </div>
 
 
 
+<div class="book">
+
+<img class="cover" src="23.jpg">
 
 
+<div class="book-name">
 
-<div class="book"
-onclick="openBook('guixianzhiyi')">
-
-
-<img src="23.jpg">
-
-
-<h3>
 诡仙志异
-</h3>
+
+</div>
 
 
-<p>
-作者：痴愚
-</p>
+<div class="number">
+
+ARCHIVE 013
+
+</div>
 
 
 </div>
 
 
 
+<div class="book">
+
+<img class="cover" src="25.jpg">
 
 
+<div class="book-name">
 
-<div class="book"
-onclick="openBook('gejumiying')">
-
-
-<img src="25.jpg">
-
-
-<h3>
 歌剧魅影
-</h3>
+
+</div>
 
 
-<p>
-作者：痴愚
-</p>
+<div class="number">
+
+ARCHIVE 014
+
+</div>
 
 
 </div>
 
 
 
+<div class="book">
+
+<img class="cover" src="27.jpg">
 
 
+<div class="book-name">
 
-<div class="book"
-onclick="openBook('shirizhongyan')">
-
-
-<img src="27.jpg">
-
-
-<h3>
 十日终焉
-</h3>
+
+</div>
 
 
-<p>
-作者：心流
-</p>
+<div class="number">
+
+ARCHIVE 015
+
+</div>
 
 
 </div>
 
 
 
-
 </div>
 
 
-</main>
-
-
-
+</section>
 
 
 
@@ -434,27 +808,12 @@ onclick="openBook('shirizhongyan')">
 
 <br><br>
 
-本站仅作为个人剧本资料整理与展示使用
+THE CLOCKTOWER ARCHIVE
 
 </footer>
 
 
 
-
-
-
-<script>
-
-function openBook(id){
-
-window.location.href="detail.html?id="+id;
-
-}
-
-</script>
-
-
 </body>
-
 
 </html>
