@@ -5,594 +5,69 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 
-<title>白羊的染·钟楼谜团</title>
+<title>
+白羊的染·钟楼谜团
+</title>
 
 
-<style>
-
-
-*{
-    box-sizing:border-box;
-}
-
-
-
-html{
-    scroll-behavior:smooth;
-}
-
-
-
-body{
-
-    margin:0;
-
-
-    min-height:100vh;
-
-
-    color:#ead9ae;
-
-
-    font-family:
-    "Microsoft YaHei",
-    "Songti SC",
-    serif;
-
-
-
-    background:
-
-
-    linear-gradient(
-        rgba(18,10,5,.78),
-        rgba(8,5,3,.92)
-    ),
-
-
-    radial-gradient(
-        circle at top,
-        #684b2b,
-        #120904 75%
-    );
-
-
-}
-
-
-
-/* ===================
-   钟楼标题
-=================== */
-
-
-.header{
-
-
-    text-align:center;
-
-
-    padding:
-
-    90px 20px 60px;
-
-
-}
-
-
-
-.candle{
-
-
-    font-size:42px;
-
-
-}
-
-
-
-.header h1{
-
-
-    margin:
-
-    25px 0 15px;
-
-
-    font-size:
-
-    58px;
-
-
-    letter-spacing:
-
-    14px;
-
-
-
-    color:#e3bf70;
-
-
-    font-family:
-
-    "Songti SC",
-    serif;
-
-
-
-    text-shadow:
-
-
-    0 0 25px
-
-    rgba(227,191,112,.5);
-
-
-}
-
-
-
-
-.subtitle{
-
-
-    font-size:20px;
-
-
-    letter-spacing:7px;
-
-
-    color:#b69a62;
-
-
-}
-
-
-
-
-.divider{
-
-
-    width:360px;
-
-
-    height:1px;
-
-
-    margin:40px auto;
-
-
-    background:#c29a52;
-
-
-}
-
-
-
-.desc{
-
-
-    letter-spacing:5px;
-
-
-    font-size:18px;
-
-
-    color:#9a8052;
-
-
-}
-
-
-
-
-/* ===================
-   藏书区域
-=================== */
-
-
-.library{
-
-
-    width:100%;
-
-
-    max-width:1700px;
-
-
-    margin:auto;
-
-
-    padding:
-
-    20px 50px 100px;
-
-
-}
-
-
-
-
-.books{
-
-
-    display:grid;
-
-
-    grid-template-columns:
-
-    repeat(5,1fr);
-
-
-
-    gap:
-
-    65px 45px;
-
-
-
-}
-
-
-
-/* ===================
-   单本剧本
-=================== */
-
-
-.book{
-
-
-    text-align:center;
-
-
-    transition:.35s;
-
-
-}
-
-
-
-.book a{
-
-
-    text-decoration:none;
-
-
-    color:inherit;
-
-
-}
-
-
-
-.cover{
-
-
-    width:100%;
-
-
-    aspect-ratio:
-
-    2 / 3;
-
-
-
-    object-fit:cover;
-
-
-
-    border-radius:6px;
-
-
-
-    border:
-
-    8px solid #352116;
-
-
-
-    box-shadow:
-
-
-    0 25px 45px
-
-    rgba(0,0,0,.85);
-
-
-
-    transition:.35s;
-
-
-
-}
-
-
-
-
-.book:hover{
-
-
-    transform:
-
-    translateY(-12px);
-
-
-}
-
-
-
-
-.book:hover .cover{
-
-
-    box-shadow:
-
-
-    0 35px 60px
-
-    rgba(0,0,0,.95);
-
-
-
-}
-
-
-
-
-.book-name{
-
-
-    margin-top:22px;
-
-
-
-    font-size:21px;
-
-
-
-    letter-spacing:5px;
-
-
-
-    color:#e8c978;
-
-
-
-}
-
-
-
-
-.archive{
-
-
-    margin-top:10px;
-
-
-    font-size:12px;
-
-
-
-    letter-spacing:4px;
-
-
-
-    color:#806946;
-
-
-}
-
-
-
-/* ===================
-   底部
-=================== */
-
-
-.footer{
-
-
-    text-align:center;
-
-
-    padding:
-
-    50px 20px 80px;
-
-
-
-    border-top:
-
-
-    1px solid
-
-    rgba(255,255,255,.1);
-
-
-
-    color:#887252;
-
-
-
-}
-
-
-
-/* ===================
-   平板
-=================== */
-
-
-@media(max-width:1200px){
-
-
-.books{
-
-
-grid-template-columns:
-
-repeat(4,1fr);
-
-
-}
-
-
-
-}
-
-
-
-/* ===================
-   手机
-=================== */
-
-
-@media(max-width:800px){
-
-
-.header h1{
-
-
-font-size:32px;
-
-
-letter-spacing:6px;
-
-
-}
-
-
-
-.library{
-
-
-padding:
-
-20px;
-
-
-}
-
-
-
-.books{
-
-
-grid-template-columns:
-
-repeat(2,1fr);
-
-
-gap:
-
-35px 20px;
-
-
-}
-
-
-
-.book-name{
-
-
-font-size:16px;
-
-
-letter-spacing:3px;
-
-
-}
-
-
-}
-
-
-
-</style>
+<link rel="stylesheet" href="css/style.css">
 
 
 </head>
 
 
-
 <body>
 
 
+<div class="library">
 
-<header class="header">
 
-
-<div class="candle">
-
-🕯
-
-</div>
+<header class="library-header">
 
 
 <h1>
-
 白羊的染·钟楼谜团
-
 </h1>
 
 
 <div class="subtitle">
-
-THE CLOCKTOWER SCRIPT ARCHIVE
-
-</div>
-
-
-<div class="divider"></div>
-
-
-<div class="desc">
 
 钟楼剧本藏书馆
 
 </div>
 
 
+<p>
+
+Script Archive Library
+
+</p>
+
+
 </header>
 
 
 
-<section class="library">
 
 
-<div class="books">
+<main class="bookshelf">
 
-<!-- =========================
-     001 暗流涌动
-========================= -->
+
+
+<!-- 01 -->
 
 <div class="book">
 
-<a href="暗流涌动.html">
+<a href="scripts/anliu.html">
 
-<img class="cover"
-src="new-01.jpg"
-loading="lazy"
-alt="暗流涌动">
+<img src="cover/01.jpg">
 
-
-<div class="book-name">
-
+<h2>
 暗流涌动
-
-</div>
-
-
-<div class="archive">
-
-ARCHIVE 001
-
-</div>
-
+</h2>
 
 </a>
 
@@ -600,34 +75,19 @@ ARCHIVE 001
 
 
 
-<!-- =========================
-     002 黯月初生
-========================= -->
 
+
+<!-- 02 -->
 
 <div class="book">
 
-<a href="黯月初生.html">
+<a href="scripts/anyue.html">
 
-<img class="cover"
-src="new-03.jpg"
-loading="lazy"
-alt="黯月初生">
+<img src="cover/02.jpg">
 
-
-<div class="book-name">
-
+<h2>
 黯月初生
-
-</div>
-
-
-<div class="archive">
-
-ARCHIVE 002
-
-</div>
-
+</h2>
 
 </a>
 
@@ -636,34 +96,18 @@ ARCHIVE 002
 
 
 
-<!-- =========================
-     003 梦陨春宵
-========================= -->
 
+<!-- 03 -->
 
 <div class="book">
 
-<a href="梦陨春宵.html">
+<a href="scripts/mengyun.html">
 
-<img class="cover"
-src="new-05.jpg"
-loading="lazy"
-alt="梦陨春宵">
+<img src="cover/03.jpg">
 
-
-<div class="book-name">
-
+<h2>
 梦陨春宵
-
-</div>
-
-
-<div class="archive">
-
-ARCHIVE 003
-
-</div>
-
+</h2>
 
 </a>
 
@@ -672,36 +116,18 @@ ARCHIVE 003
 
 
 
-<!-- =========================
-     004 窃窃私语
-========================= -->
 
+<!-- 04 -->
 
 <div class="book">
 
-<a href="窃窃私语.html">
+<a href="scripts/qieqie.html">
 
+<img src="cover/04.jpg">
 
-<img class="cover"
-src="7.jpg"
-loading="lazy"
-alt="窃窃私语">
-
-
-
-<div class="book-name">
-
+<h2>
 窃窃私语
-
-</div>
-
-
-<div class="archive">
-
-ARCHIVE 004
-
-</div>
-
+</h2>
 
 </a>
 
@@ -711,36 +137,17 @@ ARCHIVE 004
 
 
 
-<!-- =========================
-     005 无上愉悦
-========================= -->
-
+<!-- 05 -->
 
 <div class="book">
 
+<a href="scripts/wushang.html">
 
-<a href="无上愉悦.html">
+<img src="cover/05.jpg">
 
-
-<img class="cover"
-src="9.jpg"
-loading="lazy"
-alt="无上愉悦">
-
-
-<div class="book-name">
-
+<h2>
 无上愉悦
-
-</div>
-
-
-<div class="archive">
-
-ARCHIVE 005
-
-</div>
-
+</h2>
 
 </a>
 
@@ -750,36 +157,17 @@ ARCHIVE 005
 
 
 
-<!-- =========================
-     006 旅行者
-========================= -->
-
+<!-- 06 -->
 
 <div class="book">
 
+<a href="scripts/lvxingzhe.html">
 
-<a href="旅行者.html">
+<img src="cover/06.jpg">
 
-
-<img class="cover"
-src="11.jpg"
-loading="lazy"
-alt="旅行者">
-
-
-<div class="book-name">
-
+<h2>
 旅行者
-
-</div>
-
-
-<div class="archive">
-
-ARCHIVE 006
-
-</div>
-
+</h2>
 
 </a>
 
@@ -789,36 +177,17 @@ ARCHIVE 006
 
 
 
-<!-- =========================
-     007 传奇角色
-========================= -->
-
+<!-- 07 -->
 
 <div class="book">
 
+<a href="scripts/chuanqi.html">
 
-<a href="传奇角色.html">
+<img src="cover/07.jpg">
 
-
-<img class="cover"
-src="13.jpg"
-loading="lazy"
-alt="传奇角色">
-
-
-<div class="book-name">
-
+<h2>
 传奇角色
-
-</div>
-
-
-<div class="archive">
-
-ARCHIVE 007
-
-</div>
-
+</h2>
 
 </a>
 
@@ -828,36 +197,17 @@ ARCHIVE 007
 
 
 
-<!-- =========================
-     008 华灯初上
-========================= -->
-
+<!-- 08 -->
 
 <div class="book">
 
+<a href="scripts/huadeng.html">
 
-<a href="华灯初上.html">
+<img src="cover/08.jpg">
 
-
-<img class="cover"
-src="15.jpg"
-loading="lazy"
-alt="华灯初上">
-
-
-<div class="book-name">
-
+<h2>
 华灯初上
-
-</div>
-
-
-<div class="archive">
-
-ARCHIVE 008
-
-</div>
-
+</h2>
 
 </a>
 
@@ -867,36 +217,17 @@ ARCHIVE 008
 
 
 
-<!-- =========================
-     009 山雨欲来
-========================= -->
-
+<!-- 09 -->
 
 <div class="book">
 
+<a href="scripts/shanyulai.html">
 
-<a href="山雨欲来.html">
+<img src="cover/09.jpg">
 
-
-<img class="cover"
-src="17.jpg"
-loading="lazy"
-alt="山雨欲来">
-
-
-<div class="book-name">
-
+<h2>
 山雨欲来
-
-</div>
-
-
-<div class="archive">
-
-ARCHIVE 009
-
-</div>
-
+</h2>
 
 </a>
 
@@ -905,36 +236,18 @@ ARCHIVE 009
 
 
 
-<!-- =========================
-     010 夜半狂欢
-========================= -->
 
+<!-- 10 -->
 
 <div class="book">
 
+<a href="scripts/ye-ban.html">
 
-<a href="夜半狂欢.html">
+<img src="cover/10.jpg">
 
-
-<img class="cover"
-src="night-01.jpg"
-loading="lazy"
-alt="夜半狂欢">
-
-
-<div class="book-name">
-
+<h2>
 夜半狂欢
-
-</div>
-
-
-<div class="archive">
-
-ARCHIVE 010
-
-</div>
-
+</h2>
 
 </a>
 
@@ -944,36 +257,17 @@ ARCHIVE 010
 
 
 
-<!-- =========================
-     011 瓦釜雷鸣
-========================= -->
-
+<!-- 11 -->
 
 <div class="book">
 
+<a href="scripts/wafuleiming.html">
 
-<a href="瓦釜雷鸣.html">
+<img src="cover/11.jpg">
 
-
-<img class="cover"
-src="19.jpg"
-loading="lazy"
-alt="瓦釜雷鸣">
-
-
-<div class="book-name">
-
+<h2>
 瓦釜雷鸣
-
-</div>
-
-
-<div class="archive">
-
-ARCHIVE 011
-
-</div>
-
+</h2>
 
 </a>
 
@@ -983,37 +277,113 @@ ARCHIVE 011
 
 
 
-<!-- =========================
-     012 江城·决
-========================= -->
-
+<!-- 12 -->
 
 <div class="book">
 
+<a href="scripts/jiangcheng.html">
 
-<a href="江城·决.html">
+<img src="cover/12.jpg">
 
-
-<img class="cover"
-src="21.jpg"
-loading="lazy"
-alt="江城·决">
-
-
-<div class="book-name">
-
+<h2>
 江城·决
-
-</div>
-
-
-<div class="archive">
-
-ARCHIVE 012
-
-</div>
-
+</h2>
 
 </a>
 
 </div>
+
+
+
+
+
+<!-- 13 -->
+
+<div class="book">
+
+<a href="scripts/guixianzhi.html">
+
+<img src="cover/13.jpg">
+
+<h2>
+诡仙志异
+</h2>
+
+</a>
+
+</div>
+
+
+
+
+
+<!-- 14 -->
+
+<div class="book">
+
+<a href="scripts/gejumeiying.html">
+
+<img src="cover/14.jpg">
+
+<h2>
+歌剧魅影
+</h2>
+
+</a>
+
+</div>
+
+
+
+
+
+<!-- 15 -->
+
+<div class="book">
+
+<a href="scripts/shirizhongyan.html">
+
+<img src="cover/15.jpg">
+
+<h2>
+十日终焉
+</h2>
+
+</a>
+
+</div>
+
+
+
+
+
+
+</main>
+
+
+
+
+
+<footer>
+
+
+白羊的染·钟楼谜团
+
+<br>
+
+剧本资料整理馆
+
+</footer>
+
+
+
+</div>
+
+
+
+
+
+</body>
+
+
+</html>
