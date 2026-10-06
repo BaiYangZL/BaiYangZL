@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+    <!-- 中文编码 -->
+    <meta charset="UTF-8">
+
+    <!-- 手机适配 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 浏览器标签上的名字 -->
+    <title>白羊的血染钟楼</title>
+
+
+    <style>
+
+        /* =========================
+           整个网页
+           ========================= */
+
+        body {
+            margin: 0;
+            background: #f3f3f3;
+            color: #222;
+            font-family: Arial, "Microsoft YaHei", sans-serif;
+        }
+
+
+        /* =========================
+           网站顶部
+           ========================= */
+
+        header {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+
+        /* 网站名字 */
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+
+        /* 网站说明 */
+
+        header p {
+            margin: 10px 0 0;
+            color: #cccccc;
+        }
+
+
+        /* =========================
+           一个系列
+           ========================= */
+
+        .series {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+
+        /* 系列名字 */
+
+        .series h2 {
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 26px;
+        }
+
+
+        /* =========================
+           图片区域
+           ========================= */
+
+        .images {
+            display: grid;
+
+            /* 两张图片并排 */
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+
+        /* 图片外面的白色区域 */
+
+        .images a {
+            display: block;
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+
+        /* 图片 */
+
+        .images img {
+            width: 100%;
+            display: block;
+            border-radius: 5px;
+        }
+
+
+        /* 鼠标放到图片上 */
+
+        .images a:hover {
+            opacity: 0.85;
+        }
+
+
+        /* =========================
+           网站底部
+           ========================= */
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #777;
+        }
+
+
+        /* =========================
+           手机显示
+           ========================= */
+
+        @media (max-width: 700px) {
+
+            .images {
+                grid-template-columns: 1fr;
+            }
+
+
+            header h1 {
+                font-size: 26px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         网站名字
+         ========================= -->
+
+    <header>
+
+        <h1>白羊的血染钟楼</h1>
+
+        <p>血染钟楼系列规则图</p>
+
+    </header>
+
+
+
+    <!-- =========================
+         夜半狂欢系列
+         ========================= -->
+
+    <section class="series">
+
+        <h2>夜半狂欢</h2>
+
+
+        <div class="images">
+
+
+            <!-- 第一张图片 -->
+
+            <a
+                href="images/night-01.jpg"
+                target="_blank"
+            >
+
+                <img
+                    src="images/night-01.jpg"
+                    alt="夜半狂欢 1"
+                >
+
+            </a>
+
+
+
+            <!-- 第二张图片 -->
+
+            <a
+                href="images/night-02.jpg"
+                target="_blank"
+            >
+
+                <img
+                    src="images/night-02.jpg"
+                    alt="夜半狂欢 2"
+                >
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         网站底部
+         ========================= -->
+
+    <footer>
+
+        白羊的血染钟楼
+
+    </footer>
+
+
+</body>
+
+</html>
