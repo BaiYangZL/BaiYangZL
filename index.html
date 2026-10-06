@@ -7,563 +7,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
-<title>白羊的染·钟楼谜团</title>
-
-
-<style>
-
-
-*{
-    box-sizing:border-box;
-}
-
-
-html{
-    scroll-behavior:smooth;
-}
-
-
-body{
-
-    margin:0;
-
-    background:
-    radial-gradient(
-        circle at top,
-        #1b3038 0%,
-        #07151c 55%,
-        #04090c 100%
-    );
-
-
-    color:#f5f0e6;
-
-
-    font-family:
-    "Microsoft YaHei",
-    "PingFang SC",
-    Arial,
-    sans-serif;
-
-}
-
-
-/* =====================
-   网站总标题
-===================== */
-
-
-.header{
-
-
-    text-align:center;
-
-
-    padding:80px 20px 55px;
-
-
-
-    background:
-
-
-    linear-gradient(
-        rgba(0,0,0,0.25),
-        rgba(0,0,0,0.7)
-    );
-
-
-    border-bottom:
-
-    1px solid rgba(232,201,120,0.25);
-
-}
-
-
-
-.header h1{
-
-
-    margin:0;
-
-
-    font-size:46px;
-
-
-    letter-spacing:10px;
-
-
-    color:#e8c978;
-
-
-
-    text-shadow:
-
-
-    0 0 18px rgba(232,201,120,0.45);
-
-
-}
-
-
-
-.header h1::before{
-
-
-    content:"✦";
-
-
-    display:block;
-
-
-    font-size:22px;
-
-
-    margin-bottom:20px;
-
-
-    color:#e8c978;
-
-
-}
-
-
-
-.header h1::after{
-
-
-    content:"";
-
-
-    display:block;
-
-
-    width:220px;
-
-
-    height:1px;
-
-
-    margin:25px auto 0;
-
-
-    background:#e8c978;
-
-
-}
-
-
-
-/* =====================
-   剧本标题
-===================== */
-
-
-.series{
-
-
-    max-width:1200px;
-
-
-    margin:auto;
-
-
-    padding-top:45px;
-
-}
-
-
-
-.series-title{
-
-
-    text-align:center;
-
-
-    font-size:42px;
-
-
-    letter-spacing:8px;
-
-
-    color:#f1d991;
-
-
-    text-shadow:
-
-
-    0 0 15px rgba(232,201,120,0.35);
-
-
-}
-
-
-
-.series-author{
-
-
-    text-align:center;
-
-
-    margin-top:15px;
-
-
-    color:#b9c6c9;
-
-
-    font-size:15px;
-
-
-    letter-spacing:3px;
-
-
-}
-
-
-
-/* =====================
-   简介
-===================== */
-
-
-.intro{
-
-
-    max-width:1100px;
-
-
-    margin:40px auto 20px;
-
-
-    padding:0 30px;
-
-
-}
-
-
-
-.intro-box{
-
-
-    background:
-
-
-    linear-gradient(
-        145deg,
-        #111f27,
-        #091218
-    );
-
-
-    border:
-
-
-    1px solid rgba(232,201,120,0.3);
-
-
-
-    border-radius:16px;
-
-
-    padding:35px 40px;
-
-
-
-    box-shadow:
-
-
-    0 20px 50px rgba(0,0,0,0.5);
-
-
-}
-
-
-
-.intro-title{
-
-
-    text-align:center;
-
-
-    color:#e8c978;
-
-
-    font-size:25px;
-
-
-    letter-spacing:5px;
-
-
-    margin-bottom:25px;
-
-
-}
-
-
-
-.intro-title::before{
-
-
-    content:"♜ ";
-
-
-}
-
-
-
-.intro-text{
-
-
-    color:#ccd6d8;
-
-
-    font-size:16px;
-
-
-    line-height:2;
-
-
-    white-space:pre-line;
-
-
-}
-
-
-
-/* =====================
-   图片区域
-===================== */
-
-
-.gallery{
-
-
-    max-width:1500px;
-
-
-    margin:auto;
-
-
-    padding:45px 30px 70px;
-
-
-
-    display:grid;
-
-
-    grid-template-columns:
-    repeat(2,minmax(0,1fr));
-
-
-
-    gap:35px;
-
-
-}
-
-
-
-.card{
-
-
-    background:#101f27;
-
-
-    border:
-
-
-    1px solid rgba(232,201,120,0.25);
-
-
-
-    border-radius:15px;
-
-
-    overflow:hidden;
-
-
-
-    box-shadow:
-
-
-    0 15px 45px rgba(0,0,0,0.5);
-
-
-    transition:0.3s;
-
-
-}
-
-
-
-.card:hover{
-
-
-    transform:translateY(-6px);
-
-
-}
-
-
-
-.card a{
-
-
-    display:block;
-
-
-}
-
-
-
-.card img{
-
-
-    width:100%;
-
-
-    height:auto;
-
-
-    display:block;
-
-
-    background:#050b0f;
-
-
-}
-
-
-
-.card-title{
-
-
-    text-align:center;
-
-
-    padding:18px;
-
-
-    color:#e8c978;
-
-
-    letter-spacing:3px;
-
-     
-/* =====================
-   底部
-===================== */
-
-
-.footer{
-
-
-    text-align:center;
-
-
-    padding:50px 20px 70px;
-
-
-    border-top:
-
-
-    1px solid rgba(255,255,255,0.1);
-
-
-
-    color:#89999e;
-
-
-    font-size:14px;
-
-
-}
-
-
-
-/* =====================
-   手机适配
-===================== */
-
-
-@media(max-width:800px){
-
-
-.header{
-
-
-    padding:55px 15px 40px;
-
-
-}
-
-
-
-.header h1{
-
-
-    font-size:30px;
-
-
-    letter-spacing:5px;
-
-
-}
-
-
-
-.series-title{
-
-
-    font-size:30px;
-
-
-    letter-spacing:5px;
-
-
-}
-
-
-
-.intro{
-
-
-    padding:0 15px;
-
-
-}
-
-
-
-.intro-box{
-
-
-    padding:25px 20px;
-
-
-}
-
-
-
-.gallery{
-
-
-    grid-template-columns:1fr;
-
-
-    padding:30px 15px 50px;
-
-
-}
-
-
-
-}
-
-
-
-
-</style>
+<title>
+白羊的染·钟楼谜团
+</title>
+
+<link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -571,13 +19,12 @@ body{
 <body>
 
 
-
-<!-- =====================
-     网站总标题
-===================== -->
-
-
 <header class="header">
+
+
+<div class="symbol">
+✦
+</div>
 
 
 <h1>
@@ -585,1581 +32,390 @@ body{
 </h1>
 
 
+<p>
+剧本资料整理与收藏
+</p>
+
+
 </header>
 
 
-    
-<!-- =====================
-     新剧本板块
-===================== -->
-
-<section class="series">
-
-<div class="series-title">
-
-暗流涌动
-
-</div>
 
 
-<div class="series-author">
 
-作者：官方
-
-</div>
+<main class="container">
 
 
-<section class="intro">
-
-<div class="intro-box">
-
-
-<div class="intro-title">
-
-暗流涌动
-
-</div>
+<h2>
+剧本大厅
+</h2>
 
 
-<div class="intro-text">
 
-  乌云在鸦木布拉夫的天空中翻滚着，让这个沉睡中的小镇和迷信的居民们笼罩在不祥的阴影之中。刚洗过的衣物在屋舍间的细绳上诡异地起舞。烟囱向外吐出滚滚的浓烟。
-    坩埚在角落里悄悄地冒着泡，混杂着奇异的气味从窗户和门缝中飘散开来。一股不寻常的秋日暖风环绕着藤蔓覆盖的墙壁，向那些敢于行走在鹅卵石街道上的人们发出不祥的低语。
-    当远处的地平线上雷声响起时，焦虑的母亲们把玩耍中的孩子唤回家中。然而，如果你再仔细聆听，仍然可以听见近处森林里的诡异回声。远处一座隐约可见的修道院里，有人影在一道道门洞间穿行。
-    只有那些读懂迹象的人，才能明白，有什么正在……暗流涌动。
+<div class="books">
 
-</div>
+
+
+<div class="book"
+onclick="openBook('yebankuanghuan')">
+
+
+<img src="night-01.jpg">
+
+
+<h3>
+夜半狂欢
+</h3>
+
+
+<p>
+作者：Zets
+</p>
 
 
 </div>
 
-</section>
 
 
-<main class="gallery">
 
 
-<div class="card">
 
-<a href="new-01.jpg"
-target="_blank">
+<div class="book"
+onclick="openBook('anliuyongdong')">
+
 
 <img src="new-01.jpg">
 
-</a>
+
+<h3>
+暗流涌动
+</h3>
 
 
-<div class="card-title">
-
-暗流涌动 · 剧本介绍
-
-</div>
-
-
-</div>
-
-
-
-<div class="card">
-
-<a href="new-02.jpg"
-target="_blank">
-
-<img src="new-02.jpg">
-
-</a>
-
-
-<div class="card-title">
-
-暗流涌动 · 角色规则
-
-</div>
-
-
-</div>
-
-
-</main>
-
-
-</section>
-
-<!-- =====================
-     新剧本板块
-===================== -->
-
-<section class="series">
-
-<div class="series-title">
-
-黯月初生
-
-</div>
-
-
-<div class="series-author">
-
+<p>
 作者：官方
-
-</div>
-
-
-<section class="intro">
-
-<div class="intro-box">
-
-
-<div class="intro-title">
-
-黯月初生
-
-</div>
-
-
-<div class="intro-text">
-
- 冬日的暮色渐近，太阳被盘陀的天际线所吞噬，橙红的枫叶被黑色斑点逐渐侵蚀，森林无声地期待着雪花将至。
-小镇边缘的岩隙深处传来阵阵饿狼的嚎叫，受惊的鸦群从舒适的栖身之处四散而逃。旅行者们匆匆步入旅店，试图回避渐增的刺骨寒意。众人靠着温热的茶水、悠扬的乐曲和浓烈的麦酒来暖和身子，却浑然不觉一双双怪异而邪恶的眼睛正向他们悄然逼近。
-    众生皆知，今夜将有……黯月初升。
-
-</div>
+</p>
 
 
 </div>
 
-</section>
 
 
-<main class="gallery">
 
 
-<div class="card">
 
-<a href="new-03.jpg"
-target="_blank">
+<div class="book"
+onclick="openBook('anyuechusheng')">
+
 
 <img src="new-03.jpg">
 
-</a>
+
+<h3>
+黯月初生
+</h3>
 
 
-<div class="card-title">
-
-黯月初生 · 剧本介绍
-
-</div>
-
-
-</div>
-
-
-
-<div class="card">
-
-<a href="new-04.jpg"
-target="_blank">
-
-<img src="new-04.jpg">
-
-</a>
-
-
-<div class="card-title">
-
-黯月初生 · 角色规则
-
-</div>
-
-
-</div>
-
-
-</main>
-
-
-</section>
-
-<!-- =====================
-     新剧本板块
-===================== -->
-
-<section class="series">
-
-<div class="series-title">
-
-梦陨春宵
-
-</div>
-
-
-<div class="series-author">
-
+<p>
 作者：官方
-
-</div>
-
-
-<section class="intro">
-
-<div class="intro-box">
-
-
-<div class="intro-title">
-
-梦陨春宵
-
-</div>
-
-
-<div class="intro-text">
-
- 生机勃勃的春天已然过去，温暖迷人的夏天悄然来临。园丁在公园和窗栏上精心培育，让百花齐放，一望无际。鸟儿在歌唱，艺术家们拿起了画笔，哲学家在熙熙攘攘的酒馆里思索人生的终极奥秘，城镇周围搭建起老旧的帐篷预示着马戏团即将开启。
-     在人们沉湎于纸醉金迷和灯红酒绿时，黑暗势力却悄然崛起。女巫和异教徒们潜藏在郊区的宏伟遗迹之间，在地下洞穴中密谋着渗透城镇，而那在宴会中狂欢的鸦木布拉夫居民们却浑然不知。
-     良辰已至……梦殒春宵
-
-</div>
+</p>
 
 
 </div>
 
-</section>
 
 
-<main class="gallery">
 
 
-<div class="card">
 
-<a href="new-05.jpg"
-target="_blank">
+<div class="book"
+onclick="openBook('mengyun')">
+
 
 <img src="new-05.jpg">
 
-</a>
+
+<h3>
+梦陨春宵
+</h3>
 
 
-<div class="card-title">
-
-梦陨春宵 · 剧本介绍
-
-</div>
-
-
-</div>
-
-
-
-<div class="card">
-
-<a href="new-06.jpg"
-target="_blank">
-
-<img src="new-06.jpg">
-
-</a>
-
-
-<div class="card-title">
-
-梦陨春宵 · 角色规则
-
-</div>
-
-
-</div>
-
-
-</main>
-
-
-</section>
-
-<!-- =====================
-     新剧本板块
-===================== -->
-
-<section class="series">
-
-<div class="series-title">
-
-窃窃私语
-
-</div>
-
-
-<div class="series-author">
-
+<p>
 作者：官方
-
-</div>
-
-
-<section class="intro">
-
-<div class="intro-box">
-
-
-<div class="intro-title">
-
-窃窃私语
-
-</div>
-
-
-<div class="intro-text">
-
- 无名村的夜晚，总是比别处来得更加寂静。
-破旧的木屋隐藏在浓雾之中，潮湿的石路被雨水冲刷得泥泞不堪。远处的荒林传来断断续续的风声，像有人在黑暗中低声交谈。
-村民们早已习惯了这样的夜晚。
-他们知道，有些声音不该回应，有些秘密不该追寻。
-可最近，那些声音变得越来越清晰。
-每当午夜降临，村庄的角落里总会响起若有若无的低语。它们像是在诉说某段被遗忘的往事，又像是在提醒所有人——有些东西，从未真正离开。
-直到那个陌生人的到来。
-他踏入村庄的那一天，没有人知道他的身份，也没有人知道他的目的。
-有人说，他是来寻找失踪真相的旅人；有人说，他带来的不是答案，而是一场新的灾难。
-镇民们躲在窗后窥视着这个不速之客。
-他们害怕的并不是这个人的力量，而是他所知道的事情。
-因为这个世界上，最令人恐惧的从来不是死亡。
-而是有人掌握了你不愿被揭开的秘密。
-随着陌生人的出现，隐藏在村庄深处的谎言开始逐渐浮现。
-有人试图寻找真相，有人在拼命掩盖过去；有人相信眼前的一切，也有人早已迷失在自己的谎言之中。
-当夜幕再次降临，那些低沉的声音又一次响起。
-是谁，在黑暗中窃窃私语？
-又是谁，将成为下一个被秘密吞噬的人？
-欢迎来到——《窃窃私语》。
-
-</div>
+</p>
 
 
 </div>
 
-</section>
 
 
-<main class="gallery">
 
 
-<div class="card">
 
-<a href="7.jpg"
-target="_blank">
+<div class="book"
+onclick="openBook('qieqiesiyu')">
+
 
 <img src="7.jpg">
 
-</a>
+
+<h3>
+窃窃私语
+</h3>
 
 
-<div class="card-title">
-
-窃窃私语 · 剧本介绍
-
-</div>
-
-
-</div>
-
-
-
-<div class="card">
-
-<a href="8.jpg"
-target="_blank">
-
-<img src="8.jpg">
-
-</a>
-
-
-<div class="card-title">
-
-窃窃私语 · 角色规则
-
-</div>
-
-
-</div>
-
-
-</main>
-
-
-</section>
-
-<!-- =====================
-     新剧本板块
-===================== -->
-
-<section class="series">
-
-<div class="series-title">
-
-无上愉悦
-
-</div>
-
-
-<div class="series-author">
-
+<p>
 作者：官方
-
-</div>
-
-
-<section class="intro">
-
-<div class="intro-box">
-
-
-<div class="intro-title">
-
-无上愉悦
-
-</div>
-
-<div class="intro-text">
-
-无名村的夜晚，总是安静得令人不安。
-月光洒落在荒废的田野上，远处的树林随着寒风发出低沉的呜咽。村口那条泥泞的小路上，一个陌生的身影缓缓走来。
-他没有行李，没有归处，也没有人知道他的名字。
-村民们隔着窗户窥视着这个突然出现的旅人，昏暗的烛光映照出一张张警惕的面孔。他们不知道这个人的过去，也不知道他为何来到这里。
-但他们知道——
-陌生人从不会无缘无故出现。
-有人说，他只是一个迷失方向的流浪者；有人说，他隐藏着不可告人的秘密；还有人认为，他的到来会给这个平静的村庄带来灾难。
-可真正令人恐惧的，从来不是一个人的出现。
-而是当所有人开始怀疑彼此时，人心中滋生出的恶意。
-在这个没有答案的夜晚，信任成为了最奢侈的东西。
-我们应该伸出手，接纳这个孤独的旅人？
-还是应该关上门，将未知的危险拒之门外？
-当谎言开始流传，当秘密逐渐浮出水面……
-究竟是谁带来了灾厄？
-又是谁，早已隐藏在人群之中？
-欢迎来到《无上愉悦》。
-这里没有绝对的善，也没有纯粹的恶。
-只有在恐惧之中，做出选择的人们。
-
-</div>
+</p>
 
 
 </div>
 
-</section>
 
 
-<main class="gallery">
 
 
-<div class="card">
 
-<a href="9.jpg"
-target="_blank">
+<div class="book"
+onclick="openBook('wushangyuyue')">
+
 
 <img src="9.jpg">
 
-</a>
+
+<h3>
+无上愉悦
+</h3>
 
 
-<div class="card-title">
-
-无上愉悦 · 剧本介绍
-
-</div>
-
-
-</div>
-
-
-
-<div class="card">
-
-<a href="10.jpg"
-target="_blank">
-
-<img src="10.jpg">
-
-</a>
-
-
-<div class="card-title">
-
-无上愉悦 · 角色规则
-
-</div>
-
-
-</div>
-
-
-</main>
-
-
-</section>
-
-<!-- =====================
-     新剧本板块
-===================== -->
-
-<section class="series">
-
-<div class="series-title">
-
-旅行者
-
-</div>
-
-
-<div class="series-author">
-
+<p>
 作者：官方
-
-</div>
-
-
-<section class="intro">
-
-<div class="intro-box">
-
-
-<div class="intro-title">
-
-旅行者
-
-</div>
-
-
-<div class="intro-text">
-
- 生机勃勃的春天已然过去，温暖迷人的夏天悄然来临。园丁在公园和窗栏上精心培育，让百花齐放，一望无际。鸟儿在歌唱，艺术家们拿起了画笔，哲学家在熙熙攘攘的酒馆里思索人生的终极奥秘，城镇周围搭建起老旧的帐篷预示着马戏团即将开启。
-     在人们沉湎于纸无名村的村间小路雨泥淤积，坑坑洼洼。一个高大男子伫立在这死寂的夜晚。雨水掠过他的帽檐瀑布般滑落，水柱映着惨白的月光在他的脚边溅起水花。男子一动不动地站着审视着周围的一切。坚定的站姿透露着他使命必达的决心。镇民们暗暗地掀起窗帘观察着他。     镇民们当然也知道这人是为何而来。镇民们担心的并不是这人带来的强大法令，而是这人将如何颁布它。常言道，人类最大的恐惧是对未知的恐惧。这个谜一般的人和他谜一般的意图正是恐惧的化身。我们凭什么去相信一个无家可归、飘摆不定、没有信仰的人呢？我们应该帮助还是驱赶这些人？ 我们应该帮助还是驱赶这些……
-    “山路可能十八弯，有的路窄有的宽。大路流水急湍湍，看见老鹰心慌慌。我想从这往里穿，马儿最多把头钻。纵使眼利似神枪，未见光明在前方。”
-    
-</div>
+</p>
 
 
 </div>
 
-</section>
 
 
-<main class="gallery">
 
 
-<div class="card">
 
-<a href="11.jpg"
-target="_blank">
+
+<div class="book"
+onclick="openBook('lvxingzhe')">
+
 
 <img src="11.jpg">
 
-</a>
+
+<h3>
+旅行者
+</h3>
 
 
-<div class="card-title">
-
-旅行者 · 剧本介绍
-
-</div>
-
-
-</div>
-
-
-
-<div class="card">
-
-<a href="12.jpg"
-target="_blank">
-
-<img src="12.jpg">
-
-</a>
-
-
-<div class="card-title">
-
-旅行者 · 角色规则
-
-</div>
-
-
-</div>
-
-
-</main>
-
-
-</section>
-
-<!-- =====================
-     新剧本板块
-===================== -->
-
-<section class="series">
-
-<div class="series-title">
-
-传奇角色
-
-</div>
-
-
-<div class="series-author">
-
+<p>
 作者：官方
-
-</div>
-
-
-<section class="intro">
-
-<div class="intro-box">
-
-
-<div class="intro-title">
-
-传奇角色
-
-</div>
-
-
-<div class="intro-text">
-
- 疲倦车夫一张口，喝下整杯蜂蜜酒。壁炉同他握了手，沙发劝他别乱走。声声哈欠声声久，熊熊火焰暖胸口。
-“可以讲讲路上发生的事吗，先生?”，酒馆里有个声音说道。
-“给我们讲一个悲伤的故事，我保证今天我不胡闹。”
-“给我们讲一个好笑的故事，我保证这杯我全喝掉。”
-车夫叹了叹气，其实他不太愿意，他深呼吸，擤鼻涕，准备给大家讲他神奇的经历。
-“真的就这么神，”他说道，“我没骗你们，从午夜到清晨，我穿过沙漠，摘过星尘，
-见过婴儿新生，也见过被冤死的好人。”
-“山路可能十八弯，有的路窄有的宽。大路流水急湍湍，看见老鹰心慌慌。我想从这往里穿，马儿最多把头钻。纵使眼利似神枪，未见光明在前方。”
-朋友们，让我们一起于壁炉边聚集，谁都不许先离席，既然大伙人这么齐，不如我就来和大家讲讲什么是·…
-    
-</div>
+</p>
 
 
 </div>
 
-</section>
 
 
-<main class="gallery">
 
 
-<div class="card">
 
-<a href="13.jpg"
-target="_blank">
+
+<div class="book"
+onclick="openBook('chuanqijuese')">
+
 
 <img src="13.jpg">
 
-</a>
+
+<h3>
+传奇角色
+</h3>
 
 
-<div class="card-title">
-
-传奇角色 · 剧本介绍
-
-</div>
-
-
-</div>
-
-
-
-<div class="card">
-
-<a href="14.jpg"
-target="_blank">
-
-<img src="14.jpg">
-
-</a>
-
-
-<div class="card-title">
-
-传奇角色 · 角色规则
-
-</div>
-
-
-</div>
-
-
-</main>
-
-
-</section>
-
-<!-- =====================
-     新剧本板块
-===================== -->
-
-<section class="series">
-
-<div class="series-title">
-
-华灯初上
-
-</div>
-
-
-<div class="series-author">
-
+<p>
 作者：官方
-
-</div>
-
-
-<section class="intro">
-
-<div class="intro-box">
-
-
-<div class="intro-title">
-
-华灯初上
-
-</div>
-
-
-<div class="intro-text">
-
- 恰逢上元佳节，全民张灯结彩，欢庆新一年的到来。
-这里是远离鸦木布拉夫的东方，邪恶曾于洪荒时代在此处肆虐，戕害苍生。如今它们已经被尽数封印，一切都朝着繁荣和美好大步迈进。但邪祟却像是终会到来的黑夜，妄图死灰复燃。郊外的森林中，虫豸的鸣叫声窸窸窣窣，本是前来报恩的白狐，眼中也闪烁着鬼魅般的焰火。坊间更有活死人的传说，甚至有人亲眼见证
-过——殊不知这繁荣的表象之下，是无法掩盖的腐朽在逐渐崩塌。
-还在辛勤忙碌中的人们全然不知，他们只
-觉花好月圆，而此时正值·…
-
-</div>
+</p>
 
 
 </div>
 
-</section>
 
 
-<main class="gallery">
 
 
-<div class="card">
 
-<a href="15.jpg"
-target="_blank">
+<div class="book"
+onclick="openBook('huadengchushang')">
+
 
 <img src="15.jpg">
 
-</a>
+
+<h3>
+华灯初上
+</h3>
 
 
-<div class="card-title">
-
-华灯初上 · 剧本介绍
-
-</div>
-
-
-</div>
-
-
-
-<div class="card">
-
-<a href="16.jpg"
-target="_blank">
-
-<img src="16.jpg">
-
-</a>
-
-
-<div class="card-title">
-
-华灯初上 · 角色规则
-
-</div>
-
-
-</div>
-
-
-</main>
-
-
-</section>
-
-<!-- =====================
-     新剧本板块
-===================== -->
-
-<section class="series">
-
-<div class="series-title">
-
-山雨欲来
-
-</div>
-
-
-<div class="series-author">
-
+<p>
 作者：官方
-
-</div>
-
-
-<section class="intro">
-
-<div class="intro-box">
-
-
-<div class="intro-title">
-
-山雨欲来
-
-</div>
-
-
-<div class="intro-text">
-
- 骤雨将临，天地间漫开厚重的阴霾，连檐角的铜铃都静了声响。
-这里是扼守南北的雄关隘口，曾是金戈铁马护佑一方的屏障，烽火狼烟里守下了百年安宁。如今城楼上的旌旗依旧猎猎，集市里的叫卖声也未曾断绝，往来商旅依旧络绎，仿佛太平盛世从未有过裂痕。但风里早已掺了异样的腥甜，城根下的青苔莫名发黑，巡夜的兵卒接连失踪，只留下带血的腰牌。茶馆里的说书人忽然噤了声，酒肆中醉汉的胡话里，竟藏着对幽冥恶鬼的惊惧——殊不知这看似固若金汤的雄关，早已被无形的阴影缠上了根基。
-还在为生计奔波的百姓浑然不觉，他们只
-道晚风微凉，而此刻偏逢…·…
-</div>
+</p>
 
 
 </div>
 
-</section>
 
 
-<main class="gallery">
 
 
-<div class="card">
 
-<a href="17.jpg"
-target="_blank">
+
+<div class="book"
+onclick="openBook('shanyuyulai')">
+
 
 <img src="17.jpg">
 
-</a>
+
+<h3>
+山雨欲来
+</h3>
 
 
-<div class="card-title">
-
-山雨欲来 · 剧本介绍
-
-</div>
-
-
-</div>
-
-
-
-<div class="card">
-
-<a href="18.jpg"
-target="_blank">
-
-<img src="18.jpg">
-
-</a>
-
-
-<div class="card-title">
-
-山雨欲来 · 角色规则
-
-</div>
+<p>
+作者：官方
+</p>
 
 
 </div>
 
 
-</main>
 
 
-</section>
 
-<!-- =====================
-     第一个剧本板块
-===================== -->
 
 
-<section class="series">
+<div class="book"
+onclick="openBook('wafuleiming')">
 
-
-
-<div class="series-title">
-
-夜半狂欢
-
-</div>
-
-
-
-<div class="series-author">
-
-作者：Zets
-
-</div>
-
-
-
-
-
-<section class="intro">
-
-
-<div class="intro-box">
-
-
-
-<div class="intro-title">
-
-夜半狂欢
-
-</div>
-
-
-
-
-<div class="intro-text">
-
-
-在被遗忘的午夜小镇，一场名为“夜半狂欢”的宴会悄然开启。
-古老的钟楼再次响起，沉睡已久的旋转木马缓缓转动，受邀而来的宾客们踏入这场诡秘的盛宴。然而，没有人知道，在欢笑与音乐背后，隐藏着一场关于谎言、背叛与死亡的游戏。
-这里有守护镇民的善良之人，也有潜伏在人群中的邪恶力量。
-博学者试图寻找真相，失忆者在迷雾中追寻过去，舞者与旅人隐藏着未知的秘密，而落难少女成为所有人关注的焦点。
-与此同时，哈迪寂亚的阴影悄然降临，麻脸、投毒者等邪恶力量隐藏其中，让每一次讨论都充满危险。
-当钟声再次响起，谁是真正的守护者？
-谁又是隐藏在狂欢之中的恶魔？
-午夜已至，旋转木马开始转动——
-欢迎来到《夜半狂欢》。
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-<!-- =====================
-     高清图片
-===================== -->
-
-
-<main class="gallery">
-
-
-
-<div class="card">
-
-
-<a href="night-01.jpg"
-target="_blank"
-rel="noopener">
-
-
-<img src="night-01.jpg"
-alt="夜半狂欢 第一张">
-
-
-</a>
-
-
-
-<div class="card-title">
-
-夜半狂欢 · 剧本介绍
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-<div class="card">
-
-
-<a href="night-02.jpg"
-target="_blank"
-rel="noopener">
-
-
-<img src="night-02.jpg"
-alt="夜半狂欢 第二张">
-
-
-</a>
-
-
-
-<div class="card-title">
-
-夜半狂欢 · 角色与规则
-
-</div>
-
-
-</div>
-
-
-
-</main>
-
-
-</section>
-
-
-
-<!-- =====================
-     新剧本板块
-===================== -->
-
-<section class="series">
-
-<div class="series-title">
-
-瓦釜雷鸣
-
-</div>
-
-
-<div class="series-author">
-
-作者：Emily
-
-</div>
-
-
-<section class="intro">
-
-<div class="intro-box">
-
-
-<div class="intro-title">
-
-瓦釜雷鸣
-
-</div>
-
-
-<div class="intro-text">
-
- 在古老的瓦釜镇，雷鸣不仅仅是天际的怒吼，更是隐藏于人心深处的震颤与回响。这是一个被遗忘的角落，一个被历史尘封的秘密之地，而今，一场突如其来的风暴，唤醒了沉睡的谜团，让每一个踏入这片土地的人，都不可避免地卷入了一场关于权力、背叛与救赎的漩涡之中。
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<main class="gallery">
-
-
-<div class="card">
-
-<a href="19.jpg"
-target="_blank">
 
 <img src="19.jpg">
 
-</a>
+
+<h3>
+瓦釜雷鸣
+</h3>
 
 
-<div class="card-title">
-
-瓦釜雷鸣· 剧本介绍
-
-</div>
-
-
-</div>
-
-
-
-<div class="card">
-
-<a href="20.jpg"
-target="_blank">
-
-<img src="20.jpg">
-
-</a>
-
-
-<div class="card-title">
-
-瓦釜雷鸣· 角色规则
-
-</div>
+<p>
+作者：Emily
+</p>
 
 
 </div>
 
 
-</main>
 
 
-</section>
-
-<!-- =====================
-     新剧本板块
-===================== -->
-
-<section class="series">
-
-<div class="series-title">
-
-江城·决
-
-</div>
 
 
-<div class="series-author">
+<div class="book"
+onclick="openBook('jiangchengjue')">
 
-作者：际尘
-
-</div>
-
-
-<section class="intro">
-
-<div class="intro-box">
-
-
-<div class="intro-title">
-
-江城·决
-
-</div>
-
-
-<div class="intro-text">
-
- 江城，一座被霓虹与阴影共同笼罩的城市。
-高楼之上的灯火彻夜不眠，街道上的车流如同永不停歇的血液，在这座钢铁森林中流淌。人们习惯了城市的喧嚣，却忘记了——越是繁华的地方，越容易藏匿无法言说的秘密。
-一场突如其来的事件，将一群毫无关联的人卷入其中。
-有人追寻真相，有人隐藏身份；有人试图守护他人，有人却在黑暗中等待时机。
-调查员拿起线索，试图拼凑出被掩埋的过去；占卜师窥探命运，却无法看清自己的终局；艺术家在虚假与真实之间寻找答案；而那些看似普通的陌生人，也许早已戴上了另一张面孔。
-在这座城市里，谎言可以成为保护，真相也可能成为致命的武器。
-当夜幕降临，江城的街灯一盏盏亮起，一场关于信任、背叛与选择的游戏悄然开始。
-没有人知道，谁是真正的朋友，谁只是伪装的敌人。
-没有人知道，那些被隐藏的秘密，究竟是在等待被揭开——还是等待吞噬所有知晓它的人。
-直到最后一刻。
-当钟声响起，江城的命运将迎来裁决。
-欢迎来到《江城·决》。
-在这里，每个人都有自己的答案。
-而你，是否能找到真正的真相？
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<main class="gallery">
-
-
-<div class="card">
-
-<a href="21.jpg"
-target="_blank">
 
 <img src="21.jpg">
 
-</a>
+
+<h3>
+江城·决
+</h3>
 
 
-<div class="card-title">
-
-江城·决 · 剧本介绍
-
-</div>
-
-
-</div>
-
-
-
-<div class="card">
-
-<a href="22.jpg"
-target="_blank">
-
-<img src="22.jpg">
-
-</a>
-
-
-<div class="card-title">
-
-江城·决 · 角色规则
-
-</div>
+<p>
+作者：际尘
+</p>
 
 
 </div>
 
 
-</main>
 
 
-</section>
-
-<!-- =====================
-     新剧本板块
-===================== -->
-
-<section class="series">
-
-<div class="series-title">
-
-诡仙志异
-
-</div>
 
 
-<div class="series-author">
+<div class="book"
+onclick="openBook('guixianzhiyi')">
 
-作者：痴愚
-
-</div>
-
-
-<section class="intro">
-
-<div class="intro-box">
-
-
-<div class="intro-title">
-
-诡仙志异
-
-</div>
-
-
-<div class="intro-text">
-
- 仰道者企，如道者浸，皆知道之事，不知道之道。吾常闻，非人勤以求知，乃知者勤以求人也。然吾知其谬。其知者非求人，实乃出而逐人矣。其刻深无情者，如鹰犬逐兔
-—《玄君七章秘经·序》
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<main class="gallery">
-
-
-<div class="card">
-
-<a href="23.jpg"
-target="_blank">
 
 <img src="23.jpg">
 
-</a>
+
+<h3>
+诡仙志异
+</h3>
 
 
-<div class="card-title">
-
-诡仙志异 · 剧本介绍
-
-</div>
-
-
-</div>
-
-
-
-<div class="card">
-
-<a href="24.jpg"
-target="_blank">
-
-<img src="24.jpg">
-
-</a>
-
-
-<div class="card-title">
-
-诡仙志异 · 角色规则
-
-</div>
-
-
-</div>
-
-
-</main>
-
-
-</section>
-
-<!-- =====================
-     新剧本板块
-===================== -->
-
-<section class="series">
-
-<div class="series-title">
-
-歌剧魅影
-
-</div>
-
-
-<div class="series-author">
-
+<p>
 作者：痴愚
-
-</div>
-
-
-<section class="intro">
-
-<div class="intro-box">
-
-
-<div class="intro-title">
-
-歌剧魅影
-
-</div>
-
-
-<div class="intro-text">
-
-午夜的钟声敲响，古老的歌剧院再次亮起了灯火。
-这座曾经辉煌无比的殿堂，即将迎来一场万众瞩目的演出。
-台前，演员们整理妆容，等待属于自己的那一刻；
-幕后，导演反复修改剧本，编剧不断填补故事的空白；
-灯光、化妆、服装与音乐交织在一起，共同编织着一场完美的幻梦。
-然而，没有人知道——
-这场演出早已不再只是演出。
-多年前，歌剧院中流传着一个关于“魅影”的传闻。
-有人说，他藏身于黑暗的幕布之后，操纵着每一次落幕与开场；
-有人说，他拥有改变命运的力量，只等待某一天重新登上舞台；
-也有人说，那张隐藏在面具后的脸，才是真正被埋葬的秘密。
-如今，随着新剧目的上演，尘封的故事再次被唤醒。
-一张张面具被戴上，一个个身份被隐藏。
-有人在舞台上扮演角色，有人在现实中伪装自己。
-当掌声响起时，你无法分辨——
-那是观众给予演员的喝彩，还是黑暗中某个人为计划成功献上的欢呼。
-剧本写下的每一句台词，都可能是真相；
-每一次表演，也可能都是欺骗。
-而在这场没有彩排的最终演出中……
-谁是演员？
-谁是观众？
-谁又是隐藏在幕后的——真正的魅影？
-欢迎来到《歌剧魅影》。
-今晚，帷幕即将落下。
-但故事，才刚刚开始。
-
-</div>
+</p>
 
 
 </div>
 
-</section>
 
 
-<main class="gallery">
 
 
-<div class="card">
 
-<a href="25.jpg"
-target="_blank">
+<div class="book"
+onclick="openBook('gejumiying')">
+
 
 <img src="25.jpg">
 
-</a>
+
+<h3>
+歌剧魅影
+</h3>
 
 
-<div class="card-title">
-
-歌剧魅影 · 剧本介绍
-
-</div>
-
-
-</div>
-
-
-
-<div class="card">
-
-<a href="26.jpg"
-target="_blank">
-
-<img src="26.jpg">
-
-</a>
-
-
-<div class="card-title">
-
-歌剧魅影 · 角色规则
-
-</div>
+<p>
+作者：痴愚
+</p>
 
 
 </div>
 
 
-</main>
 
 
-</section>
-
-<!-- =====================
-     新剧本板块
-===================== -->
-
-<section class="series">
-
-<div class="series-title">
-
-十日终焉
-
-</div>
 
 
-<div class="series-author">
+<div class="book"
+onclick="openBook('shirizhongyan')">
 
-作者：心流
-
-</div>
-
-
-<section class="intro">
-
-<div class="intro-box">
-
-
-<div class="intro-title">
-
-十日终焉
-
-</div>
-
-
-<div class="intro-text">
-
- “我看到了生存尽头的答案。”
-当世界走向终焉，幸存者们被拖入一片没有出口的废墟。
-这里没有法律，没有秩序，也没有所谓的救赎。
-只有一条规则——
-活过十日。
-每个人醒来时，都失去了部分记忆，却获得了一种名为“回响”的力量。
-有人能窥见未来；
-有人能操控死亡；
-有人能让伤痕愈合；
-有人甚至能让已经结束的生命，再次燃烧。
-可他们很快发现——
-这里的每一次胜利，都需要支付代价。
-这里的每一份善意，都可能成为杀死自己的刀。
-传闻在终焉之地里，有一个男人曾经无数次走向死亡。
-他叫——齐夏。
-别人寻找逃出去的方法。
-而他寻找的，是这个世界存在的漏洞。
-在所有人眼中，他冷漠、算计、不值得信任。
-可没人知道……
-那个一次次站在悬崖边的人，早已把自己的生命当成了一场赌局。
-他的回响——
-「生生不息」
-不是为了让自己活下来。
-而是为了让那些本该死去的人，再多拥有一次选择的机会。
-在这片被鲜血染红的大地上，
-陈俊南用疯狂点燃希望；
-林檎用谎言守护真相；
-乔家劲用拳头证明自己的道路；
-楚天秋在棋局中寻找唯一的胜算；
-云瑶在死亡与记忆之间寻找答案；
-而一个又一个进入终焉之地的人，
-都必须面对属于自己的回响。
-这里没有英雄。
-因为英雄也会死。
-这里没有绝对的恶人。
-因为所有人都只是为了活下去。
-当第十日的钟声响起，
-当所有人的回响同时觉醒，
-他们终于发现：
-所谓终焉之地，
-并不是为了毁灭人类。
-而是在等待一个答案——
-如果给予你重来一次的机会，你会选择拯救世界，还是拯救自己？
-十日终焉。
-血染终焉之地。
-十日之后，究竟是谁走出去？
-又是谁，永远留在了昨天。
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<main class="gallery">
-
-
-<div class="card">
-
-<a href="27.jpg"
-target="_blank">
 
 <img src="27.jpg">
 
-</a>
+
+<h3>
+十日终焉
+</h3>
 
 
-<div class="card-title">
+<p>
+作者：心流
+</p>
 
-十日终焉 · 剧本介绍
 
 </div>
 
 
-</div>
-
-
-
-<div class="card">
-
-<a href="28.jpg"
-target="_blank">
-
-<img src="28.jpg">
-
-</a>
-
-
-<div class="card-title">
-
-十日终焉 · 角色规则
-
-</div>
 
 
 </div>
@@ -2168,49 +424,17 @@ target="_blank">
 </main>
 
 
-</section>
 
 
-
-
-
-
-
-
-
-<!-- =====================
-     底部
-===================== -->
 
 
 <footer class="footer">
 
-
-<div>
-
 白羊的染·钟楼谜团
 
-</div>
+<br><br>
 
-
-<div style="margin-top:10px;">
-
-剧本资料整理
-
-</div>
-
-
-<div style="margin-top:20px; line-height:1.8;">
-剧本持续更新中.......
-    
-本站仅作为个人剧本资料整理与展示使用，
-不用于任何商业用途。
-
-如涉及版权、作者权益或相关内容问题，
-请联系VX：BaiYang5192处理。
-
-</div>
-
+本站仅作为个人剧本资料整理与展示使用
 
 </footer>
 
@@ -2219,49 +443,18 @@ target="_blank">
 
 
 
-<!-- =====================
-     背景音乐
-===================== -->
-
-
-<audio id="backgroundMusic"
-loop
-preload="auto">
-
-
-<source src=".mp3"
-type="audio/mpeg">
-
-
-</audio>
-
-
-
-
 <script>
 
+function openBook(id){
 
-const music =
-document.getElementById("backgroundMusic");
+window.location.href="detail.html?id="+id;
 
-
-
-document.addEventListener("click",function(){
-
-
-music.play();
-
-
-},{once:true});
-
-
+}
 
 </script>
 
 
-
 </body>
 
-</html>
 
-}
+</html>
