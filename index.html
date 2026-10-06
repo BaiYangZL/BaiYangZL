@@ -64,6 +64,40 @@
         }
 
         /* =========================
+           剧本简介
+        ========================= */
+
+        .intro {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 45px 30px 10px;
+        }
+
+        .intro-box {
+            background: #101f27;
+            border: 1px solid rgba(232,201,120,0.25);
+            border-radius: 14px;
+            padding: 30px 35px;
+
+            box-shadow:
+                0 15px 45px rgba(0,0,0,0.35);
+        }
+
+        .intro-title {
+            text-align: center;
+            color: #e8c978;
+            font-size: 24px;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+        }
+
+        .intro-text {
+            color: #c5d0d3;
+            font-size: 16px;
+            line-height: 2;
+        }
+
+        /* =========================
            图片区域
         ========================= */
 
@@ -157,6 +191,23 @@
                 letter-spacing: 5px;
             }
 
+            .intro {
+                padding: 25px 15px 10px;
+            }
+
+            .intro-box {
+                padding: 25px 20px;
+            }
+
+            .intro-title {
+                font-size: 21px;
+            }
+
+            .intro-text {
+                font-size: 15px;
+                line-height: 1.9;
+            }
+
             .gallery {
                 grid-template-columns: 1fr;
                 padding: 25px 15px 45px;
@@ -187,6 +238,30 @@
         </p>
 
     </header>
+
+
+    <!-- =========================
+         剧本简介
+    ========================== -->
+
+    <section class="intro">
+
+        <div class="intro-box">
+
+            <div class="intro-title">
+                深夜钟楼
+            </div>
+
+            <div class="intro-text">
+
+                在月色朦胧的深夜，古老的钟楼仿佛被一层神秘的面纱所笼罩，阴森而幽邃。
+                此时，钟楼的大门悄然洞开，一群各怀鬼胎的宾客悄然涌入，他们身负着不为人知的秘密，踏入了这场注定不平凡的夜半狂欢。
+
+            </div>
+
+        </div>
+
+    </section>
 
 
     <!-- =========================
@@ -260,6 +335,7 @@
         </div>
 
     </footer>
+
 <audio id="backgroundMusic" loop preload="auto">
     <source src="渡边雅二 - 青山绿野.mp3" type="audio/mpeg">
 </audio>
