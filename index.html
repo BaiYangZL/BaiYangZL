@@ -1,252 +1,265 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-<title>白羊的血染钟楼</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<style>
-* {
-    box-sizing: border-box;
-}
+    <title>夜半狂欢</title>
 
-body {
-    margin: 0;
-    background: #0b1015;
-    color: #f5f0e6;
-    font-family:
-        "Microsoft YaHei",
-        "PingFang SC",
-        Arial,
-        sans-serif;
-}
+    <style>
 
-/* 顶部 */
-.header {
-    padding: 45px 20px 35px;
-    text-align: center;
-    border-bottom: 1px solid rgba(255,255,255,0.12);
-    background:
-        radial-gradient(circle at center, #202c35 0%, #0b1015 65%);
-}
+        * {
+            box-sizing: border-box;
+        }
 
-.header h1 {
-    margin: 0;
-    font-size: 42px;
-    letter-spacing: 6px;
-    font-weight: 700;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-.header p {
-    margin: 14px 0 0;
-    color: #aaa;
-    font-size: 16px;
-}
+        body {
+            margin: 0;
+            background: #07151c;
+            color: #f5f0e6;
+            font-family:
+                "Microsoft YaHei",
+                "PingFang SC",
+                Arial,
+                sans-serif;
+        }
 
-/* 内容区域 */
-.container {
-    width: min(1400px, 94%);
-    margin: 0 auto;
-    padding: 50px 0 80px;
-}
+        /* =========================
+           顶部
+        ========================= */
 
-/* 系列标题 */
-.series-title {
-    text-align: center;
-    margin-bottom: 40px;
-}
+        .header {
+            text-align: center;
+            padding: 55px 20px 45px;
 
-.series-title h2 {
-    margin: 0;
-    font-size: 32px;
-    letter-spacing: 4px;
-}
+            background:
+                radial-gradient(
+                    circle at center,
+                    #173844 0%,
+                    #0b2029 45%,
+                    #07151c 100%
+                );
 
-.series-title p {
-    margin-top: 12px;
-    color: #aaa;
-    font-size: 15px;
-}
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+        }
 
-/* 图片区域 */
-.gallery {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    align-items: center;
-}
+        .header h1 {
+            margin: 0;
+            font-size: 48px;
+            letter-spacing: 8px;
+            color: #e8c978;
+            text-shadow:
+                0 0 12px rgba(232,201,120,0.35);
+        }
 
-/* 图片卡片 */
-.card {
-    width: 100%;
-    max-width: 1100px;
-    background: #111820;
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 14px;
-    padding: 15px;
-    box-shadow: 0 15px 50px rgba(0,0,0,0.4);
-}
+        .header p {
+            margin: 18px 0 0;
+            color: #b9c6c9;
+            font-size: 16px;
+        }
 
-.card img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    cursor: zoom-in;
-}
+        /* =========================
+           图片区域
+        ========================= */
 
-/* 图片下面的名字 */
-.card-title {
-    text-align: center;
-    padding: 18px 10px 8px;
-    font-size: 18px;
-    color: #ddd;
-}
+        .gallery {
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 45px 30px 60px;
 
-/* 底部 */
-.footer {
-    text-align: center;
-    padding: 30px 20px 45px;
-    color: #777;
-    font-size: 13px;
-    border-top: 1px solid rgba(255,255,255,0.08);
-}
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 35px;
+        }
 
-/* 放大图片 */
-.lightbox {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    inset: 0;
-    background: rgba(0,0,0,0.92);
-    justify-content: center;
-    align-items: center;
-    padding: 25px;
-}
+        .card {
+            background: #101f27;
+            border: 1px solid rgba(232,201,120,0.25);
+            border-radius: 14px;
+            overflow: hidden;
 
-.lightbox img {
-    max-width: 95vw;
-    max-height: 95vh;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-}
+            box-shadow:
+                0 15px 45px rgba(0,0,0,0.45);
 
-.close {
-    position: fixed;
-    top: 20px;
-    right: 30px;
-    font-size: 42px;
-    color: white;
-    cursor: pointer;
-    z-index: 10000;
-}
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
 
-/* 手机 */
-@media (max-width: 600px) {
+        .card:hover {
+            transform: translateY(-5px);
 
-    .header {
-        padding: 30px 15px 25px;
-    }
+            box-shadow:
+                0 20px 55px rgba(0,0,0,0.6);
+        }
 
-    .header h1 {
-        font-size: 28px;
-        letter-spacing: 3px;
-    }
+        .card a {
+            display: block;
+            text-decoration: none;
+        }
 
-    .container {
-        width: 94%;
-        padding-top: 35px;
-    }
+        .card img {
+            display: block;
 
-    .series-title h2 {
-        font-size: 25px;
-    }
+            width: 100%;
+            height: auto;
 
-    .card {
-        padding: 8px;
-        border-radius: 10px;
-    }
+            /* 保持图片原比例 */
+            object-fit: contain;
 
-    .card-title {
-        font-size: 16px;
-    }
-}
-</style>
+            background: #050b0f;
+        }
+
+        .card-title {
+            padding: 16px 20px;
+
+            text-align: center;
+
+            color: #e8c978;
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
+
+        /* =========================
+           底部
+        ========================= */
+
+        .footer {
+            text-align: center;
+
+            padding: 45px 20px 60px;
+
+            border-top:
+                1px solid rgba(255,255,255,0.1);
+
+            color: #89999e;
+
+            font-size: 14px;
+        }
+
+        /* =========================
+           手机适配
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .header {
+                padding: 40px 15px 35px;
+            }
+
+            .header h1 {
+                font-size: 34px;
+                letter-spacing: 5px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+                padding: 25px 15px 45px;
+                gap: 25px;
+            }
+
+            .card-title {
+                font-size: 16px;
+            }
+        }
+
+    </style>
 </head>
+
 
 <body>
 
-<!-- 网站标题 -->
-<header class="header">
-    <h1>白羊的血染钟楼</h1>
-    <p>Blood on the Clocktower · 剧本资料库</p>
-</header>
+    <!-- =========================
+         网站顶部
+    ========================== -->
 
-<main class="container">
+    <header class="header">
 
-    <!-- 系列标题 -->
-    <section class="series-title">
-        <h2>夜半狂欢</h2>
-        <p>旋转木马“快速上手剧本” · 剧本作者：Zets</p>
-    </section>
+        <h1>夜半狂欢</h1>
 
-    <!-- 两张系列图片 -->
-    <section class="gallery">
+        <p>
+            “旋转木马”快速上手剧本
+        </p>
+
+    </header>
+
+
+    <!-- =========================
+         两张高清图片
+    ========================== -->
+
+    <main class="gallery">
+
+        <!-- 第一张 -->
 
         <div class="card">
-            <img
-                src="night-01.jpg"
-                alt="夜半狂欢"
-                onclick="openImage(this.src)"
+
+            <a
+                href="night-01.jpg"
+                target="_blank"
+                rel="noopener"
             >
+
+                <img
+                    src="night-01.jpg"
+                    alt="夜半狂欢 第一张"
+                >
+
+            </a>
+
             <div class="card-title">
                 夜半狂欢 · 剧本介绍
             </div>
+
         </div>
 
+
+        <!-- 第二张 -->
+
         <div class="card">
-            <img
-                src="night-02.jpg"
-                alt="夜半狂欢角色表"
-                onclick="openImage(this.src)"
+
+            <a
+                href="night-02.jpg"
+                target="_blank"
+                rel="noopener"
             >
+
+                <img
+                    src="night-02.jpg"
+                    alt="夜半狂欢 第二张"
+                >
+
+            </a>
+
             <div class="card-title">
                 夜半狂欢 · 角色与规则
             </div>
+
         </div>
 
-    </section>
+    </main>
 
-</main>
 
-<footer class="footer">
-    白羊的血染钟楼
-</footer>
+    <!-- =========================
+         网站底部
+    ========================== -->
 
-<!-- 图片放大 -->
-<div class="lightbox" id="lightbox" onclick="closeImage()">
-    <span class="close">×</span>
-    <img id="bigImage" src="" alt="">
-</div>
+    <footer class="footer">
 
-<script>
-function openImage(src) {
-    document.getElementById("bigImage").src = src;
-    document.getElementById("lightbox").style.display = "flex";
-}
+        <div>
+            白羊的血染钟楼
+        </div>
 
-function closeImage() {
-    document.getElementById("lightbox").style.display = "none";
-}
+        <div style="margin-top: 10px;">
+            剧本作者：Zets
+        </div>
 
-document.addEventListener("keydown", function(event) {
-    if (event.key === "Escape") {
-        closeImage();
-    }
-});
-</script>
+    </footer>
 
 </body>
 </html>
