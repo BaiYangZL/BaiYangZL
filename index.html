@@ -4,40 +4,38 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
 <title>白羊的染·钟楼谜团</title>
 
 
 <style>
 
+
 *{
     box-sizing:border-box;
 }
+
+
+
+html{
+    scroll-behavior:smooth;
+}
+
 
 
 body{
 
     margin:0;
 
+
     min-height:100vh;
 
 
-    background:
+    color:#ead9ae;
 
-    linear-gradient(
-        rgba(20,12,8,.78),
-        rgba(8,5,3,.92)
-    ),
-
-    radial-gradient(
-        circle at top,
-        #594126,
-        #120b07 70%
-    );
-
-
-    color:#e8d5a3;
 
     font-family:
     "Microsoft YaHei",
@@ -45,73 +43,129 @@ body{
     serif;
 
 
+
+    background:
+
+
+    linear-gradient(
+        rgba(18,10,5,.78),
+        rgba(8,5,3,.92)
+    ),
+
+
+    radial-gradient(
+        circle at top,
+        #684b2b,
+        #120904 75%
+    );
+
+
 }
 
 
 
-/* 顶部 */
+/* ===================
+   钟楼标题
+=================== */
 
 
 .header{
 
+
     text-align:center;
 
-    padding:70px 20px 45px;
+
+    padding:
+
+    90px 20px 60px;
+
 
 }
+
 
 
 .candle{
 
-    font-size:38px;
+
+    font-size:42px;
+
 
 }
+
 
 
 .header h1{
 
-    margin:25px 0 15px;
+
+    margin:
+
+    25px 0 15px;
 
 
-    font-size:48px;
+    font-size:
+
+    58px;
 
 
-    letter-spacing:12px;
+    letter-spacing:
+
+    14px;
 
 
-    color:#d8b56a;
+
+    color:#e3bf70;
+
+
+    font-family:
+
+    "Songti SC",
+    serif;
+
 
 
     text-shadow:
 
-    0 0 25px rgba(216,181,106,.5);
+
+    0 0 25px
+
+    rgba(227,191,112,.5);
 
 
 }
+
 
 
 
 .subtitle{
 
-    letter-spacing:5px;
 
-    color:#a78b58;
+    font-size:20px;
 
-    font-size:18px;
+
+    letter-spacing:7px;
+
+
+    color:#b69a62;
+
 
 }
 
 
 
+
 .divider{
 
-    width:260px;
+
+    width:360px;
+
 
     height:1px;
 
-    background:#b58b48;
 
-    margin:35px auto;
+    margin:40px auto;
+
+
+    background:#c29a52;
 
 
 }
@@ -120,28 +174,45 @@ body{
 
 .desc{
 
-    color:#8f7954;
 
-    letter-spacing:4px;
+    letter-spacing:5px;
+
+
+    font-size:18px;
+
+
+    color:#9a8052;
+
 
 }
 
 
 
-/* 书架 */
+
+/* ===================
+   藏书区域
+=================== */
 
 
 .library{
 
 
-    max-width:1300px;
+    width:100%;
+
+
+    max-width:1700px;
+
 
     margin:auto;
 
-    padding:20px 40px 80px;
+
+    padding:
+
+    20px 50px 100px;
 
 
 }
+
 
 
 
@@ -153,18 +224,23 @@ body{
 
     grid-template-columns:
 
-    repeat(4,1fr);
+    repeat(5,1fr);
 
 
-    gap:55px 45px;
+
+    gap:
+
+    65px 45px;
+
 
 
 }
 
 
 
-
-/* 单本书 */
+/* ===================
+   单本剧本
+=================== */
 
 
 .book{
@@ -173,7 +249,7 @@ body{
     text-align:center;
 
 
-    transition:.3s;
+    transition:.35s;
 
 
 }
@@ -182,9 +258,12 @@ body{
 
 .book a{
 
+
     text-decoration:none;
 
+
     color:inherit;
+
 
 }
 
@@ -193,15 +272,21 @@ body{
 .cover{
 
 
-    width:230px;
+    width:100%;
 
-    height:330px;
+
+    aspect-ratio:
+
+    2 / 3;
+
 
 
     object-fit:cover;
 
 
-    border-radius:5px;
+
+    border-radius:6px;
+
 
 
     border:
@@ -209,19 +294,26 @@ body{
     8px solid #352116;
 
 
+
     box-shadow:
 
-    0 20px 40px rgba(0,0,0,.8);
+
+    0 25px 45px
+
+    rgba(0,0,0,.85);
 
 
-    transition:.3s;
+
+    transition:.35s;
+
 
 
 }
 
 
 
-.book:hover .cover{
+
+.book:hover{
 
 
     transform:
@@ -234,45 +326,71 @@ body{
 
 
 
+.book:hover .cover{
+
+
+    box-shadow:
+
+
+    0 35px 60px
+
+    rgba(0,0,0,.95);
+
+
+
+}
+
+
+
+
 .book-name{
 
 
-    margin-top:20px;
+    margin-top:22px;
 
 
-    font-size:20px;
+
+    font-size:21px;
 
 
-    letter-spacing:4px;
+
+    letter-spacing:5px;
+
 
 
     color:#e8c978;
 
 
+
 }
 
 
 
 
-.number{
+.archive{
 
 
-    margin-top:8px;
+    margin-top:10px;
 
 
     font-size:12px;
 
 
-    letter-spacing:3px;
+
+    letter-spacing:4px;
 
 
-    color:#796344;
+
+    color:#806946;
 
 
 }
 
 
 
+/* ===================
+   底部
+=================== */
 
 
 .footer{
@@ -280,47 +398,112 @@ body{
 
     text-align:center;
 
-    padding:40px;
 
-    color:#766247;
+    padding:
+
+    50px 20px 80px;
+
+
 
     border-top:
 
-    1px solid rgba(255,255,255,.1);
+
+    1px solid
+
+    rgba(255,255,255,.1);
+
+
+
+    color:#887252;
+
+
 
 }
 
 
 
+/* ===================
+   平板
+=================== */
 
-@media(max-width:900px){
+
+@media(max-width:1200px){
 
 
 .books{
+
+
+grid-template-columns:
+
+repeat(4,1fr);
+
+
+}
+
+
+
+}
+
+
+
+/* ===================
+   手机
+=================== */
+
+
+@media(max-width:800px){
+
+
+.header h1{
+
+
+font-size:32px;
+
+
+letter-spacing:6px;
+
+
+}
+
+
+
+.library{
+
+
+padding:
+
+20px;
+
+
+}
+
+
+
+.books{
+
 
 grid-template-columns:
 
 repeat(2,1fr);
 
+
+gap:
+
+35px 20px;
+
+
 }
 
 
 
-.cover{
-
-width:150px;
-
-height:220px;
-
-}
+.book-name{
 
 
+font-size:16px;
 
-.header h1{
 
-font-size:30px;
+letter-spacing:3px;
 
-letter-spacing:6px;
 
 }
 
@@ -330,6 +513,7 @@ letter-spacing:6px;
 
 
 </style>
+
 
 </head>
 
@@ -368,7 +552,7 @@ THE CLOCKTOWER SCRIPT ARCHIVE
 
 <div class="desc">
 
-终焉剧本收藏馆
+钟楼剧本藏书馆
 
 </div>
 
@@ -377,23 +561,23 @@ THE CLOCKTOWER SCRIPT ARCHIVE
 
 
 
-
 <section class="library">
 
 
 <div class="books">
 
-
-
-<!-- 001 -->
-
+<!-- =========================
+     001 暗流涌动
+========================= -->
 
 <div class="book">
 
 <a href="暗流涌动.html">
 
-
-<img class="cover" src="new-01.jpg">
+<img class="cover"
+src="new-01.jpg"
+loading="lazy"
+alt="暗流涌动">
 
 
 <div class="book-name">
@@ -403,7 +587,7 @@ THE CLOCKTOWER SCRIPT ARCHIVE
 </div>
 
 
-<div class="number">
+<div class="archive">
 
 ARCHIVE 001
 
@@ -416,17 +600,19 @@ ARCHIVE 001
 
 
 
-
-<!-- 002 -->
+<!-- =========================
+     002 黯月初生
+========================= -->
 
 
 <div class="book">
 
-
 <a href="黯月初生.html">
 
-
-<img class="cover" src="new-03.jpg">
+<img class="cover"
+src="new-03.jpg"
+loading="lazy"
+alt="黯月初生">
 
 
 <div class="book-name">
@@ -436,7 +622,7 @@ ARCHIVE 001
 </div>
 
 
-<div class="number">
+<div class="archive">
 
 ARCHIVE 002
 
@@ -445,23 +631,24 @@ ARCHIVE 002
 
 </a>
 
-
 </div>
 
 
 
 
-
-<!-- 003 -->
+<!-- =========================
+     003 梦陨春宵
+========================= -->
 
 
 <div class="book">
 
-
 <a href="梦陨春宵.html">
 
-
-<img class="cover" src="new-05.jpg">
+<img class="cover"
+src="new-05.jpg"
+loading="lazy"
+alt="梦陨春宵">
 
 
 <div class="book-name">
@@ -471,7 +658,7 @@ ARCHIVE 002
 </div>
 
 
-<div class="number">
+<div class="archive">
 
 ARCHIVE 003
 
@@ -480,23 +667,26 @@ ARCHIVE 003
 
 </a>
 
-
 </div>
 
 
 
 
-
-<!-- 004 -->
+<!-- =========================
+     004 窃窃私语
+========================= -->
 
 
 <div class="book">
 
-
 <a href="窃窃私语.html">
 
 
-<img class="cover" src="7.jpg">
+<img class="cover"
+src="7.jpg"
+loading="lazy"
+alt="窃窃私语">
+
 
 
 <div class="book-name">
@@ -506,7 +696,7 @@ ARCHIVE 003
 </div>
 
 
-<div class="number">
+<div class="archive">
 
 ARCHIVE 004
 
@@ -515,20 +705,27 @@ ARCHIVE 004
 
 </a>
 
-
 </div>
 
 
 
 
 
-<!-- 005 -->
+<!-- =========================
+     005 无上愉悦
+========================= -->
 
 
 <div class="book">
 
 
-<img class="cover" src="9.jpg">
+<a href="无上愉悦.html">
+
+
+<img class="cover"
+src="9.jpg"
+loading="lazy"
+alt="无上愉悦">
 
 
 <div class="book-name">
@@ -538,26 +735,36 @@ ARCHIVE 004
 </div>
 
 
-<div class="number">
+<div class="archive">
 
 ARCHIVE 005
 
 </div>
 
 
+</a>
+
 </div>
 
 
 
 
 
-<!-- 006 -->
+<!-- =========================
+     006 旅行者
+========================= -->
 
 
 <div class="book">
 
 
-<img class="cover" src="11.jpg">
+<a href="旅行者.html">
+
+
+<img class="cover"
+src="11.jpg"
+loading="lazy"
+alt="旅行者">
 
 
 <div class="book-name">
@@ -567,26 +774,36 @@ ARCHIVE 005
 </div>
 
 
-<div class="number">
+<div class="archive">
 
 ARCHIVE 006
 
 </div>
 
 
+</a>
+
 </div>
 
 
 
 
 
-<!-- 007 -->
+<!-- =========================
+     007 传奇角色
+========================= -->
 
 
 <div class="book">
 
 
-<img class="cover" src="13.jpg">
+<a href="传奇角色.html">
+
+
+<img class="cover"
+src="13.jpg"
+loading="lazy"
+alt="传奇角色">
 
 
 <div class="book-name">
@@ -596,24 +813,36 @@ ARCHIVE 006
 </div>
 
 
-<div class="number">
+<div class="archive">
 
 ARCHIVE 007
 
 </div>
 
 
+</a>
+
 </div>
 
 
 
 
 
-<!-- 后续继续接 -->
+<!-- =========================
+     008 华灯初上
+========================= -->
+
 
 <div class="book">
 
-<img class="cover" src="15.jpg">
+
+<a href="华灯初上.html">
+
+
+<img class="cover"
+src="15.jpg"
+loading="lazy"
+alt="华灯初上">
 
 
 <div class="book-name">
@@ -623,20 +852,36 @@ ARCHIVE 007
 </div>
 
 
-<div class="number">
+<div class="archive">
 
 ARCHIVE 008
 
 </div>
 
 
+</a>
+
 </div>
 
 
 
+
+
+<!-- =========================
+     009 山雨欲来
+========================= -->
+
+
 <div class="book">
 
-<img class="cover" src="17.jpg">
+
+<a href="山雨欲来.html">
+
+
+<img class="cover"
+src="17.jpg"
+loading="lazy"
+alt="山雨欲来">
 
 
 <div class="book-name">
@@ -646,20 +891,35 @@ ARCHIVE 008
 </div>
 
 
-<div class="number">
+<div class="archive">
 
 ARCHIVE 009
 
 </div>
 
 
+</a>
+
 </div>
 
 
 
+
+<!-- =========================
+     010 夜半狂欢
+========================= -->
+
+
 <div class="book">
 
-<img class="cover" src="night-01.jpg">
+
+<a href="夜半狂欢.html">
+
+
+<img class="cover"
+src="night-01.jpg"
+loading="lazy"
+alt="夜半狂欢">
 
 
 <div class="book-name">
@@ -669,20 +929,36 @@ ARCHIVE 009
 </div>
 
 
-<div class="number">
+<div class="archive">
 
 ARCHIVE 010
 
 </div>
 
 
+</a>
+
 </div>
 
 
 
+
+
+<!-- =========================
+     011 瓦釜雷鸣
+========================= -->
+
+
 <div class="book">
 
-<img class="cover" src="19.jpg">
+
+<a href="瓦釜雷鸣.html">
+
+
+<img class="cover"
+src="19.jpg"
+loading="lazy"
+alt="瓦釜雷鸣">
 
 
 <div class="book-name">
@@ -692,20 +968,36 @@ ARCHIVE 010
 </div>
 
 
-<div class="number">
+<div class="archive">
 
 ARCHIVE 011
 
 </div>
 
 
+</a>
+
 </div>
 
 
 
+
+
+<!-- =========================
+     012 江城·决
+========================= -->
+
+
 <div class="book">
 
-<img class="cover" src="21.jpg">
+
+<a href="江城·决.html">
+
+
+<img class="cover"
+src="21.jpg"
+loading="lazy"
+alt="江城·决">
 
 
 <div class="book-name">
@@ -715,105 +1007,13 @@ ARCHIVE 011
 </div>
 
 
-<div class="number">
+<div class="archive">
 
 ARCHIVE 012
 
 </div>
 
 
-</div>
-
-
-
-<div class="book">
-
-<img class="cover" src="23.jpg">
-
-
-<div class="book-name">
-
-诡仙志异
+</a>
 
 </div>
-
-
-<div class="number">
-
-ARCHIVE 013
-
-</div>
-
-
-</div>
-
-
-
-<div class="book">
-
-<img class="cover" src="25.jpg">
-
-
-<div class="book-name">
-
-歌剧魅影
-
-</div>
-
-
-<div class="number">
-
-ARCHIVE 014
-
-</div>
-
-
-</div>
-
-
-
-<div class="book">
-
-<img class="cover" src="27.jpg">
-
-
-<div class="book-name">
-
-十日终焉
-
-</div>
-
-
-<div class="number">
-
-ARCHIVE 015
-
-</div>
-
-
-</div>
-
-
-
-</div>
-
-
-</section>
-
-
-
-<footer class="footer">
-
-白羊的染·钟楼谜团
-
-<br><br>
-
-THE CLOCKTOWER ARCHIVE
-
-</footer>
-
-
-
-</body>
-
-</html>
