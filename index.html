@@ -1,362 +1,822 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
-    <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
 
-    <title>夜半狂欢</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
 
-        * {
-            box-sizing: border-box;
-        }
+<title>白羊的染·钟楼谜团</title>
 
-        html {
-            scroll-behavior: smooth;
-        }
 
-        body {
-            margin: 0;
-            background: #07151c;
-            color: #f5f0e6;
-            font-family:
-                "Microsoft YaHei",
-                "PingFang SC",
-                Arial,
-                sans-serif;
-        }
+<style>
 
-        /* =========================
-           顶部
-        ========================= */
 
-        .header {
-            text-align: center;
-            padding: 55px 20px 45px;
+*{
+    box-sizing:border-box;
+}
 
-            background:
-                radial-gradient(
-                    circle at center,
-                    #173844 0%,
-                    #0b2029 45%,
-                    #07151c 100%
-                );
 
-            border-bottom: 1px solid rgba(255,255,255,0.12);
-        }
+html{
+    scroll-behavior:smooth;
+}
 
-        .header h1 {
-            margin: 0;
-            font-size: 48px;
-            letter-spacing: 8px;
-            color: #e8c978;
-            text-shadow:
-                0 0 12px rgba(232,201,120,0.35);
-        }
 
-        .header p {
-            margin: 18px 0 0;
-            color: #b9c6c9;
-            font-size: 16px;
-        }
+body{
 
-        /* =========================
-           剧本简介
-        ========================= */
+    margin:0;
 
-        .intro {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 45px 30px 10px;
-        }
+    background:
+    radial-gradient(
+        circle at top,
+        #1b3038 0%,
+        #07151c 55%,
+        #04090c 100%
+    );
 
-        .intro-box {
-            background: #101f27;
-            border: 1px solid rgba(232,201,120,0.25);
-            border-radius: 14px;
-            padding: 30px 35px;
 
-            box-shadow:
-                0 15px 45px rgba(0,0,0,0.35);
-        }
+    color:#f5f0e6;
 
-        .intro-title {
-            text-align: center;
-            color: #e8c978;
-            font-size: 24px;
-            letter-spacing: 4px;
-            margin-bottom: 20px;
-        }
 
-        .intro-text {
-            color: #c5d0d3;
-            font-size: 16px;
-            line-height: 2;
-        }
+    font-family:
+    "Microsoft YaHei",
+    "PingFang SC",
+    Arial,
+    sans-serif;
 
-        /* =========================
-           图片区域
-        ========================= */
+}
 
-        .gallery {
-            max-width: 1500px;
-            margin: 0 auto;
-            padding: 45px 30px 60px;
 
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 35px;
-        }
+/* =====================
+   网站总标题
+===================== */
 
-        .card {
-            background: #101f27;
-            border: 1px solid rgba(232,201,120,0.25);
-            border-radius: 14px;
-            overflow: hidden;
 
-            box-shadow:
-                0 15px 45px rgba(0,0,0,0.45);
+.header{
 
-            transition:
-                transform 0.25s ease,
-                box-shadow 0.25s ease;
-        }
 
-        .card:hover {
-            transform: translateY(-5px);
+    text-align:center;
 
-            box-shadow:
-                0 20px 55px rgba(0,0,0,0.6);
-        }
 
-        .card a {
-            display: block;
-            text-decoration: none;
-        }
+    padding:80px 20px 55px;
 
-        .card img {
-            display: block;
 
-            width: 100%;
-            height: auto;
 
-            /* 保持图片原比例 */
-            object-fit: contain;
+    background:
 
-            background: #050b0f;
-        }
 
-        .card-title {
-            padding: 16px 20px;
+    linear-gradient(
+        rgba(0,0,0,0.25),
+        rgba(0,0,0,0.7)
+    );
 
-            text-align: center;
 
-            color: #e8c978;
-            font-size: 18px;
-            letter-spacing: 2px;
-        }
+    border-bottom:
 
-        /* =========================
-           底部
-        ========================= */
+    1px solid rgba(232,201,120,0.25);
 
-        .footer {
-            text-align: center;
+}
 
-            padding: 45px 20px 60px;
 
-            border-top:
-                1px solid rgba(255,255,255,0.1);
 
-            color: #89999e;
+.header h1{
 
-            font-size: 14px;
-        }
 
-        /* =========================
-           手机适配
-        ========================= */
+    margin:0;
 
-        @media (max-width: 800px) {
 
-            .header {
-                padding: 40px 15px 35px;
-            }
+    font-size:46px;
 
-            .header h1 {
-                font-size: 34px;
-                letter-spacing: 5px;
-            }
 
-            .intro {
-                padding: 25px 15px 10px;
-            }
+    letter-spacing:10px;
 
-            .intro-box {
-                padding: 25px 20px;
-            }
 
-            .intro-title {
-                font-size: 21px;
-            }
+    color:#e8c978;
 
-            .intro-text {
-                font-size: 15px;
-                line-height: 1.9;
-            }
 
-            .gallery {
-                grid-template-columns: 1fr;
-                padding: 25px 15px 45px;
-                gap: 25px;
-            }
 
-            .card-title {
-                font-size: 16px;
-            }
-        }
+    text-shadow:
 
-    </style>
+
+    0 0 18px rgba(232,201,120,0.45);
+
+
+}
+
+
+
+.header h1::before{
+
+
+    content:"✦";
+
+
+    display:block;
+
+
+    font-size:22px;
+
+
+    margin-bottom:20px;
+
+
+    color:#e8c978;
+
+
+}
+
+
+
+.header h1::after{
+
+
+    content:"";
+
+
+    display:block;
+
+
+    width:220px;
+
+
+    height:1px;
+
+
+    margin:25px auto 0;
+
+
+    background:#e8c978;
+
+
+}
+
+
+
+/* =====================
+   剧本标题
+===================== */
+
+
+.series{
+
+
+    max-width:1200px;
+
+
+    margin:auto;
+
+
+    padding-top:45px;
+
+}
+
+
+
+.series-title{
+
+
+    text-align:center;
+
+
+    font-size:42px;
+
+
+    letter-spacing:8px;
+
+
+    color:#f1d991;
+
+
+    text-shadow:
+
+
+    0 0 15px rgba(232,201,120,0.35);
+
+
+}
+
+
+
+.series-author{
+
+
+    text-align:center;
+
+
+    margin-top:15px;
+
+
+    color:#b9c6c9;
+
+
+    font-size:15px;
+
+
+    letter-spacing:3px;
+
+
+}
+
+
+
+/* =====================
+   简介
+===================== */
+
+
+.intro{
+
+
+    max-width:1100px;
+
+
+    margin:40px auto 20px;
+
+
+    padding:0 30px;
+
+
+}
+
+
+
+.intro-box{
+
+
+    background:
+
+
+    linear-gradient(
+        145deg,
+        #111f27,
+        #091218
+    );
+
+
+    border:
+
+
+    1px solid rgba(232,201,120,0.3);
+
+
+
+    border-radius:16px;
+
+
+    padding:35px 40px;
+
+
+
+    box-shadow:
+
+
+    0 20px 50px rgba(0,0,0,0.5);
+
+
+}
+
+
+
+.intro-title{
+
+
+    text-align:center;
+
+
+    color:#e8c978;
+
+
+    font-size:25px;
+
+
+    letter-spacing:5px;
+
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+.intro-title::before{
+
+
+    content:"♜ ";
+
+
+}
+
+
+
+.intro-text{
+
+
+    color:#ccd6d8;
+
+
+    font-size:16px;
+
+
+    line-height:2;
+
+
+    white-space:pre-line;
+
+
+}
+
+
+
+/* =====================
+   图片区域
+===================== */
+
+
+.gallery{
+
+
+    max-width:1500px;
+
+
+    margin:auto;
+
+
+    padding:45px 30px 70px;
+
+
+
+    display:grid;
+
+
+    grid-template-columns:
+    repeat(2,minmax(0,1fr));
+
+
+
+    gap:35px;
+
+
+}
+
+
+
+.card{
+
+
+    background:#101f27;
+
+
+    border:
+
+
+    1px solid rgba(232,201,120,0.25);
+
+
+
+    border-radius:15px;
+
+
+    overflow:hidden;
+
+
+
+    box-shadow:
+
+
+    0 15px 45px rgba(0,0,0,0.5);
+
+
+    transition:0.3s;
+
+
+}
+
+
+
+.card:hover{
+
+
+    transform:translateY(-6px);
+
+
+}
+
+
+
+.card a{
+
+
+    display:block;
+
+
+}
+
+
+
+.card img{
+
+
+    width:100%;
+
+
+    height:auto;
+
+
+    display:block;
+
+
+    background:#050b0f;
+
+
+}
+
+
+
+.card-title{
+
+
+    text-align:center;
+
+
+    padding:18px;
+
+
+    color:#e8c978;
+
+
+    letter-spacing:3px;
+
+     
+/* =====================
+   底部
+===================== */
+
+
+.footer{
+
+
+    text-align:center;
+
+
+    padding:50px 20px 70px;
+
+
+    border-top:
+
+
+    1px solid rgba(255,255,255,0.1);
+
+
+
+    color:#89999e;
+
+
+    font-size:14px;
+
+
+}
+
+
+
+/* =====================
+   手机适配
+===================== */
+
+
+@media(max-width:800px){
+
+
+.header{
+
+
+    padding:55px 15px 40px;
+
+
+}
+
+
+
+.header h1{
+
+
+    font-size:30px;
+
+
+    letter-spacing:5px;
+
+
+}
+
+
+
+.series-title{
+
+
+    font-size:30px;
+
+
+    letter-spacing:5px;
+
+
+}
+
+
+
+.intro{
+
+
+    padding:0 15px;
+
+
+}
+
+
+
+.intro-box{
+
+
+    padding:25px 20px;
+
+
+}
+
+
+
+.gallery{
+
+
+    grid-template-columns:1fr;
+
+
+    padding:30px 15px 50px;
+
+
+}
+
+
+
+}
+
+
+
+
+</style>
+
 </head>
 
 
 <body>
 
-    <!-- =========================
-         网站顶部
-    ========================== -->
-
-    <header class="header">
-
-        <h1>夜半狂欢</h1>
-
-        <p>
-            “旋转木马”快速上手剧本
-        </p>
-
-    </header>
 
 
-    <!-- =========================
-         剧本简介
-    ========================== -->
+<!-- =====================
+     网站总标题
+===================== -->
 
-    <section class="intro">
 
-        <div class="intro-box">
+<header class="header">
 
-            <div class="intro-title">
-                深夜钟楼
-            </div>
 
-            <div class="intro-text">
+<h1>
+白羊的染·钟楼谜团
+</h1>
 
-                在被遗忘的午夜小镇，一场名为“夜半狂欢”的宴会悄然开启。
+
+</header>
+
+
+
+
+
+<!-- =====================
+     第一个剧本板块
+===================== -->
+
+
+<section class="series">
+
+
+
+<div class="series-title">
+
+夜半狂欢
+
+</div>
+
+
+
+<div class="series-author">
+
+作者：Zets
+
+</div>
+
+
+
+
+
+<section class="intro">
+
+
+<div class="intro-box">
+
+
+
+<div class="intro-title">
+
+夜半狂欢
+
+</div>
+
+
+
+
+<div class="intro-text">
+
+
+在被遗忘的午夜小镇，一场名为“夜半狂欢”的宴会悄然开启。
 
 古老的钟楼再次响起，沉睡已久的旋转木马缓缓转动，受邀而来的宾客们踏入这场诡秘的盛宴。然而，没有人知道，在欢笑与音乐背后，隐藏着一场关于谎言、背叛与死亡的游戏。
 
-这里有守护镇民的善良阵营，也有潜伏在人群中的邪恶力量。
-博学者试图从混乱中寻找真相，失忆者在迷雾中追寻自己的身份；舞者与旅人隐藏着未知的秘密，而落难少女则成为所有人争夺与怀疑的焦点。
+这里有守护镇民的善良之人，也有潜伏在人群中的邪恶力量。
 
-与此同时，哈迪恶魔的阴影悄然降临，带着死亡与欺骗的爪牙潜伏在人群之中。麻脸、投毒者等邪恶阵营成员不断编织谎言，让每一次讨论都充满危险。
+博学者试图寻找真相，失忆者在迷雾中追寻过去，舞者与旅人隐藏着未知的秘密，而落难少女成为所有人关注的焦点。
 
-当钟声再次响起，谁是真正的守护者？谁又是隐藏在狂欢之中的恶魔？
+与此同时，哈迪恶魔的阴影悄然降临，麻脸、投毒者等邪恶力量隐藏其中，让每一次讨论都充满危险。
+
+当钟声再次响起，谁是真正的守护者？
+
+谁又是隐藏在狂欢之中的恶魔？
 
 午夜已至，旋转木马开始转动——
+
 欢迎来到《夜半狂欢》。
 
-            </div>
 
-        </div>
-
-    </section>
+</div>
 
 
-    <!-- =========================
-         两张高清图片
-    ========================== -->
-
-    <main class="gallery">
-
-        <!-- 第一张 -->
-
-        <div class="card">
-
-            <a
-                href="night-01.jpg"
-                target="_blank"
-                rel="noopener"
-            >
-
-                <img
-                    src="night-01.jpg"
-                    alt="夜半狂欢 第一张"
-                >
-
-            </a>
-
-            <div class="card-title">
-                夜半狂欢 · 剧本介绍
-            </div>
-
-        </div>
+</div>
 
 
-        <!-- 第二张 -->
-
-        <div class="card">
-
-            <a
-                href="night-02.jpg"
-                target="_blank"
-                rel="noopener"
-            >
-
-                <img
-                    src="night-02.jpg"
-                    alt="夜半狂欢 第二张"
-                >
-
-            </a>
-
-            <div class="card-title">
-                夜半狂欢 · 角色与规则
-            </div>
-
-        </div>
-
-    </main>
+</section>
 
 
-    <!-- =========================
-         网站底部
-    ========================== -->
 
-    <footer class="footer">
 
-        <div>
-            白羊的血染钟楼
-        </div>
 
-        <div style="margin-top: 10px;">
-            剧本作者：Zets
-        </div>
+<!-- =====================
+     高清图片
+===================== -->
 
-    </footer>
 
-<audio id="backgroundMusic" loop preload="auto">
-    <source src="渡边雅二 - 青山绿野.mp3" type="audio/mpeg">
+<main class="gallery">
+
+
+
+<div class="card">
+
+
+<a href="night-01.jpg"
+target="_blank"
+rel="noopener">
+
+
+<img src="night-01.jpg"
+alt="夜半狂欢 第一张">
+
+
+</a>
+
+
+
+<div class="card-title">
+
+夜半狂欢 · 剧本介绍
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+
+<a href="night-02.jpg"
+target="_blank"
+rel="noopener">
+
+
+<img src="night-02.jpg"
+alt="夜半狂欢 第二张">
+
+
+</a>
+
+
+
+<div class="card-title">
+
+夜半狂欢 · 角色与规则
+
+</div>
+
+
+</div>
+
+
+
+</main>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- =====================
+     底部
+===================== -->
+
+
+<footer class="footer">
+
+
+<div>
+
+白羊的染·钟楼谜团
+
+</div>
+
+
+<div style="margin-top:10px;">
+
+剧本资料整理
+
+</div>
+
+
+</footer>
+
+
+
+
+
+
+<!-- =====================
+     背景音乐
+===================== -->
+
+
+<audio id="backgroundMusic"
+loop
+preload="auto">
+
+
+<source src="渡边雅二 - 青山绿野.mp3"
+type="audio/mpeg">
+
+
 </audio>
 
-<script>
-const music = document.getElementById("backgroundMusic");
 
-document.addEventListener("click", function () {
-    music.play();
-}, { once: true });
+
+
+<script>
+
+
+const music =
+document.getElementById("backgroundMusic");
+
+
+
+document.addEventListener("click",function(){
+
+
+music.play();
+
+
+},{once:true});
+
+
+
 </script>
+
+
+
 </body>
+
 </html>
+
+}
