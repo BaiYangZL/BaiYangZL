@@ -1626,3 +1626,209 @@ img{
 
 
 }
+/* ===============================
+      剧本搜索框
+================================ */
+
+.search-box{
+
+    max-width:700px;
+
+    margin:50px auto 20px;
+
+    padding:0 25px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+}
+
+
+
+.search-box input{
+
+    flex:1;
+
+    height:55px;
+
+    padding:0 25px;
+
+
+    background:
+
+    linear-gradient(
+        145deg,
+        #201306,
+        #0d0803
+    );
+
+
+    border:
+
+    2px solid #9d763c;
+
+
+    border-radius:30px;
+
+
+    color:#ead9ad;
+
+
+    font-size:18px;
+
+
+    letter-spacing:2px;
+
+
+    outline:none;
+
+
+    box-shadow:
+
+    0 10px 30px rgba(0,0,0,.7),
+
+    inset 0 0 15px rgba(220,170,80,.15);
+
+}
+
+
+
+.search-box input::placeholder{
+
+    color:#aa9365;
+
+}
+
+
+
+.search-box input:focus{
+
+    border-color:#e5c879;
+
+    box-shadow:
+
+    0 0 20px rgba(230,200,120,.4);
+
+}
+
+
+
+
+.search-box button{
+
+
+    width:120px;
+
+
+    height:55px;
+
+
+    border:none;
+
+
+    border-radius:30px;
+
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #b98b42,
+        #725020
+    );
+
+
+
+    color:#fff1c4;
+
+
+
+    font-size:18px;
+
+
+
+    letter-spacing:4px;
+
+
+
+    cursor:pointer;
+
+
+
+    box-shadow:
+
+    0 10px 25px rgba(0,0,0,.7);
+
+
+}
+
+
+
+.search-box button:hover{
+
+
+    transform:translateY(-3px);
+
+
+    filter:brightness(1.15);
+
+
+}
+
+
+
+/* 手机适配 */
+
+@media(max-width:700px){
+
+
+.search-box{
+
+
+    margin:35px auto 10px;
+
+
+    padding:0 18px;
+
+
+    flex-direction:column;
+
+
+}
+
+
+
+.search-box input{
+
+
+    width:100%;
+
+
+    height:50px;
+
+
+    font-size:16px;
+
+
+}
+
+
+
+.search-box button{
+
+
+    width:100%;
+
+
+    height:50px;
+
+
+}
+
+
+
+}
