@@ -1,66 +1,186 @@
 *{
-    box-sizing:border-box;
+
+box-sizing:border-box;
+
 }
+
+
 
 body{
 
-    margin:0;
+margin:0;
 
-    min-height:100vh;
-
-
-    color:#ead9ad;
+min-height:100vh;
 
 
-    font-family:
-    "Microsoft YaHei",
-    "Songti SC",
-    serif;
+background:
+
+
+radial-gradient(
+
+ellipse at top,
+
+#26352f,
+
+#101814 45%,
+
+#050807 100%
+
+);
+
+
+color:#e8dfc8;
+
+
+font-family:
+
+"Microsoft YaHei",
+
+"Songti SC",
+
+serif;
+
+
+position:relative;
+
+overflow-x:hidden;
 
 }
+
+
+/* 两侧装饰 */
+
+body::before,
+body::after{
+
+
+content:"";
+
+
+position:fixed;
+
+
+top:0;
+
+
+width:260px;
+
+
+height:100vh;
+
+
+opacity:.25;
+
+
+background-repeat:no-repeat;
+
+
+background-size:contain;
+
+
+z-index:-1;
+
+
+}
+
+
+
+body::before{
+
+
+left:0;
+
+
+background-image:url("img/book-left.png");
+
+
+}
+
+
+
+body::after{
+
+
+right:0;
+
+
+background-image:url("img/book-right.png");
+
+
+}
+
+
+
 
 /* 顶部 */
 
+
 .detail-header{
 
-    text-align:center;
 
-    padding:70px 20px 40px;
+text-align:center;
 
-    border-bottom:
-    2px solid #8c6935;
 
-    box-shadow:
-    0 10px 40px #000;
+padding:75px 20px 45px;
+
+
+border-bottom:
+
+1px solid rgba(220,190,120,.35);
+
+
+
+box-shadow:
+
+0 15px 40px rgba(0,0,0,.7);
+
 
 }
+
 
 
 .detail-header h1{
 
-    margin:0;
 
-    font-size:48px;
+margin:0;
 
-    letter-spacing:12px;
 
-    color:#e7c879;
+font-size:48px;
 
-    text-shadow:
-    0 5px 15px #000;
+
+letter-spacing:12px;
+
+
+color:#e6c878;
+
+
+text-shadow:
+
+
+0 0 20px rgba(230,200,120,.4);
+
 
 }
+
 
 
 .author{
 
-    margin-top:20px;
 
-    color:#c7aa6b;
+margin-top:20px;
 
-    letter-spacing:4px;
+
+font-size:15px;
+
+
+letter-spacing:5px;
+
+
+color:#bca978;
+
 
 }
+
 
 
 
@@ -68,96 +188,169 @@ body{
 
 .intro{
 
-    max-width:1100px;
 
-    margin:50px auto;
-
-    padding:40px;
-
-    background:
-
-    linear-gradient(
-    145deg,
-    rgba(60,40,20,.8),
-    rgba(15,8,3,.9)
-    );
+max-width:1100px;
 
 
-    border:
-
-    2px solid #8d6b35;
+margin:55px auto;
 
 
-    box-shadow:
+padding:45px;
 
-    0 20px 50px #000;
+
+background:
+
+
+linear-gradient(
+
+145deg,
+
+rgba(30,45,40,.9),
+
+rgba(8,14,12,.95)
+
+);
+
+
+
+border:
+
+
+1px solid rgba(220,190,120,.35);
+
+
+
+box-shadow:
+
+
+0 25px 60px rgba(0,0,0,.6);
+
+
+
+border-radius:12px;
 
 
 }
+
+
 
 
 .intro h2{
 
-    text-align:center;
 
-    color:#e7c879;
+text-align:center;
 
-    letter-spacing:6px;
+
+font-size:28px;
+
+
+letter-spacing:8px;
+
+
+color:#e6c878;
+
+
+margin-bottom:35px;
+
 
 }
+
 
 
 .intro p{
 
-    font-size:17px;
 
-    line-height:2;
+font-size:17px;
 
-    white-space:pre-line;
 
-    color:#e6d6ad;
+line-height:2.2;
+
+
+letter-spacing:1px;
+
+
+white-space:pre-line;
+
+
+color:#ded6c4;
+
 
 }
 
 
 
 
-/* 图片 */
+/* 图片区域 */
+
 
 .gallery{
 
-    max-width:1200px;
 
-    margin:auto;
+max-width:1200px;
 
-    padding:20px;
 
-    display:grid;
+margin:auto;
 
-    grid-template-columns:
-    repeat(2,1fr);
 
-    gap:40px;
+padding:20px 30px 80px;
+
+
+display:grid;
+
+
+grid-template-columns:
+
+repeat(2,1fr);
+
+
+
+gap:45px;
+
 
 }
+
+
+
+.gallery div{
+
+
+background:#080d0b;
+
+
+padding:12px;
+
+
+border-radius:8px;
+
+
+
+border:
+
+1px solid rgba(220,190,120,.3);
+
+
+
+box-shadow:
+
+0 20px 50px rgba(0,0,0,.7);
+
+
+}
+
+
 
 
 .gallery img{
 
-    width:100%;
 
-    display:block;
-
-    border:
-
-    3px solid #96703a;
+width:100%;
 
 
-    box-shadow:
+display:block;
 
-    0 20px 40px #000;
 
 }
+
 
 
 
@@ -166,349 +359,65 @@ body{
 @media(max-width:700px){
 
 
-.detail-header h1{
 
-    font-size:32px;
+body::before,
+body::after{
 
-    letter-spacing:6px;
+
+display:none;
+
 
 }
+
+
+
+.detail-header h1{
+
+
+font-size:32px;
+
+
+letter-spacing:6px;
+
+
+}
+
+
 
 
 .intro{
 
-    margin:30px 15px;
 
-    padding:25px;
+margin:30px 15px;
+
+
+padding:25px;
+
 
 }
+
+
+
+.intro p{
+
+
+font-size:16px;
+
+
+}
+
 
 
 .gallery{
 
-    grid-template-columns:1fr;
+
+grid-template-columns:1fr;
+
+
+padding:15px;
+
 
 }
 
-
-}
-
-/* ======================
-   暗流涌动主题
-====================== */
-
-
-.dark-stream{
-
-    background:
-
-    radial-gradient(
-        ellipse at top,
-        #45502c,
-        #15190d 55%,
-        #050604 100%
-    );
-
-}
-
-/* ======================
-   黯月初生主题
-   冬夜 月狼
-====================== */
-
-
-.dark-moon{
-
-    background:
-
-    radial-gradient(
-        ellipse at top,
-        #34435c 0%,
-        #141b2b 45%,
-        #05070d 100%
-    );
-
-}
-/* ======================
-   梦陨春宵主题
-   春花 梦境 幻想
-====================== */
-
-
-.spring-dream{
-
-    background:
-
-    radial-gradient(
-        ellipse at top,
-        #684b68,
-        #29182f 50%,
-        #08040c 100%
-    );
-
-}
-
-/* ======================
-   窃窃私语主题
-   雾 夜 秘密
-====================== */
-
-
-.whisper-night{
-
-    background:
-
-    radial-gradient(
-        ellipse at top,
-        #46514c,
-        #17201d 50%,
-        #050706 100%
-    );
-
-}
-
-
-
-
-/* ======================
-   无上愉悦主题
-   宴会 黑暗
-====================== */
-
-
-.dark-pleasure{
-
-    background:
-
-    radial-gradient(
-        ellipse at top,
-        #60452d,
-        #211207 50%,
-        #050302 100%
-    );
-
-}
-
-
-
-
-/* ======================
-   旅行者主题
-   荒野 远方
-====================== */
-
-
-.wanderer{
-
-    background:
-
-    radial-gradient(
-        ellipse at top,
-        #405963,
-        #18252b 50%,
-        #050708 100%
-    );
-
-}
-
-
-
-
-/* ======================
-   传奇角色主题
-   酒馆 火焰
-====================== */
-
-
-.legend-story{
-
-    background:
-
-    radial-gradient(
-        ellipse at top,
-        #70482b,
-        #261306 50%,
-        #050302 100%
-    );
-
-}
-
-
-
-
-
-/* ======================
-   华灯初上主题
-   东方 夜色
-====================== */
-
-
-.lantern-night{
-
-    background:
-
-    radial-gradient(
-        ellipse at top,
-        #71382b,
-        #2a100d 50%,
-        #050303 100%
-    );
-
-}
-
-
-
-
-
-/* ======================
-   山雨欲来主题
-   古城 风雨
-====================== */
-
-
-.storm-city{
-
-    background:
-
-    radial-gradient(
-        ellipse at top,
-        #45505a,
-        #171d22 50%,
-        #050607 100%
-    );
-
-}
-
-
-
-
-
-/* ======================
-   夜半狂欢主题
-   午夜 游乐
-====================== */
-
-
-.midnight-party{
-
-    background:
-
-    radial-gradient(
-        ellipse at top,
-        #43295e,
-        #160a24 50%,
-        #040207 100%
-    );
-
-}
-
-
-
-
-/* ======================
-   瓦釜雷鸣主题
-====================== */
-
-
-.thunder-night{
-
-    background:
-
-    radial-gradient(
-        ellipse at top,
-        #514334,
-        #18130d 50%,
-        #040302 100%
-    );
-
-}
-
-
-
-
-/* ======================
-   江城·决主题
-   都市霓虹
-====================== */
-
-
-.city-night{
-
-    background:
-
-    radial-gradient(
-        ellipse at top,
-        #29415a,
-        #0b111b 50%,
-        #020306 100%
-    );
-
-}
-
-
-
-
-
-/* ======================
-   诡仙志异主题
-   仙诡
-====================== */
-
-
-.ghost-world{
-
-    background:
-
-    radial-gradient(
-        ellipse at top,
-        #365245,
-        #101c16 50%,
-        #030504 100%
-    );
-
-}
-
-
-
-
-
-/* ======================
-   歌剧魅影主题
-====================== */
-
-
-.phantom-opera{
-
-    background:
-
-    radial-gradient(
-        ellipse at top,
-        #542c3c,
-        #1b0b13 50%,
-        #040203 100%
-    );
-
-}
-
-
-
-
-
-/* ======================
-   十日终焉主题
-   末日
-====================== */
-
-
-.final-day{
-
-    background:
-
-    radial-gradient(
-        ellipse at top,
-        #444444,
-        #111111 50%,
-        #020202 100%
-    );
 
 }
