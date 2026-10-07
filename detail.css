@@ -1,1 +1,201 @@
+*{
+    box-sizing:border-box;
+}
 
+body{
+
+    margin:0;
+
+    min-height:100vh;
+
+    background:
+    radial-gradient(
+        ellipse at top,
+        #30251b,
+        #120b06 55%,
+        #050302 100%
+    );
+
+    color:#ead9ad;
+
+    font-family:
+    "Microsoft YaHei",
+    "Songti SC",
+    serif;
+
+}
+
+
+/* 顶部 */
+
+.detail-header{
+
+    text-align:center;
+
+    padding:70px 20px 40px;
+
+    border-bottom:
+    2px solid #8c6935;
+
+    box-shadow:
+    0 10px 40px #000;
+
+}
+
+
+.detail-header h1{
+
+    margin:0;
+
+    font-size:48px;
+
+    letter-spacing:12px;
+
+    color:#e7c879;
+
+    text-shadow:
+    0 5px 15px #000;
+
+}
+
+
+.author{
+
+    margin-top:20px;
+
+    color:#c7aa6b;
+
+    letter-spacing:4px;
+
+}
+
+
+
+/* 简介 */
+
+.intro{
+
+    max-width:1100px;
+
+    margin:50px auto;
+
+    padding:40px;
+
+    background:
+
+    linear-gradient(
+    145deg,
+    rgba(60,40,20,.8),
+    rgba(15,8,3,.9)
+    );
+
+
+    border:
+
+    2px solid #8d6b35;
+
+
+    box-shadow:
+
+    0 20px 50px #000;
+
+
+}
+
+
+.intro h2{
+
+    text-align:center;
+
+    color:#e7c879;
+
+    letter-spacing:6px;
+
+}
+
+
+.intro p{
+
+    font-size:17px;
+
+    line-height:2;
+
+    white-space:pre-line;
+
+    color:#e6d6ad;
+
+}
+
+
+
+
+/* 图片 */
+
+.gallery{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:20px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:40px;
+
+}
+
+
+.gallery img{
+
+    width:100%;
+
+    display:block;
+
+    border:
+
+    3px solid #96703a;
+
+
+    box-shadow:
+
+    0 20px 40px #000;
+
+}
+
+
+
+/* 手机 */
+
+@media(max-width:700px){
+
+
+.detail-header h1{
+
+    font-size:32px;
+
+    letter-spacing:6px;
+
+}
+
+
+.intro{
+
+    margin:30px 15px;
+
+    padding:25px;
+
+}
+
+
+.gallery{
+
+    grid-template-columns:1fr;
+
+}
+
+
+}
