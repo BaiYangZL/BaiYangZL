@@ -1,12 +1,12 @@
 /* =====================================================
    染·钟楼谜团
    血染钟楼图书馆
-   Ultimate Library Theme
+   西欧古堡藏书馆最终版
 ===================================================== */
 
 
 /* ===============================
-        全局
+        全局基础
 ================================ */
 
 
@@ -36,7 +36,7 @@ body{
 
 
 
-    color:#e8d39b;
+    color:#e6d19a;
 
 
 
@@ -54,13 +54,13 @@ body{
 
     radial-gradient(
 
-        ellipse at 50% 0%,
+        ellipse at center top,
 
-        #76502b 0%,
+        #70502d 0%,
 
-        #38200f 32%,
+        #3b2413 28%,
 
-        #170b05 65%,
+        #1b0d06 60%,
 
         #050302 100%
 
@@ -75,7 +75,11 @@ body{
 
 
 
-/* 古堡暗角 */
+
+
+/* ===============================
+        古堡暗角
+================================ */
 
 
 body::before{
@@ -100,17 +104,17 @@ body::before{
 
     radial-gradient(
 
-        ellipse,
+        ellipse at center,
 
-        transparent 35%,
+        transparent 30%,
 
-        rgba(0,0,0,.8) 100%
+        rgba(0,0,0,.82) 100%
 
     );
 
 
 
-    z-index:10;
+    z-index:20;
 
 
 }
@@ -120,12 +124,9 @@ body::before{
 
 
 
-
-
 /* ===============================
-        顶部图书馆入口
+        顶部区域
 ================================ */
-
 
 
 .library-header{
@@ -142,12 +143,11 @@ body::before{
     padding:
 
 
-    100px 20px 75px;
+    90px 20px 70px;
 
 
 
     background:
-
 
 
     linear-gradient(
@@ -163,15 +163,15 @@ body::before{
     border-bottom:
 
 
-    3px solid #a87935;
+    3px solid #a97938;
 
 
 
     box-shadow:
 
 
+    0 25px 70px rgba(0,0,0,.95);
 
-    0 20px 70px rgba(0,0,0,.95);
 
 
 }
@@ -181,7 +181,8 @@ body::before{
 
 
 
-/* 作者 */
+
+/* BY 白羊 */
 
 
 .author{
@@ -191,23 +192,23 @@ body::before{
 
 
 
-    top:45px;
-
-
-
     right:55px;
 
 
 
-    color:#dfbf76;
+    top:45px;
 
 
 
-    font-size:23px;
+    font-size:22px;
 
 
 
     letter-spacing:4px;
+
+
+
+    color:#dfbd72;
 
 
 
@@ -218,7 +219,7 @@ body::before{
     text-shadow:
 
 
-    0 4px 10px #000;
+    0 4px 12px #000;
 
 
 }
@@ -244,7 +245,7 @@ body::before{
     margin:
 
 
-    0 auto 25px;
+    0 auto 30px;
 
 
 
@@ -267,7 +268,7 @@ body::before{
     border:
 
 
-    2px solid #c29248;
+    2px solid #c0934c;
 
 
 
@@ -278,15 +279,15 @@ body::before{
 
         circle,
 
-        #63421d,
+        #62431f,
 
-        #120704
+        #100603
 
     );
 
 
 
-    color:#f0cb7b;
+    color:#efc979;
 
 
 
@@ -297,11 +298,11 @@ body::before{
     box-shadow:
 
 
+    0 0 40px rgba(220,170,70,.45),
 
-    0 0 35px rgba(220,170,70,.5),
 
+    inset 0 0 25px rgba(255,220,120,.2);
 
-    inset 0 0 20px rgba(255,220,120,.25);
 
 
 }
@@ -315,7 +316,7 @@ body::before{
 .library-header h1{
 
 
-    margin:0;
+    margin:0 0 35px;
 
 
 
@@ -338,11 +339,10 @@ body::before{
     text-shadow:
 
 
-
     0 5px 15px #000,
 
 
-    0 0 25px rgba(220,170,70,.3);
+    0 0 25px rgba(220,170,70,.25);
 
 
 
@@ -351,28 +351,20 @@ body::before{
 
 
 
+
+
+
+/* 隐藏英文 */
 
 
 .english{
 
 
-    margin-top:25px;
-
-
-
-    font-size:17px;
-
-
-
-    letter-spacing:10px;
-
-
-
-    color:#c7a35d;
-
+    display:none;
 
 
 }
+
 
 
 
@@ -390,7 +382,7 @@ body::before{
 
 
 
-    margin:35px auto;
+    margin:30px auto;
 
 
 
@@ -403,7 +395,7 @@ body::before{
 
         transparent,
 
-        #d1a451,
+        #d0a04d,
 
         transparent
 
@@ -412,6 +404,7 @@ body::before{
 
 
 }
+
 
 
 
@@ -448,6 +441,8 @@ body::before{
 
 
 
+
+
 .library-header p{
 
 
@@ -460,10 +455,8 @@ body::before{
 
 
 
-
-
 /* ===============================
-        书架区域
+        书架主体
 ================================ */
 
 
@@ -511,7 +504,7 @@ body::before{
 
 
 
-/* 木质书柜 */
+/* 木制书架 */
 
 
 .bookshelf::before{
@@ -520,16 +513,15 @@ body::before{
     content:"";
 
 
-
     position:absolute;
 
 
 
-    left:35px;
+    left:30px;
 
 
 
-    right:35px;
+    right:30px;
 
 
 
@@ -548,11 +540,11 @@ body::before{
 
         90deg,
 
-        rgba(92,52,20,.45),
+        rgba(100,60,25,.45),
 
-        rgba(30,15,6,.2),
+        rgba(25,12,5,.2),
 
-        rgba(92,52,20,.45)
+        rgba(100,60,25,.45)
 
     );
 
@@ -561,25 +553,81 @@ body::before{
     border-top:
 
 
-    14px solid rgba(135,85,35,.35);
+    14px solid rgba(150,95,40,.3);
 
 
 
     border-bottom:
 
 
-    14px solid rgba(135,85,35,.35);
+    14px solid rgba(150,95,40,.3);
 
 
 
     box-shadow:
 
 
-    inset 0 0 70px #000;
+    inset 0 0 80px #000;
 
 
 
     z-index:-1;
+
+
+}
+
+/* ===============================
+        两侧古堡装饰
+================================ */
+
+
+@media(min-width:1200px){
+
+
+
+body::after{
+
+
+    content:"♜";
+
+
+
+    position:fixed;
+
+
+
+    left:35px;
+
+
+
+    top:45%;
+
+
+
+    transform:translateY(-50%);
+
+
+
+    font-size:260px;
+
+
+
+    color:rgba(190,145,70,.08);
+
+
+
+    pointer-events:none;
+
+
+
+    z-index:0;
+
+
+
+    text-shadow:
+
+
+    0 0 50px rgba(0,0,0,.8);
 
 
 }
@@ -589,9 +637,113 @@ body::before{
 
 
 
+.library-header::before{
+
+
+    content:"";
+
+
+
+    position:absolute;
+
+
+
+    left:60px;
+
+
+
+    bottom:30px;
+
+
+
+    width:120px;
+
+
+
+    height:120px;
+
+
+
+    border-left:
+
+
+    2px solid rgba(210,160,80,.25);
+
+
+
+    border-bottom:
+
+
+    2px solid rgba(210,160,80,.25);
+
+
+
+}
+
+
+
+
+
+
+.library-header::after{
+
+
+    content:"";
+
+
+
+    position:absolute;
+
+
+
+    right:60px;
+
+
+
+    bottom:30px;
+
+
+
+    width:120px;
+
+
+
+    height:120px;
+
+
+
+    border-right:
+
+
+    2px solid rgba(210,160,80,.25);
+
+
+
+    border-bottom:
+
+
+    2px solid rgba(210,160,80,.25);
+
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
 /* ===============================
         单本书
 ================================ */
+
 
 
 .book{
@@ -605,10 +757,16 @@ body::before{
 
 
 
-    transition:.4s;
+    transition:.45s;
+
+
+
+    z-index:1;
 
 
 }
+
+
 
 
 
@@ -623,7 +781,10 @@ body::before{
     color:inherit;
 
 
+
 }
+
+
 
 
 
@@ -634,16 +795,24 @@ body::before{
     transform:
 
 
-    translateY(-18px)
+    translateY(-20px)
 
-    rotateY(-4deg);
+    rotateY(-5deg);
 
 
 
 }
+
+
+
+
+
+
+
 /* ===============================
-        书封设计
+        古籍封面
 ================================ */
+
 
 
 .book-cover{
@@ -660,9 +829,9 @@ body::before{
 
         145deg,
 
-        #4a2d12,
+        #4d3015,
 
-        #160904
+        #120704
 
     );
 
@@ -686,14 +855,15 @@ body::before{
     box-shadow:
 
 
-    0 35px 60px rgba(0,0,0,.95),
+    0 35px 65px rgba(0,0,0,.95),
 
 
-    inset 0 0 30px rgba(240,190,90,.2);
+    inset 0 0 35px rgba(240,190,90,.22);
 
 
 
-    transform-style:preserve-3d;
+    overflow:visible;
+
 
 
 }
@@ -703,7 +873,7 @@ body::before{
 
 
 
-/* 书本右侧厚度 */
+/* 书脊厚度 */
 
 
 .book-cover::after{
@@ -717,15 +887,15 @@ body::before{
 
 
 
-    right:-12px;
-
-
-
     top:8px;
 
 
 
-    width:12px;
+    right:-13px;
+
+
+
+    width:13px;
 
 
 
@@ -740,9 +910,9 @@ body::before{
 
         90deg,
 
-        #4b2b12,
+        #553214,
 
-        #100603
+        #160904
 
     );
 
@@ -751,14 +921,14 @@ body::before{
     border-radius:
 
 
-    0 6px 6px 0;
+    0 7px 7px 0;
 
 
 
     box-shadow:
 
 
-    8px 8px 15px rgba(0,0,0,.8);
+    8px 8px 18px rgba(0,0,0,.85);
 
 
 
@@ -769,7 +939,7 @@ body::before{
 
 
 
-/* 书本底部厚度 */
+/* 底部纸页厚度 */
 
 
 .book-cover::before{
@@ -802,14 +972,23 @@ body::before{
     background:
 
 
-    #140804;
+    linear-gradient(
+
+        90deg,
+
+        #2b1709,
+
+        #080402
+
+    );
 
 
 
     box-shadow:
 
 
-    0 8px 20px rgba(0,0,0,.8);
+    0 8px 20px rgba(0,0,0,.9);
+
 
 
 }
@@ -818,9 +997,6 @@ body::before{
 
 
 
-
-
-/* 图片 */
 
 
 .book-cover img{
@@ -848,7 +1024,7 @@ body::before{
     border:
 
 
-    1px solid rgba(240,210,130,.5);
+    1px solid rgba(235,200,120,.55);
 
 
 
@@ -859,9 +1035,11 @@ body::before{
 
 
 
+
 /* ===============================
         书名
 ================================ */
+
 
 
 .book h3{
@@ -882,11 +1060,11 @@ body::before{
 
 
 
-    letter-spacing:6px;
-
-
-
     font-weight:500;
+
+
+
+    letter-spacing:6px;
 
 
 
@@ -908,10 +1086,7 @@ body::before{
 
 
 
-
-/* ===============================
-        悬浮光影
-================================ */
+/* 悬浮光 */
 
 
 .book:hover .book-cover{
@@ -920,33 +1095,27 @@ body::before{
     box-shadow:
 
 
-    0 45px 80px rgba(0,0,0,.95),
+    0 50px 90px rgba(0,0,0,.95),
 
 
-    0 0 35px rgba(220,170,70,.25),
+    0 0 40px rgba(220,170,70,.3),
 
 
-    inset 0 0 35px rgba(255,220,120,.25);
+    inset 0 0 35px rgba(255,220,120,.3);
 
 
 
 }
 
-
-
-
-
-
-
 /* ===============================
-        底部
+        页脚
 ================================ */
 
 
 footer{
 
 
-    margin-top:70px;
+    margin-top:80px;
 
 
 
@@ -987,7 +1156,59 @@ footer{
 
 
 
+    box-shadow:
+
+
+    0 -20px 50px rgba(0,0,0,.5);
+
+
+
 }
+
+
+
+
+
+
+
+
+
+/* ===============================
+        大屏优化
+================================ */
+
+
+
+@media(min-width:1400px){
+
+
+
+    .bookshelf{
+
+
+        padding-left:80px;
+
+
+        padding-right:80px;
+
+
+    }
+
+
+
+    .book h3{
+
+
+        font-size:24px;
+
+
+    }
+
+
+
+}
+
+
 
 
 
@@ -1000,38 +1221,63 @@ footer{
 ================================ */
 
 
+
 @media(max-width:1200px){
 
 
-.bookshelf{
+
+    .bookshelf{
 
 
-    grid-template-columns:
+        grid-template-columns:
 
 
-    repeat(3,1fr);
+        repeat(3,1fr);
+
+
+
+        padding:
+
+
+        70px 35px;
+
+
+
+    }
+
+
+
+
+
+    .library-header h1{
+
+
+        font-size:48px;
+
+
+
+        letter-spacing:12px;
+
+
+
+    }
+
+
+
+
+    .library-header h2{
+
+
+        font-size:28px;
+
+
+
+    }
+
 
 
 }
 
-
-
-
-.library-header h1{
-
-
-    font-size:48px;
-
-
-
-    letter-spacing:12px;
-
-
-}
-
-
-
-}
 
 
 
@@ -1041,21 +1287,254 @@ footer{
 
 
 /* ===============================
-        手机
+        手机端
 ================================ */
+
 
 
 @media(max-width:700px){
 
 
 
-.library-header{
+    .library-header{
 
 
-    padding:
+        padding:
 
 
-    65px 15px 50px;
+        65px 15px 50px;
+
+
+
+    }
+
+
+
+
+
+    .author{
+
+
+        right:18px;
+
+
+
+        top:20px;
+
+
+
+        font-size:15px;
+
+
+
+        letter-spacing:2px;
+
+
+
+    }
+
+
+
+
+
+
+
+    .tower{
+
+
+        width:65px;
+
+
+
+        height:65px;
+
+
+
+        font-size:30px;
+
+
+
+    }
+
+
+
+
+
+
+
+    .library-header h1{
+
+
+        font-size:34px;
+
+
+
+        letter-spacing:7px;
+
+
+
+        margin-bottom:25px;
+
+
+
+    }
+
+
+
+
+
+
+
+    .library-header h2{
+
+
+        font-size:21px;
+
+
+
+        letter-spacing:5px;
+
+
+
+    }
+
+
+
+
+
+
+
+    .gold-line{
+
+
+        width:200px;
+
+
+
+    }
+
+
+
+
+
+
+
+    .bookshelf{
+
+
+        grid-template-columns:
+
+
+        repeat(2,1fr);
+
+
+
+        padding:
+
+
+        40px 18px;
+
+
+
+        gap:
+
+
+        45px 18px;
+
+
+
+    }
+
+
+
+
+
+
+
+    .bookshelf::before{
+
+
+        left:10px;
+
+
+
+        right:10px;
+
+
+
+        border-width:
+
+
+        8px;
+
+
+
+    }
+
+
+
+
+
+
+
+    .book-cover{
+
+
+        padding:8px;
+
+
+
+        border-width:
+
+
+        2px;
+
+
+
+    }
+
+
+
+
+
+
+
+    .book-cover::after{
+
+
+        right:-7px;
+
+
+
+        width:7px;
+
+
+
+    }
+
+
+
+
+
+
+
+    .book h3{
+
+
+        margin-top:16px;
+
+
+
+        font-size:16px;
+
+
+
+        letter-spacing:3px;
+
+
+
+    }
+
 
 
 }
@@ -1064,187 +1543,61 @@ footer{
 
 
 
-.author{
 
 
-    right:20px;
 
 
+/* ===============================
+        超小手机
+================================ */
 
-    top:20px;
 
 
+@media(max-width:380px){
 
-    font-size:15px;
 
 
-}
+    .bookshelf{
 
 
+        gap:
 
 
+        35px 10px;
 
-.tower{
 
 
-    width:65px;
+        padding-left:
 
 
+        12px;
 
-    height:65px;
 
 
+        padding-right:
 
-    font-size:30px;
 
+        12px;
 
-}
 
 
+    }
 
 
 
-.library-header h1{
 
 
-    font-size:34px;
+    .book h3{
 
 
+        font-size:14px;
 
-    letter-spacing:7px;
 
 
+    }
 
-}
 
 
-
-
-.english{
-
-
-    font-size:10px;
-
-
-
-    letter-spacing:4px;
-
-
-
-}
-
-
-
-
-
-.library-header h2{
-
-
-    font-size:22px;
-
-
-
-    letter-spacing:5px;
-
-
-
-}
-
-
-
-
-
-
-
-.bookshelf{
-
-
-    grid-template-columns:
-
-
-    repeat(2,1fr);
-
-
-
-    padding:
-
-
-    40px 18px;
-
-
-
-    gap:
-
-
-    45px 18px;
-
-
-
-}
-
-
-
-
-
-.bookshelf::before{
-
-
-    left:15px;
-
-
-
-    right:15px;
-
-
-
-}
-
-
-
-
-
-
-
-.book-cover{
-
-
-    padding:8px;
-
-
-
-}
-
-
-
-.book-cover::after{
-
-
-    right:-7px;
-
-
-
-    width:7px;
-
-
-
-}
-
-
-
-
-
-.book h3{
-
-
-    font-size:16px;
-
-
-
-    letter-spacing:3px;
-
-
-
-}
 
 
 }
@@ -1256,31 +1609,19 @@ footer{
 
 
 /* ===============================
-        超小屏
+        图片保护
 ================================ */
 
 
-@media(max-width:380px){
+
+img{
+
+
+    max-width:100%;
 
 
 
-.bookshelf{
-
-
-    gap:30px 10px;
-
-
-}
-
-
-
-.book h3{
-
-
-    font-size:14px;
-
-
-}
+    height:auto;
 
 
 
