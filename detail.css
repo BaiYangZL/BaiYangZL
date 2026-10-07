@@ -230,8 +230,8 @@ body{
 
 }
 /* ======================
-   梦陨春宵主题
-   春花 梦境 幻想
+   梦陨春宵
+   花园幻梦装饰
 ====================== */
 
 
@@ -241,10 +241,136 @@ body{
 
     radial-gradient(
         ellipse at top,
-        #684b68,
-        #29182f 50%,
-        #08040c 100%
+        #586747 0%,
+        #20291b 45%,
+        #070907 100%
     );
+
+}
+
+
+
+/* 两侧装饰 */
+
+.spring-dream::before,
+.spring-dream::after{
+
+
+    content:"❀  ❁  ❀";
+
+
+    position:fixed;
+
+
+    top:120px;
+
+
+    width:260px;
+
+
+    height:700px;
+
+
+    font-size:55px;
+
+
+    line-height:120px;
+
+
+    color:rgba(220,190,120,.25);
+
+
+    z-index:-1;
+
+
+    white-space:pre-wrap;
+
+
+}
+
+
+
+/* 左侧花藤 */
+
+.spring-dream::before{
+
+
+    left:20px;
+
+
+    background:
+
+    linear-gradient(
+        90deg,
+        rgba(80,100,50,.4),
+        transparent
+    );
+
+
+    padding:40px;
+
+
+}
+
+
+
+/* 右侧花藤 */
+
+.spring-dream::after{
+
+
+    right:20px;
+
+
+    background:
+
+    linear-gradient(
+        -90deg,
+        rgba(80,100,50,.4),
+        transparent
+    );
+
+
+    padding:40px;
+
+
+}
+
+
+
+/* 图片增加梦幻感 */
+
+
+.spring-dream .gallery img{
+
+
+    border-color:#b89b55;
+
+
+    box-shadow:
+
+    0 0 30px rgba(220,180,100,.35),
+    0 20px 40px #000;
+
+
+}
+
+
+
+/* 简介框 */
+
+
+.spring-dream .intro{
+
+
+    background:
+
+    linear-gradient(
+        145deg,
+        rgba(55,70,40,.85),
+        rgba(10,15,8,.95)
+    );
+
 
 }
 
