@@ -1,1 +1,776 @@
 
+/* ===================================
+   染·钟楼谜团
+   BLOOD ON THE CLOCKTOWER LIBRARY
+   古典西欧图书馆风格
+=================================== */
+
+
+/* 基础 */
+
+*{
+    box-sizing:border-box;
+}
+
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+body{
+
+    margin:0;
+
+    min-height:100vh;
+
+    background:
+
+    radial-gradient(
+        circle at top,
+        #6b4a27 0%,
+        #35200f 35%,
+        #120905 75%,
+        #050302 100%
+    );
+
+
+    color:#ead7a1;
+
+
+    font-family:
+
+    "Microsoft YaHei",
+    "Songti SC",
+    serif;
+
+
+}
+
+
+
+/* ===================================
+        顶部图书馆
+=================================== */
+
+
+.library{
+
+
+    position:relative;
+
+
+    text-align:center;
+
+
+    padding:
+
+    90px 20px 80px;
+
+
+
+    background:
+
+
+    linear-gradient(
+
+        rgba(0,0,0,.25),
+
+        rgba(0,0,0,.85)
+
+    );
+
+
+
+    border-bottom:
+
+    4px solid #a77b36;
+
+
+
+    box-shadow:
+
+
+    0 20px 50px rgba(0,0,0,.9);
+
+
+}
+
+
+
+
+
+/* 作者 */
+
+.author{
+
+
+    position:absolute;
+
+
+    top:45px;
+
+
+    right:55px;
+
+
+    color:#d7b56b;
+
+
+    font-size:22px;
+
+
+    letter-spacing:4px;
+
+
+    font-style:italic;
+
+
+
+    text-shadow:
+
+    0 2px 8px #000;
+
+
+}
+
+
+
+
+
+/* 钟楼符号 */
+
+.tower{
+
+
+    font-size:48px;
+
+
+    color:#d8ad52;
+
+
+    margin-bottom:20px;
+
+
+    text-shadow:
+
+
+    0 0 20px rgba(220,170,70,.5);
+
+
+}
+
+
+
+
+
+
+.library h1{
+
+
+    margin:0;
+
+
+    font-size:64px;
+
+
+    letter-spacing:20px;
+
+
+    color:#e8ca76;
+
+
+
+    font-weight:700;
+
+
+
+    text-shadow:
+
+
+    0 5px 12px #000,
+
+
+    0 0 25px rgba(220,170,70,.4);
+
+
+}
+
+
+
+
+
+
+.subtitle{
+
+
+    margin-top:25px;
+
+
+    font-size:18px;
+
+
+    letter-spacing:10px;
+
+
+    color:#c8a35c;
+
+
+}
+
+
+
+
+
+
+
+.line{
+
+
+    width:350px;
+
+
+    height:3px;
+
+
+    background:#c59a45;
+
+
+    margin:35px auto;
+
+
+
+    box-shadow:
+
+
+    0 0 15px rgba(220,170,70,.7);
+
+
+}
+
+
+
+
+
+
+.library h2{
+
+
+    margin:15px 0;
+
+
+    font-size:32px;
+
+
+    letter-spacing:10px;
+
+
+    color:#e1c37b;
+
+
+}
+
+
+
+
+
+.library p{
+
+
+    margin-top:20px;
+
+
+    font-size:17px;
+
+
+    letter-spacing:6px;
+
+
+    color:#bda878;
+
+
+}
+
+/* ===================================
+        剧本书架
+=================================== */
+
+
+.books{
+
+
+    max-width:1500px;
+
+
+    margin:auto;
+
+
+    padding:
+
+    80px 60px;
+
+
+
+    display:grid;
+
+
+
+    grid-template-columns:
+
+    repeat(4,1fr);
+
+
+
+    gap:
+
+    65px 45px;
+
+
+}
+
+
+
+
+
+/* 单本书 */
+
+.book{
+
+
+    position:relative;
+
+
+    transition:.35s;
+
+
+}
+
+
+
+.book a{
+
+
+    text-decoration:none;
+
+
+    color:inherit;
+
+
+    display:block;
+
+
+}
+
+
+
+
+
+.book:hover{
+
+
+    transform:
+
+    translateY(-15px);
+
+
+}
+
+
+
+
+
+
+/* 书封 */
+
+.book img{
+
+
+    width:100%;
+
+
+    aspect-ratio:
+
+    3 / 4;
+
+
+
+    object-fit:cover;
+
+
+
+    display:block;
+
+
+
+    border-radius:3px;
+
+
+
+    border:
+
+    1px solid #b58a45;
+
+
+
+    padding:10px;
+
+
+
+    background:
+
+
+    linear-gradient(
+
+    145deg,
+
+    #241508,
+
+    #080402
+
+    );
+
+
+
+    box-shadow:
+
+
+    0 25px 45px rgba(0,0,0,.9),
+
+
+    inset 0 0 25px rgba(255,210,120,.15);
+
+
+
+    transition:.35s;
+
+
+}
+
+
+
+
+
+.book:hover img{
+
+
+    box-shadow:
+
+
+    0 35px 60px rgba(0,0,0,.95),
+
+
+    0 0 25px rgba(220,170,70,.4);
+
+
+
+}
+
+
+
+
+
+
+
+/* 书名 */
+
+.book h3{
+
+
+    text-align:center;
+
+
+    margin:
+
+    22px 0 0;
+
+
+
+    font-size:24px;
+
+
+
+    letter-spacing:5px;
+
+
+
+    font-weight:500;
+
+
+
+    color:#e5c77b;
+
+
+
+    text-shadow:
+
+
+    0 3px 8px #000;
+
+
+
+}
+
+
+
+
+
+/* ===================================
+        底部
+=================================== */
+
+
+footer{
+
+
+    text-align:center;
+
+
+    padding:
+
+    60px 20px;
+
+
+    margin-top:50px;
+
+
+
+    border-top:
+
+    2px solid rgba(200,160,80,.3);
+
+
+
+    color:#bda474;
+
+
+    font-size:16px;
+
+
+    letter-spacing:5px;
+
+
+
+    background:
+
+
+    rgba(0,0,0,.35);
+
+
+}
+
+
+
+
+
+
+
+/* ===================================
+        平板
+=================================== */
+
+
+@media(max-width:1100px){
+
+
+.books{
+
+
+    grid-template-columns:
+
+    repeat(3,1fr);
+
+
+    padding:
+
+    50px 35px;
+
+
+}
+
+
+
+.library h1{
+
+
+    font-size:48px;
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+/* ===================================
+        手机
+=================================== */
+
+
+@media(max-width:700px){
+
+
+
+.library{
+
+
+    padding:
+
+    65px 15px 50px;
+
+
+}
+
+
+
+
+
+.author{
+
+
+    right:20px;
+
+
+    top:20px;
+
+
+    font-size:15px;
+
+
+}
+
+
+
+
+.library h1{
+
+
+    font-size:34px;
+
+
+    letter-spacing:8px;
+
+
+}
+
+
+
+
+.subtitle{
+
+
+    font-size:12px;
+
+
+    letter-spacing:4px;
+
+
+}
+
+
+
+.library h2{
+
+
+    font-size:22px;
+
+
+    letter-spacing:5px;
+
+
+}
+
+
+
+
+.books{
+
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+
+
+    padding:
+
+    35px 18px;
+
+
+
+    gap:
+
+    35px 18px;
+
+
+}
+
+
+
+
+.book h3{
+
+
+    font-size:16px;
+
+
+    letter-spacing:3px;
+
+
+}
+
+
+
+.book img{
+
+
+    padding:7px;
+
+
+}
+
+
+
+}
+
+
+
+
+/* ===================================
+        小手机
+=================================== */
+
+
+@media(max-width:400px){
+
+
+.books{
+
+
+    gap:25px 12px;
+
+
+    padding:25px 12px;
+
+
+}
+
+
+
+.book h3{
+
+
+    font-size:14px;
+
+
+}
+
+
+
+}
