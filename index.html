@@ -5,447 +5,14 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <title>
-白羊的染·钟楼谜团
+染·钟楼谜团
 </title>
 
 
-<style>
-
-
-*{
-box-sizing:border-box;
-}
-
-
-
-body{
-
-margin:0;
-
-background:
-
-linear-gradient(
-rgba(0,0,0,0.65),
-rgba(0,0,0,0.85)
-),
-
-url("library.jpg");
-
-
-background-size:cover;
-
-background-position:center;
-
-background-attachment:fixed;
-
-
-color:#f5e8c8;
-
-
-font-family:
-
-"Microsoft YaHei",
-"STKaiti",
-serif;
-
-}
-
-
-
-/* 顶部 */
-
-
-.header{
-
-
-text-align:center;
-
-
-padding:
-
-90px 20px 70px;
-
-
-background:
-
-rgba(0,0,0,.45);
-
-
-border-bottom:
-
-1px solid rgba(232,201,120,.3);
-
-
-}
-
-
-
-.header h1{
-
-
-margin:0;
-
-
-font-size:60px;
-
-
-letter-spacing:15px;
-
-
-color:#e8c978;
-
-
-text-shadow:
-
-0 0 25px rgba(232,201,120,.6);
-
-
-}
-
-
-
-.header .sub{
-
-
-margin-top:25px;
-
-
-font-size:24px;
-
-
-letter-spacing:10px;
-
-
-color:#d7c49a;
-
-
-}
-
-
-
-
-.header .line{
-
-
-width:260px;
-
-
-height:1px;
-
-
-background:#d7b86a;
-
-
-margin:35px auto;
-
-
-}
-
-
-
-
-
-/* 书架区域 */
-
-
-.bookshelf{
-
-
-max-width:1600px;
-
-
-margin:auto;
-
-
-padding:
-
-70px 50px;
-
-
-display:grid;
-
-
-grid-template-columns:
-
-repeat(5,1fr);
-
-
-gap:45px;
-
-
-}
-
-
-
-
-/* 单本书 */
-
-
-.book{
-
-
-background:
-
-
-linear-gradient(
-145deg,
-#392719,
-#120d09
-);
-
-
-padding:15px;
-
-
-border:
-
-1px solid rgba(232,201,120,.45);
-
-
-box-shadow:
-
-0 20px 45px rgba(0,0,0,.8);
-
-
-transition:.35s;
-
-
-}
-
-
-
-.book:hover{
-
-
-transform:
-
-translateY(-12px);
-
-
-box-shadow:
-
-0 30px 60px rgba(0,0,0,.9);
-
-
-}
-
-
-
-
-.book a{
-
-
-text-decoration:none;
-
-
-}
-
-
-
-
-
-.book img{
-
-
-width:100%;
-
-
-height:420px;
-
-
-object-fit:cover;
-
-
-display:block;
-
-
-}
-
-
-
-
-
-.book h2{
-
-
-text-align:center;
-
-
-font-size:22px;
-
-
-font-weight:normal;
-
-
-letter-spacing:5px;
-
-
-color:#e8c978;
-
-
-margin:
-
-22px 0 10px;
-
-
-}
-
-
-
-
-
-/* 底部 */
-
-
-.footer{
-
-
-text-align:center;
-
-
-padding:
-
-70px 20px;
-
-
-color:#aaa;
-
-
-line-height:2;
-
-
-border-top:
-
-1px solid rgba(255,255,255,.1);
-
-
-}
-
-
-
-
-
-/* 平板 */
-
-
-@media(max-width:1200px){
-
-
-.bookshelf{
-
-
-grid-template-columns:
-
-repeat(4,1fr);
-
-
-}
-
-
-}
-
-
-
-
-/* 手机 */
-
-
-@media(max-width:800px){
-
-
-
-.header{
-
-
-padding:
-
-55px 15px;
-
-
-}
-
-
-.header h1{
-
-
-font-size:34px;
-
-
-letter-spacing:8px;
-
-
-}
-
-
-.header .sub{
-
-
-font-size:18px;
-
-
-letter-spacing:5px;
-
-
-}
-
-
-
-
-.bookshelf{
-
-
-grid-template-columns:
-
-repeat(2,1fr);
-
-
-padding:
-
-30px 15px;
-
-
-gap:25px;
-
-
-}
-
-
-
-
-.book img{
-
-
-height:280px;
-
-
-}
-
-
-
-
-.book h2{
-
-
-font-size:17px;
-
-
-letter-spacing:3px;
-
-
-}
-
-
-
-}
-
-
-
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 
 </head>
@@ -454,23 +21,54 @@ letter-spacing:3px;
 <body>
 
 
+<header class="library-header">
 
-<header class="header">
+
+<div class="author">
+
+BY 白羊
+
+</div>
+
+
+<div class="clock">
+
+✦
+
+</div>
 
 
 <h1>
-白羊的染·钟楼谜团
+
+染·钟楼谜团
+
 </h1>
 
 
-<div class="line"></div>
+<div class="en">
 
-
-<div class="sub">
-
-钟楼剧本藏书馆
+BLOOD ON THE CLOCKTOWER
 
 </div>
+
+
+
+<div class="gold-line"></div>
+
+
+
+<h2>
+
+血染钟楼剧本藏书馆
+
+</h2>
+
+
+<p>
+
+记录每一场谎言、推理与死亡的故事
+
+</p>
 
 
 </header>
@@ -487,13 +85,18 @@ letter-spacing:3px;
 
 <div class="book">
 
-<a href="scripts/anliu.html">
+<a href="暗流涌动.html">
+
+<div class="cover">
 
 <img src="x1.jpg">
 
-<h2>
+</div>
+
+
+<h3>
 暗流涌动
-</h2>
+</h3>
 
 </a>
 
@@ -507,13 +110,18 @@ letter-spacing:3px;
 
 <div class="book">
 
-<a href="scripts/anyue.html">
+<a href="黯月初生.html">
+
+<div class="cover">
 
 <img src="x3.jpg">
 
-<h2>
+</div>
+
+
+<h3>
 黯月初生
-</h2>
+</h3>
 
 </a>
 
@@ -525,15 +133,21 @@ letter-spacing:3px;
 
 <!-- 梦陨春宵 -->
 
+
 <div class="book">
 
-<a href="scripts/mengyun.html">
+<a href="梦陨春宵.html">
+
+<div class="cover">
 
 <img src="x5.jpg">
 
-<h2>
+</div>
+
+
+<h3>
 梦陨春宵
-</h2>
+</h3>
 
 </a>
 
@@ -543,17 +157,23 @@ letter-spacing:3px;
 
 
 
+
 <!-- 窃窃私语 -->
 
 <div class="book">
 
-<a href="scripts/qieqie.html">
+<a href="窃窃私语.html">
+
+<div class="cover">
 
 <img src="x7.jpg">
 
-<h2>
+</div>
+
+
+<h3>
 窃窃私语
-</h2>
+</h3>
 
 </a>
 
@@ -567,13 +187,18 @@ letter-spacing:3px;
 
 <div class="book">
 
-<a href="scripts/wushang.html">
+<a href="无上愉悦.html">
+
+<div class="cover">
 
 <img src="x9.jpg">
 
-<h2>
+</div>
+
+
+<h3>
 无上愉悦
-</h2>
+</h3>
 
 </a>
 
@@ -583,17 +208,23 @@ letter-spacing:3px;
 
 
 
+
 <!-- 旅行者 -->
 
 <div class="book">
 
-<a href="scripts/lvxingzhe.html">
+<a href="旅行者.html">
+
+<div class="cover">
 
 <img src="x11.jpg">
 
-<h2>
+</div>
+
+
+<h3>
 旅行者
-</h2>
+</h3>
 
 </a>
 
@@ -607,13 +238,18 @@ letter-spacing:3px;
 
 <div class="book">
 
-<a href="scripts/chuanqi.html">
+<a href="传奇角色.html">
+
+<div class="cover">
 
 <img src="x13.jpg">
 
-<h2>
+</div>
+
+
+<h3>
 传奇角色
-</h2>
+</h3>
 
 </a>
 
@@ -627,13 +263,18 @@ letter-spacing:3px;
 
 <div class="book">
 
-<a href="scripts/huadeng.html">
+<a href="华灯初上.html">
+
+<div class="cover">
 
 <img src="x15.jpg">
 
-<h2>
+</div>
+
+
+<h3>
 华灯初上
-</h2>
+</h3>
 
 </a>
 
@@ -647,13 +288,18 @@ letter-spacing:3px;
 
 <div class="book">
 
-<a href="scripts/shanyulai.html">
+<a href="山雨欲来.html">
+
+<div class="cover">
 
 <img src="x17.jpg">
 
-<h2>
+</div>
+
+
+<h3>
 山雨欲来
-</h2>
+</h3>
 
 </a>
 
@@ -663,17 +309,23 @@ letter-spacing:3px;
 
 
 
+
 <!-- 夜半狂欢 -->
 
 <div class="book">
 
-<a href="scripts/yebankuanghuan.html">
+<a href="夜半狂欢.html">
+
+<div class="cover">
 
 <img src="x夜半.jpg">
 
-<h2>
+</div>
+
+
+<h3>
 夜半狂欢
-</h2>
+</h3>
 
 </a>
 
@@ -687,17 +339,23 @@ letter-spacing:3px;
 
 <div class="book">
 
-<a href="scripts/wafuleiming.html">
+<a href="瓦釜雷鸣.html">
+
+<div class="cover">
 
 <img src="x19.jpg">
 
-<h2>
+</div>
+
+
+<h3>
 瓦釜雷鸣
-</h2>
+</h3>
 
 </a>
 
 </div>
+
 
 
 
@@ -707,17 +365,23 @@ letter-spacing:3px;
 
 <div class="book">
 
-<a href="scripts/jiangcheng.html">
+<a href="江城决.html">
+
+<div class="cover">
 
 <img src="x21.jpg">
 
-<h2>
+</div>
+
+
+<h3>
 江城·决
-</h2>
+</h3>
 
 </a>
 
 </div>
+
 
 
 
@@ -727,17 +391,23 @@ letter-spacing:3px;
 
 <div class="book">
 
-<a href="scripts/guixianzhi.html">
+<a href="诡仙志异.html">
+
+<div class="cover">
 
 <img src="x23.jpg">
 
-<h2>
+</div>
+
+
+<h3>
 诡仙志异
-</h2>
+</h3>
 
 </a>
 
 </div>
+
 
 
 
@@ -747,17 +417,23 @@ letter-spacing:3px;
 
 <div class="book">
 
-<a href="scripts/gejumeiying.html">
+<a href="歌剧魅影.html">
+
+<div class="cover">
 
 <img src="x25.jpg">
 
-<h2>
+</div>
+
+
+<h3>
 歌剧魅影
-</h2>
+</h3>
 
 </a>
 
 </div>
+
 
 
 
@@ -767,19 +443,22 @@ letter-spacing:3px;
 
 <div class="book">
 
-<a href="scripts/shirizhongyan.html">
+<a href="十日终焉.html">
+
+<div class="cover">
 
 <img src="x27.jpg">
-
-<h2>
-十日终焉
-</h2>
-
-</a>
 
 </div>
 
 
+<h3>
+十日终焉
+</h3>
+
+</a>
+
+</div>
 
 
 
@@ -789,21 +468,23 @@ letter-spacing:3px;
 
 
 
-<footer class="footer">
+<footer>
 
-白羊的染·钟楼谜团
+<div>
 
-<br>
+染·钟楼谜团
 
-剧本资料整理馆
+</div>
 
-<br>
 
-本站仅作为个人剧本资料整理与展示使用，
-不用于任何商业用途。
+<div>
+
+剧本资料收藏馆
+
+</div>
+
 
 </footer>
-
 
 
 
