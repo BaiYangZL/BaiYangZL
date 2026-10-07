@@ -5,7 +5,8 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
 <title>
 白羊的染·钟楼谜团
@@ -14,9 +15,11 @@
 
 <style>
 
+
 *{
 box-sizing:border-box;
 }
+
 
 
 body{
@@ -26,8 +29,8 @@ margin:0;
 background:
 
 linear-gradient(
-rgba(0,0,0,.65),
-rgba(0,0,0,.85)
+rgba(0,0,0,0.65),
+rgba(0,0,0,0.85)
 ),
 
 url("library.jpg");
@@ -35,18 +38,22 @@ url("library.jpg");
 
 background-size:cover;
 
+background-position:center;
+
 background-attachment:fixed;
 
 
 color:#f5e8c8;
 
+
 font-family:
 
 "Microsoft YaHei",
+"STKaiti",
 serif;
 
-
 }
+
 
 
 /* 顶部 */
@@ -57,12 +64,20 @@ serif;
 
 text-align:center;
 
-padding:90px 20px 60px;
+
+padding:
+
+90px 20px 70px;
 
 
 background:
 
 rgba(0,0,0,.45);
+
+
+border-bottom:
+
+1px solid rgba(232,201,120,.3);
 
 
 }
@@ -75,7 +90,7 @@ rgba(0,0,0,.45);
 margin:0;
 
 
-font-size:56px;
+font-size:60px;
 
 
 letter-spacing:15px;
@@ -86,40 +101,69 @@ color:#e8c978;
 
 text-shadow:
 
-
-0 0 25px #8b6b2e;
-
-
-}
-
-
-.header p{
-
-
-font-size:22px;
-
-letter-spacing:8px;
-
-color:#d6c49b;
+0 0 25px rgba(232,201,120,.6);
 
 
 }
 
 
 
-/* 书架 */
+.header .sub{
+
+
+margin-top:25px;
+
+
+font-size:24px;
+
+
+letter-spacing:10px;
+
+
+color:#d7c49a;
+
+
+}
+
+
+
+
+.header .line{
+
+
+width:260px;
+
+
+height:1px;
+
+
+background:#d7b86a;
+
+
+margin:35px auto;
+
+
+}
+
+
+
+
+
+/* 书架区域 */
 
 
 .bookshelf{
 
 
-max-width:1500px;
+max-width:1600px;
 
 
 margin:auto;
 
 
-padding:60px 50px;
+padding:
+
+70px 50px;
 
 
 display:grid;
@@ -137,7 +181,8 @@ gap:45px;
 
 
 
-/* 每一本书 */
+
+/* 单本书 */
 
 
 .book{
@@ -148,8 +193,8 @@ background:
 
 linear-gradient(
 145deg,
-#3b2818,
-#17100b
+#392719,
+#120d09
 );
 
 
@@ -158,18 +203,15 @@ padding:15px;
 
 border:
 
-
-1px solid rgba(232,201,120,.5);
+1px solid rgba(232,201,120,.45);
 
 
 box-shadow:
 
+0 20px 45px rgba(0,0,0,.8);
 
-0 20px 40px black;
 
-
-transition:.3s;
-
+transition:.35s;
 
 
 }
@@ -182,6 +224,22 @@ transition:.3s;
 transform:
 
 translateY(-12px);
+
+
+box-shadow:
+
+0 30px 60px rgba(0,0,0,.9);
+
+
+}
+
+
+
+
+.book a{
+
+
+text-decoration:none;
 
 
 }
@@ -210,6 +268,7 @@ display:block;
 
 
 
+
 .book h2{
 
 
@@ -219,32 +278,27 @@ text-align:center;
 font-size:22px;
 
 
-letter-spacing:4px;
-
-
 font-weight:normal;
+
+
+letter-spacing:5px;
 
 
 color:#e8c978;
 
 
-margin:20px 0 10px;
+margin:
+
+22px 0 10px;
 
 
 }
 
 
 
-.book a{
 
 
-text-decoration:none;
-
-
-}
-
-
-
+/* 底部 */
 
 
 .footer{
@@ -253,17 +307,29 @@ text-decoration:none;
 text-align:center;
 
 
-padding:60px;
+padding:
+
+70px 20px;
 
 
 color:#aaa;
+
+
+line-height:2;
+
+
+border-top:
+
+1px solid rgba(255,255,255,.1);
 
 
 }
 
 
 
-/* 电脑 */
+
+
+/* 平板 */
 
 
 @media(max-width:1200px){
@@ -279,13 +345,28 @@ repeat(4,1fr);
 
 }
 
+
 }
 
 
-/* 平板 */
+
+
+/* 手机 */
 
 
 @media(max-width:800px){
+
+
+
+.header{
+
+
+padding:
+
+55px 15px;
+
+
+}
 
 
 .header h1{
@@ -300,6 +381,19 @@ letter-spacing:8px;
 }
 
 
+.header .sub{
+
+
+font-size:18px;
+
+
+letter-spacing:5px;
+
+
+}
+
+
+
 
 .bookshelf{
 
@@ -309,7 +403,9 @@ grid-template-columns:
 repeat(2,1fr);
 
 
-padding:30px 20px;
+padding:
+
+30px 15px;
 
 
 gap:25px;
@@ -319,19 +415,25 @@ gap:25px;
 
 
 
+
 .book img{
 
 
-height:300px;
+height:280px;
 
 
 }
 
 
+
+
 .book h2{
 
 
-font-size:18px;
+font-size:17px;
+
+
+letter-spacing:3px;
 
 
 }
@@ -349,7 +451,6 @@ font-size:18px;
 </head>
 
 
-
 <body>
 
 
@@ -362,9 +463,14 @@ font-size:18px;
 </h1>
 
 
-<p>
+<div class="line"></div>
+
+
+<div class="sub">
+
 钟楼剧本藏书馆
-</p>
+
+</div>
 
 
 </header>
@@ -376,6 +482,8 @@ font-size:18px;
 <main class="bookshelf">
 
 
+
+<!-- 暗流涌动 -->
 
 <div class="book">
 
@@ -393,6 +501,10 @@ font-size:18px;
 
 
 
+
+
+<!-- 黯月初生 -->
+
 <div class="book">
 
 <a href="scripts/anyue.html">
@@ -408,6 +520,10 @@ font-size:18px;
 </div>
 
 
+
+
+
+<!-- 梦陨春宵 -->
 
 <div class="book">
 
@@ -425,6 +541,10 @@ font-size:18px;
 
 
 
+
+
+<!-- 窃窃私语 -->
+
 <div class="book">
 
 <a href="scripts/qieqie.html">
@@ -440,6 +560,10 @@ font-size:18px;
 </div>
 
 
+
+
+
+<!-- 无上愉悦 -->
 
 <div class="book">
 
@@ -457,6 +581,10 @@ font-size:18px;
 
 
 
+
+
+<!-- 旅行者 -->
+
 <div class="book">
 
 <a href="scripts/lvxingzhe.html">
@@ -472,6 +600,10 @@ font-size:18px;
 </div>
 
 
+
+
+
+<!-- 传奇角色 -->
 
 <div class="book">
 
@@ -489,6 +621,10 @@ font-size:18px;
 
 
 
+
+
+<!-- 华灯初上 -->
+
 <div class="book">
 
 <a href="scripts/huadeng.html">
@@ -504,6 +640,10 @@ font-size:18px;
 </div>
 
 
+
+
+
+<!-- 山雨欲来 -->
 
 <div class="book">
 
@@ -521,11 +661,15 @@ font-size:18px;
 
 
 
+
+
+<!-- 夜半狂欢 -->
+
 <div class="book">
 
 <a href="scripts/yebankuanghuan.html">
 
-<img src="x19.jpg">
+<img src="x夜半.jpg">
 
 <h2>
 夜半狂欢
@@ -537,11 +681,15 @@ font-size:18px;
 
 
 
+
+
+<!-- 瓦釜雷鸣 -->
+
 <div class="book">
 
 <a href="scripts/wafuleiming.html">
 
-<img src="x21.jpg">
+<img src="x19.jpg">
 
 <h2>
 瓦釜雷鸣
@@ -553,11 +701,15 @@ font-size:18px;
 
 
 
+
+
+<!-- 江城决 -->
+
 <div class="book">
 
 <a href="scripts/jiangcheng.html">
 
-<img src="x23.jpg">
+<img src="x21.jpg">
 
 <h2>
 江城·决
@@ -569,11 +721,15 @@ font-size:18px;
 
 
 
+
+
+<!-- 诡仙志异 -->
+
 <div class="book">
 
 <a href="scripts/guixianzhi.html">
 
-<img src="x25.jpg">
+<img src="x23.jpg">
 
 <h2>
 诡仙志异
@@ -585,11 +741,15 @@ font-size:18px;
 
 
 
+
+
+<!-- 歌剧魅影 -->
+
 <div class="book">
 
 <a href="scripts/gejumeiying.html">
 
-<img src="x27.jpg">
+<img src="x25.jpg">
 
 <h2>
 歌剧魅影
@@ -601,11 +761,15 @@ font-size:18px;
 
 
 
+
+
+<!-- 十日终焉 -->
+
 <div class="book">
 
 <a href="scripts/shirizhongyan.html">
 
-<img src="x29.jpg">
+<img src="x27.jpg">
 
 <h2>
 十日终焉
@@ -617,7 +781,11 @@ font-size:18px;
 
 
 
+
+
 </main>
+
+
 
 
 
@@ -629,11 +797,13 @@ font-size:18px;
 
 剧本资料整理馆
 
-<br><br>
+<br>
 
-本站仅作为个人剧本资料整理与展示使用
+本站仅作为个人剧本资料整理与展示使用，
+不用于任何商业用途。
 
 </footer>
+
 
 
 
