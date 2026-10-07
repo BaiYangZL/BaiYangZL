@@ -7,25 +7,354 @@
 
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-
 <title>
 白羊的染·钟楼谜团
 </title>
 
 
-<link rel="stylesheet" href="css/style.css">
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+
+body{
+
+margin:0;
+
+background:
+
+linear-gradient(
+rgba(0,0,0,.65),
+rgba(0,0,0,.85)
+),
+
+url("library.jpg");
+
+
+background-size:cover;
+
+background-attachment:fixed;
+
+
+color:#f5e8c8;
+
+font-family:
+
+"Microsoft YaHei",
+serif;
+
+
+}
+
+
+/* 顶部 */
+
+
+.header{
+
+
+text-align:center;
+
+padding:90px 20px 60px;
+
+
+background:
+
+rgba(0,0,0,.45);
+
+
+}
+
+
+
+.header h1{
+
+
+margin:0;
+
+
+font-size:56px;
+
+
+letter-spacing:15px;
+
+
+color:#e8c978;
+
+
+text-shadow:
+
+
+0 0 25px #8b6b2e;
+
+
+}
+
+
+.header p{
+
+
+font-size:22px;
+
+letter-spacing:8px;
+
+color:#d6c49b;
+
+
+}
+
+
+
+/* 书架 */
+
+
+.bookshelf{
+
+
+max-width:1500px;
+
+
+margin:auto;
+
+
+padding:60px 50px;
+
+
+display:grid;
+
+
+grid-template-columns:
+
+repeat(5,1fr);
+
+
+gap:45px;
+
+
+}
+
+
+
+/* 每一本书 */
+
+
+.book{
+
+
+background:
+
+
+linear-gradient(
+145deg,
+#3b2818,
+#17100b
+);
+
+
+padding:15px;
+
+
+border:
+
+
+1px solid rgba(232,201,120,.5);
+
+
+box-shadow:
+
+
+0 20px 40px black;
+
+
+transition:.3s;
+
+
+
+}
+
+
+
+.book:hover{
+
+
+transform:
+
+translateY(-12px);
+
+
+}
+
+
+
+
+
+.book img{
+
+
+width:100%;
+
+
+height:420px;
+
+
+object-fit:cover;
+
+
+display:block;
+
+
+}
+
+
+
+
+.book h2{
+
+
+text-align:center;
+
+
+font-size:22px;
+
+
+letter-spacing:4px;
+
+
+font-weight:normal;
+
+
+color:#e8c978;
+
+
+margin:20px 0 10px;
+
+
+}
+
+
+
+.book a{
+
+
+text-decoration:none;
+
+
+}
+
+
+
+
+
+.footer{
+
+
+text-align:center;
+
+
+padding:60px;
+
+
+color:#aaa;
+
+
+}
+
+
+
+/* 电脑 */
+
+
+@media(max-width:1200px){
+
+
+.bookshelf{
+
+
+grid-template-columns:
+
+repeat(4,1fr);
+
+
+}
+
+}
+
+
+/* 平板 */
+
+
+@media(max-width:800px){
+
+
+.header h1{
+
+
+font-size:34px;
+
+
+letter-spacing:8px;
+
+
+}
+
+
+
+.bookshelf{
+
+
+grid-template-columns:
+
+repeat(2,1fr);
+
+
+padding:30px 20px;
+
+
+gap:25px;
+
+
+}
+
+
+
+.book img{
+
+
+height:300px;
+
+
+}
+
+
+.book h2{
+
+
+font-size:18px;
+
+
+}
+
+
+
+}
+
+
+
+
+</style>
 
 
 </head>
 
 
+
 <body>
 
 
-<div class="library">
 
-
-<header class="library-header">
+<header class="header">
 
 
 <h1>
@@ -33,17 +362,8 @@
 </h1>
 
 
-<div class="subtitle">
-
-钟楼剧本藏书馆
-
-</div>
-
-
 <p>
-
-Script Archive Library
-
+钟楼剧本藏书馆
 </p>
 
 
@@ -57,13 +377,11 @@ Script Archive Library
 
 
 
-<!-- 01 -->
-
 <div class="book">
 
 <a href="scripts/anliu.html">
 
-<img src="cover/01.jpg">
+<img src="x1.jpg">
 
 <h2>
 暗流涌动
@@ -75,15 +393,11 @@ Script Archive Library
 
 
 
-
-
-<!-- 02 -->
-
 <div class="book">
 
 <a href="scripts/anyue.html">
 
-<img src="cover/02.jpg">
+<img src="x3.jpg">
 
 <h2>
 黯月初生
@@ -95,15 +409,11 @@ Script Archive Library
 
 
 
-
-
-<!-- 03 -->
-
 <div class="book">
 
 <a href="scripts/mengyun.html">
 
-<img src="cover/03.jpg">
+<img src="x5.jpg">
 
 <h2>
 梦陨春宵
@@ -115,15 +425,11 @@ Script Archive Library
 
 
 
-
-
-<!-- 04 -->
-
 <div class="book">
 
 <a href="scripts/qieqie.html">
 
-<img src="cover/04.jpg">
+<img src="x7.jpg">
 
 <h2>
 窃窃私语
@@ -135,15 +441,11 @@ Script Archive Library
 
 
 
-
-
-<!-- 05 -->
-
 <div class="book">
 
 <a href="scripts/wushang.html">
 
-<img src="cover/05.jpg">
+<img src="x9.jpg">
 
 <h2>
 无上愉悦
@@ -155,15 +457,11 @@ Script Archive Library
 
 
 
-
-
-<!-- 06 -->
-
 <div class="book">
 
 <a href="scripts/lvxingzhe.html">
 
-<img src="cover/06.jpg">
+<img src="x11.jpg">
 
 <h2>
 旅行者
@@ -175,15 +473,11 @@ Script Archive Library
 
 
 
-
-
-<!-- 07 -->
-
 <div class="book">
 
 <a href="scripts/chuanqi.html">
 
-<img src="cover/07.jpg">
+<img src="x13.jpg">
 
 <h2>
 传奇角色
@@ -195,15 +489,11 @@ Script Archive Library
 
 
 
-
-
-<!-- 08 -->
-
 <div class="book">
 
 <a href="scripts/huadeng.html">
 
-<img src="cover/08.jpg">
+<img src="x15.jpg">
 
 <h2>
 华灯初上
@@ -215,15 +505,11 @@ Script Archive Library
 
 
 
-
-
-<!-- 09 -->
-
 <div class="book">
 
 <a href="scripts/shanyulai.html">
 
-<img src="cover/09.jpg">
+<img src="x17.jpg">
 
 <h2>
 山雨欲来
@@ -235,15 +521,11 @@ Script Archive Library
 
 
 
-
-
-<!-- 10 -->
-
 <div class="book">
 
-<a href="scripts/ye-ban.html">
+<a href="scripts/yebankuanghuan.html">
 
-<img src="cover/10.jpg">
+<img src="x19.jpg">
 
 <h2>
 夜半狂欢
@@ -255,15 +537,11 @@ Script Archive Library
 
 
 
-
-
-<!-- 11 -->
-
 <div class="book">
 
 <a href="scripts/wafuleiming.html">
 
-<img src="cover/11.jpg">
+<img src="x21.jpg">
 
 <h2>
 瓦釜雷鸣
@@ -275,15 +553,11 @@ Script Archive Library
 
 
 
-
-
-<!-- 12 -->
-
 <div class="book">
 
 <a href="scripts/jiangcheng.html">
 
-<img src="cover/12.jpg">
+<img src="x23.jpg">
 
 <h2>
 江城·决
@@ -295,15 +569,11 @@ Script Archive Library
 
 
 
-
-
-<!-- 13 -->
-
 <div class="book">
 
 <a href="scripts/guixianzhi.html">
 
-<img src="cover/13.jpg">
+<img src="x25.jpg">
 
 <h2>
 诡仙志异
@@ -315,15 +585,11 @@ Script Archive Library
 
 
 
-
-
-<!-- 14 -->
-
 <div class="book">
 
 <a href="scripts/gejumeiying.html">
 
-<img src="cover/14.jpg">
+<img src="x27.jpg">
 
 <h2>
 歌剧魅影
@@ -335,15 +601,11 @@ Script Archive Library
 
 
 
-
-
-<!-- 15 -->
-
 <div class="book">
 
 <a href="scripts/shirizhongyan.html">
 
-<img src="cover/15.jpg">
+<img src="x29.jpg">
 
 <h2>
 十日终焉
@@ -355,17 +617,11 @@ Script Archive Library
 
 
 
-
-
-
 </main>
 
 
 
-
-
-<footer>
-
+<footer class="footer">
 
 白羊的染·钟楼谜团
 
@@ -373,17 +629,14 @@ Script Archive Library
 
 剧本资料整理馆
 
+<br><br>
+
+本站仅作为个人剧本资料整理与展示使用
+
 </footer>
 
 
 
-</div>
-
-
-
-
-
 </body>
-
 
 </html>
