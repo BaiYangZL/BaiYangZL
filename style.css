@@ -1,12 +1,11 @@
-
-/* ===================================
+/* =========================================
    染·钟楼谜团
-   BLOOD ON THE CLOCKTOWER LIBRARY
-   古典西欧图书馆风格
-=================================== */
+   血染钟楼图书馆
+   西欧古典图书馆风格
+========================================= */
 
 
-/* 基础 */
+/* ---------- 基础 ---------- */
 
 *{
     box-sizing:border-box;
@@ -24,18 +23,19 @@ body{
 
     min-height:100vh;
 
+
     background:
 
     radial-gradient(
         circle at top,
-        #6b4a27 0%,
-        #35200f 35%,
-        #120905 75%,
+        #5a3b1d 0%,
+        #29170c 35%,
+        #100804 75%,
         #050302 100%
     );
 
 
-    color:#ead7a1;
+    color:#e6d09a;
 
 
     font-family:
@@ -44,17 +44,16 @@ body{
     "Songti SC",
     serif;
 
-
 }
 
 
 
-/* ===================================
+/* =========================================
         顶部图书馆
-=================================== */
+========================================= */
 
 
-.library{
+.library-header{
 
 
     position:relative;
@@ -65,7 +64,7 @@ body{
 
     padding:
 
-    90px 20px 80px;
+    90px 20px 75px;
 
 
 
@@ -74,9 +73,9 @@ body{
 
     linear-gradient(
 
-        rgba(0,0,0,.25),
+        rgba(20,10,3,.35),
 
-        rgba(0,0,0,.85)
+        rgba(0,0,0,.88)
 
     );
 
@@ -84,18 +83,16 @@ body{
 
     border-bottom:
 
-    4px solid #a77b36;
+    3px solid #9b7435;
 
 
 
     box-shadow:
 
 
-    0 20px 50px rgba(0,0,0,.9);
-
+    0 15px 50px rgba(0,0,0,.9);
 
 }
-
 
 
 
@@ -108,19 +105,23 @@ body{
     position:absolute;
 
 
+    right:50px;
+
+
     top:45px;
 
-
-    right:55px;
-
-
-    color:#d7b56b;
 
 
     font-size:22px;
 
 
+
     letter-spacing:4px;
+
+
+
+    color:#d8b66a;
+
 
 
     font-style:italic;
@@ -129,8 +130,7 @@ body{
 
     text-shadow:
 
-    0 2px 8px #000;
-
+    0 3px 10px #000;
 
 }
 
@@ -138,15 +138,15 @@ body{
 
 
 
-/* 钟楼符号 */
+/* 顶部符号 */
 
 .tower{
 
 
-    font-size:48px;
+    font-size:45px;
 
 
-    color:#d8ad52;
+    color:#d8b15b;
 
 
     margin-bottom:20px;
@@ -154,9 +154,7 @@ body{
 
     text-shadow:
 
-
-    0 0 20px rgba(220,170,70,.5);
-
+    0 0 20px rgba(220,170,70,.6);
 
 }
 
@@ -165,19 +163,23 @@ body{
 
 
 
-.library h1{
+
+.library-header h1{
 
 
     margin:0;
 
 
+
     font-size:64px;
 
 
-    letter-spacing:20px;
+
+    letter-spacing:18px;
 
 
-    color:#e8ca76;
+
+    color:#ebcb78;
 
 
 
@@ -188,10 +190,9 @@ body{
     text-shadow:
 
 
-    0 5px 12px #000,
+    0 5px 15px #000,
 
-
-    0 0 25px rgba(220,170,70,.4);
+    0 0 25px rgba(230,190,90,.35);
 
 
 }
@@ -201,7 +202,7 @@ body{
 
 
 
-.subtitle{
+.english{
 
 
     margin-top:25px;
@@ -210,10 +211,10 @@ body{
     font-size:18px;
 
 
-    letter-spacing:10px;
+    letter-spacing:9px;
 
 
-    color:#c8a35c;
+    color:#cba45c;
 
 
 }
@@ -223,21 +224,20 @@ body{
 
 
 
-
-.line{
-
-
-    width:350px;
+.gold-line{
 
 
-    height:3px;
+    width:320px;
 
 
-    background:#c59a45;
+    height:2px;
 
 
     margin:35px auto;
 
+
+
+    background:#c89a45;
 
 
     box-shadow:
@@ -245,7 +245,6 @@ body{
 
     0 0 15px rgba(220,170,70,.7);
 
-
 }
 
 
@@ -253,19 +252,19 @@ body{
 
 
 
-.library h2{
+.library-header h2{
 
 
     margin:15px 0;
 
 
-    font-size:32px;
+    font-size:34px;
 
 
     letter-spacing:10px;
 
 
-    color:#e1c37b;
+    color:#e3c47a;
 
 
 }
@@ -274,7 +273,8 @@ body{
 
 
 
-.library p{
+
+.library-header p{
 
 
     margin-top:20px;
@@ -283,20 +283,25 @@ body{
     font-size:17px;
 
 
-    letter-spacing:6px;
+    letter-spacing:5px;
 
 
-    color:#bda878;
+    color:#c3aa79;
 
 
 }
 
-/* ===================================
+
+
+
+
+
+/* =========================================
         剧本书架
-=================================== */
+========================================= */
 
 
-.books{
+.bookshelf{
 
 
     max-width:1500px;
@@ -305,9 +310,10 @@ body{
     margin:auto;
 
 
+
     padding:
 
-    80px 60px;
+    80px 55px;
 
 
 
@@ -323,10 +329,13 @@ body{
 
     gap:
 
+
     65px 45px;
 
 
 }
+
+
 
 
 
@@ -337,10 +346,8 @@ body{
 .book{
 
 
-    position:relative;
-
-
     transition:.35s;
+
 
 
 }
@@ -350,13 +357,13 @@ body{
 .book a{
 
 
+    display:block;
+
+
     text-decoration:none;
 
 
     color:inherit;
-
-
-    display:block;
 
 
 }
@@ -370,7 +377,7 @@ body{
 
     transform:
 
-    translateY(-15px);
+    translateY(-12px);
 
 
 }
@@ -380,12 +387,63 @@ body{
 
 
 
+
 /* 书封 */
 
-.book img{
+.book-cover{
+
+
+    background:
+
+
+    linear-gradient(
+
+        145deg,
+
+        #251508,
+
+        #090503
+
+    );
+
+
+    padding:12px;
+
+
+
+    border:
+
+
+    2px solid #9e7538;
+
+
+
+    border-radius:5px;
+
+
+
+    box-shadow:
+
+
+    0 25px 45px rgba(0,0,0,.9),
+
+
+    inset 0 0 25px rgba(220,170,70,.15);
+
+
+
+}
+
+
+
+
+
+
+.book-cover img{
 
 
     width:100%;
+
 
 
     aspect-ratio:
@@ -402,65 +460,7 @@ body{
 
 
 
-    border-radius:3px;
-
-
-
-    border:
-
-    1px solid #b58a45;
-
-
-
-    padding:10px;
-
-
-
-    background:
-
-
-    linear-gradient(
-
-    145deg,
-
-    #241508,
-
-    #080402
-
-    );
-
-
-
-    box-shadow:
-
-
-    0 25px 45px rgba(0,0,0,.9),
-
-
-    inset 0 0 25px rgba(255,210,120,.15);
-
-
-
-    transition:.35s;
-
-
-}
-
-
-
-
-
-.book:hover img{
-
-
-    box-shadow:
-
-
-    0 35px 60px rgba(0,0,0,.95),
-
-
-    0 0 25px rgba(220,170,70,.4);
-
+    border-radius:2px;
 
 
 }
@@ -479,13 +479,12 @@ body{
     text-align:center;
 
 
-    margin:
 
-    22px 0 0;
-
+    margin-top:22px;
 
 
-    font-size:24px;
+
+    font-size:23px;
 
 
 
@@ -497,7 +496,7 @@ body{
 
 
 
-    color:#e5c77b;
+    color:#e4c77d;
 
 
 
@@ -507,46 +506,39 @@ body{
     0 3px 8px #000;
 
 
-
 }
 
 
 
 
 
-/* ===================================
-        底部
-=================================== */
+
+/* =========================================
+        页脚
+========================================= */
 
 
 footer{
 
 
-    text-align:center;
+    margin-top:40px;
+
 
 
     padding:
 
-    60px 20px;
+    55px 20px;
 
 
-    margin-top:50px;
+
+    text-align:center;
 
 
 
     border-top:
 
-    2px solid rgba(200,160,80,.3);
 
-
-
-    color:#bda474;
-
-
-    font-size:16px;
-
-
-    letter-spacing:5px;
+    1px solid rgba(220,170,70,.3);
 
 
 
@@ -556,6 +548,18 @@ footer{
     rgba(0,0,0,.35);
 
 
+
+    color:#b99c67;
+
+
+
+    letter-spacing:6px;
+
+
+
+    line-height:2;
+
+
 }
 
 
@@ -563,16 +567,16 @@ footer{
 
 
 
-
-/* ===================================
+/* =========================================
         平板
-=================================== */
+========================================= */
 
 
-@media(max-width:1100px){
+@media(max-width:1200px){
 
 
-.books{
+
+.bookshelf{
 
 
     grid-template-columns:
@@ -580,23 +584,18 @@ footer{
     repeat(3,1fr);
 
 
-    padding:
-
-    50px 35px;
-
-
 }
 
 
 
-.library h1{
+
+.library-header h1{
 
 
-    font-size:48px;
+    font-size:50px;
 
 
 }
-
 
 
 }
@@ -608,21 +607,21 @@ footer{
 
 
 
-/* ===================================
+/* =========================================
         手机
-=================================== */
+========================================= */
 
 
 @media(max-width:700px){
 
 
 
-.library{
+.library-header{
 
 
     padding:
 
-    65px 15px 50px;
+    60px 15px 50px;
 
 
 }
@@ -634,10 +633,10 @@ footer{
 .author{
 
 
-    right:20px;
-
-
     top:20px;
+
+
+    right:20px;
 
 
     font-size:15px;
@@ -648,7 +647,9 @@ footer{
 
 
 
-.library h1{
+
+
+.library-header h1{
 
 
     font-size:34px;
@@ -662,10 +663,12 @@ footer{
 
 
 
-.subtitle{
 
 
-    font-size:12px;
+.english{
+
+
+    font-size:11px;
 
 
     letter-spacing:4px;
@@ -675,7 +678,9 @@ footer{
 
 
 
-.library h2{
+
+
+.library-header h2{
 
 
     font-size:22px;
@@ -689,7 +694,22 @@ footer{
 
 
 
-.books{
+
+
+.library-header p{
+
+
+    font-size:14px;
+
+
+}
+
+
+
+
+
+
+.bookshelf{
 
 
     grid-template-columns:
@@ -706,10 +726,26 @@ footer{
 
     gap:
 
-    35px 18px;
+    40px 18px;
 
 
 }
+
+
+
+
+
+
+
+.book-cover{
+
+
+    padding:7px;
+
+
+}
+
+
 
 
 
@@ -727,39 +763,30 @@ footer{
 
 
 
-.book img{
-
-
-    padding:7px;
-
-
-}
-
-
-
 }
 
 
 
 
-/* ===================================
-        小手机
-=================================== */
 
+
+
+/* 小屏手机 */
 
 @media(max-width:400px){
 
 
-.books{
-
-
-    gap:25px 12px;
+.bookshelf{
 
 
     padding:25px 12px;
 
 
+    gap:30px 12px;
+
+
 }
+
 
 
 
