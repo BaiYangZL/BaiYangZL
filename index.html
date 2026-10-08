@@ -22,18 +22,14 @@
 
 .creator-credit{
     margin-top:16px;
-
     font-size:20px;
     font-weight:bold;
-
     letter-spacing:6px;
-
     color:#e6c878;
 
     text-shadow:
         0 0 8px rgba(230,200,120,.55),
         0 0 18px rgba(230,200,120,.35);
-
 }
 
 
@@ -42,53 +38,35 @@
    ========================= */
 
 .search-area{
-
     position:relative;
-
     width:100%;
-
     max-width:620px;
-
     margin:32px auto 42px;
-
     z-index:100;
-
 }
 
 
 .search-box{
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     gap:10px;
-
 }
 
 
 .search-box input{
-
     width:430px;
-
     height:48px;
-
     padding:0 18px;
 
     border:2px solid #8d6728;
-
     border-radius:25px;
-
     outline:none;
 
     background:rgba(10,7,4,.9);
-
     color:#e6c878;
 
     font-size:15px;
-
     letter-spacing:2px;
 
     box-shadow:
@@ -96,36 +74,28 @@
         inset 0 0 12px rgba(0,0,0,.5);
 
     transition:.25s ease;
-
 }
 
 
 .search-box input::placeholder{
-
     color:#967d50;
-
 }
 
 
 .search-box input:focus{
-
     border-color:#c69a45;
 
     box-shadow:
         0 0 18px rgba(198,154,69,.35),
         inset 0 0 12px rgba(0,0,0,.5);
-
 }
 
 
 .search-box button{
-
     height:48px;
-
     padding:0 27px;
 
     border:none;
-
     border-radius:25px;
 
     cursor:pointer;
@@ -140,24 +110,20 @@
     color:#fff4d2;
 
     font-size:15px;
-
     letter-spacing:2px;
 
     box-shadow:
         0 5px 15px rgba(0,0,0,.35);
 
     transition:.25s ease;
-
 }
 
 
 .search-box button:hover{
-
     transform:translateY(-2px);
 
     box-shadow:
         0 8px 22px rgba(0,0,0,.5);
-
 }
 
 
@@ -166,17 +132,13 @@
    ========================= */
 
 .search-suggestions{
-
     position:absolute;
 
     top:58px;
-
     left:0;
-
     right:75px;
 
     display:none;
-
     overflow:hidden;
 
     background:
@@ -191,25 +153,20 @@
         0 15px 40px rgba(0,0,0,.65);
 
     backdrop-filter:blur(8px);
-
 }
 
 
 .search-suggestions.show{
-
     display:block;
-
 }
 
 
 .search-suggestion{
-
     padding:15px 20px;
 
     color:#e5d2a0;
 
     font-size:16px;
-
     letter-spacing:2px;
 
     cursor:pointer;
@@ -221,31 +178,25 @@
         background .2s ease,
         padding-left .2s ease,
         color .2s ease;
-
 }
 
 
 .search-suggestion:last-child{
-
     border-bottom:none;
-
 }
 
 
 .search-suggestion:hover{
-
     background:
         rgba(160,115,45,.2);
 
     color:#f1d78f;
 
     padding-left:28px;
-
 }
 
 
 .search-no-result{
-
     padding:16px 20px;
 
     color:#967d50;
@@ -253,7 +204,6 @@
     text-align:center;
 
     font-size:14px;
-
 }
 
 
@@ -262,139 +212,114 @@
    ========================= */
 
 .book.search-hidden{
-
     display:none !important;
-
 }
 
 
 .book.search-show{
-
     animation:
         searchBookShow .45s ease;
-
 }
 
 
 @keyframes searchBookShow{
 
     from{
-
         opacity:0;
-
         transform:
             translateY(25px);
-
     }
 
     to{
-
         opacity:1;
-
         transform:
             translateY(0);
-
     }
 
 }
 
 
 /* =========================
-   搜索时的提示
+   搜索结果提示
    ========================= */
 
 .search-result-text{
-
     text-align:center;
 
     color:#bca978;
 
     font-size:14px;
-
     letter-spacing:2px;
 
     margin-top:-25px;
-
     margin-bottom:25px;
 
     opacity:0;
 
     transition:opacity .3s ease;
-
 }
 
 
 .search-result-text.show{
-
     opacity:1;
-
 }
 
 
 /* =========================
-   手机端
+   返回全部剧本
    ========================= */
 
-@media(max-width:700px){
+.reset-search-button{
 
-    .search-area{
+    display:none;
 
-        padding:0 15px;
+    margin:-5px auto 35px;
 
-        margin-top:25px;
+    padding:9px 20px;
 
-    }
+    border:1px solid rgba(198,154,69,.45);
 
+    border-radius:20px;
 
-    .search-box{
+    background:
+        rgba(25,18,10,.85);
 
-        gap:7px;
+    color:#cdb475;
 
-    }
+    font-size:13px;
 
+    letter-spacing:2px;
 
-    .search-box input{
+    cursor:pointer;
 
-        width:100%;
-
-        height:44px;
-
-        font-size:14px;
-
-    }
-
-
-    .search-box button{
-
-        height:44px;
-
-        padding:0 18px;
-
-    }
-
-
-    .search-suggestions{
-
-        left:15px;
-
-        right:15px;
-
-        top:54px;
-
-    }
-
-
-    .creator-credit{
-
-        font-size:17px;
-
-        letter-spacing:4px;
-
-    }
-
+    transition:
+        background .25s ease,
+        color .25s ease,
+        border-color .25s ease,
+        transform .25s ease;
 }
 
-</style>
+
+.reset-search-button.show{
+    display:block;
+}
+
+
+.reset-search-button:hover{
+
+    color:#f0d58b;
+
+    border-color:
+        rgba(230,200,120,.75);
+
+    background:
+        rgba(55,43,25,.9);
+
+    transform:
+        translateY(-2px);
+}
+
+
 /* =========================
    网站免责声明
    ========================= */
@@ -403,14 +328,16 @@
 
     max-width:900px;
 
-    margin:80px auto 0;
+    margin:85px auto 0;
 
-    padding:0 25px 55px;
+    padding:
+        0 25px 55px;
 
     text-align:center;
-
 }
 
+
+/* 上方金色细线 */
 
 .notice-line{
 
@@ -429,13 +356,14 @@
         );
 
     opacity:.8;
-
 }
 
 
+/* 标题 */
+
 .notice-title{
 
-    margin-bottom:18px;
+    margin-bottom:22px;
 
     color:#cdb475;
 
@@ -443,8 +371,11 @@
 
     letter-spacing:4px;
 
+    line-height:1.8;
 }
 
+
+/* 正文 */
 
 .notice-text{
 
@@ -456,53 +387,69 @@
 
     font-size:12px;
 
-    line-height:2.1;
+    line-height:2.15;
 
     letter-spacing:1px;
-
 }
 
 
 .notice-text strong{
 
-    color:#9f895d;
+    color:#a38d61;
 
     font-weight:normal;
-
 }
 
 
+/* =========================
+   微信联系方式
+   ========================= */
+
 .notice-contact{
 
-    display:inline-block;
+    display:block;
 
-    margin-top:20px;
+    width:max-content;
 
-    padding:9px 20px;
+    max-width:100%;
 
-    border:1px solid rgba(180,145,75,.25);
+    margin:25px auto 0;
 
-    border-radius:3px;
+    padding:10px 22px;
 
-    color:#8e7953;
+    border:
+        1px solid rgba(180,145,75,.3);
+
+    border-radius:4px;
+
+    color:#9b8559;
 
     font-size:12px;
 
     letter-spacing:1px;
 
     background:
-        rgba(20,15,9,.35);
+        rgba(20,15,9,.45);
 
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.15);
+
+    transition:
+        border-color .25s ease,
+        color .25s ease,
+        background .25s ease;
 }
 
 
 .notice-contact:hover{
 
     border-color:
-        rgba(198,154,69,.55);
+        rgba(198,154,69,.65);
 
-    color:#c5a967;
+    color:#d1b875;
 
+    background:
+        rgba(35,27,17,.65);
 }
 
 
@@ -512,7 +459,7 @@
 
 .site-copyright{
 
-    margin-top:20px;
+    margin-top:22px;
 
     color:#5e513d;
 
@@ -520,48 +467,217 @@
 
     letter-spacing:2px;
 
+    line-height:1.8;
 }
 
 
+/* =================================================
+   手机竖屏
+   ================================================= */
+
 @media(max-width:700px){
+
+    /* 搜索 */
+
+    .search-area{
+
+        padding:0 15px;
+
+        margin-top:25px;
+
+        margin-bottom:35px;
+    }
+
+
+    .search-box{
+
+        gap:7px;
+
+        width:100%;
+    }
+
+
+    .search-box input{
+
+        width:auto;
+
+        flex:1;
+
+        min-width:0;
+
+        height:44px;
+
+        padding:
+            0 15px;
+
+        font-size:13px;
+
+        letter-spacing:1px;
+    }
+
+
+    .search-box button{
+
+        flex-shrink:0;
+
+        height:44px;
+
+        padding:
+            0 17px;
+
+        font-size:13px;
+    }
+
+
+    .search-suggestions{
+
+        left:15px;
+
+        right:15px;
+
+        top:54px;
+    }
+
+
+    .search-suggestion{
+
+        padding:
+            13px 16px;
+
+        font-size:14px;
+    }
+
+
+    /* BY 白羊 */
+
+    .creator-credit{
+
+        margin-top:13px;
+
+        font-size:17px;
+
+        letter-spacing:4px;
+    }
+
+
+    /* =========================
+       手机免责声明
+       ========================= */
 
     .site-notice{
 
-        margin-top:60px;
+        width:auto;
+
+        max-width:none;
+
+        margin:
+            65px 0 0;
 
         padding:
-            0 18px 40px;
+            0 20px 38px;
+    }
 
+
+    .notice-line{
+
+        width:70px;
+
+        margin:
+            0 auto 22px;
     }
 
 
     .notice-title{
 
+        margin-bottom:20px;
+
         font-size:14px;
 
         letter-spacing:3px;
 
+        line-height:1.8;
     }
 
 
     .notice-text{
 
+        width:100%;
+
+        max-width:none;
+
+        margin:0 auto;
+
         font-size:11px;
 
-        line-height:2;
+        line-height:2.15;
 
         letter-spacing:.5px;
 
+        text-align:left;
     }
 
+
+    .notice-text br{
+
+        display:block;
+
+        content:"";
+
+        margin-bottom:8px;
+    }
+
+
+    .notice-text strong{
+
+        display:block;
+
+        margin-top:8px;
+    }
+
+
+    /* 微信框 */
 
     .notice-contact{
 
+        width:100%;
+
+        max-width:none;
+
+        box-sizing:border-box;
+
+        margin:
+            22px 0 0;
+
+        padding:
+            11px 12px;
+
+        text-align:center;
+
         font-size:11px;
 
+        letter-spacing:.5px;
+
+        line-height:1.8;
+    }
+
+
+    /* 底部版权 */
+
+    .site-copyright{
+
+        margin-top:18px;
+
+        font-size:10px;
+
+        letter-spacing:1px;
+
+        line-height:1.8;
     }
 
 }
+
+</style>
+
 </head>
 
 
@@ -579,11 +695,6 @@
 <h1>
 染·钟楼谜团
 </h1>
-
-
-<div class="english">
-BLOOD ON THE CLOCKTOWER
-</div>
 
 
 <div class="gold-line"></div>
@@ -630,8 +741,6 @@ BY 白羊
     </div>
 
 
-    <!-- 自动出现的搜索结果 -->
-
     <div
         id="searchSuggestions"
         class="search-suggestions">
@@ -647,11 +756,16 @@ BY 白羊
     id="searchResultText"
     class="search-result-text">
 </div>
+
+
 <button
     id="resetSearchButton"
     class="reset-search-button">
+
     ↩ 返回全部剧本
+
 </button>
+
 
 <main class="bookshelf">
 
@@ -1004,15 +1118,21 @@ BY 白羊
 </main>
 
 
+<!-- =========================
+     网站说明 / 版权声明
+     ========================= -->
+
 <footer>
 
     <div class="site-notice">
 
         <div class="notice-line"></div>
 
+
         <div class="notice-title">
             网站说明 · 版权声明
         </div>
+
 
         <div class="notice-text">
 
@@ -1027,7 +1147,9 @@ BY 白羊
             <br>
 
             本站建立的目的仅为方便玩家进行剧本资料整理与阅读查阅，
-            <strong>不以任何形式进行商业销售、收费、盈利或授权转让。</strong>
+            <strong>
+                不以任何形式进行商业销售、收费、盈利或授权转让。
+            </strong>
 
             <br>
 
@@ -1042,8 +1164,11 @@ BY 白羊
                 请勿将本站内容用于商业用途或其他侵犯相关权利人合法权益的行为。
             </strong>
 
+
             <div class="notice-contact">
+
                 版权及内容联系　｜　微信：BaiYang5192
+
             </div>
 
         </div>
@@ -1051,14 +1176,13 @@ BY 白羊
 
         <div class="site-copyright">
 
-             染·钟楼谜团 · 剧本资料收藏馆
+            染·钟楼谜团 · 剧本资料收藏馆
 
         </div>
 
     </div>
 
 </footer>
-
 
 
 <!-- =========================
@@ -1094,9 +1218,10 @@ document.addEventListener(
                 "searchResultText"
             );
 
-       const resetSearchButton =
-             document.getElementById(
-               "resetSearchButton"
+
+        const resetSearchButton =
+            document.getElementById(
+                "resetSearchButton"
             );
 
 
@@ -1197,10 +1322,6 @@ document.addEventListener(
             }
 
 
-            /*
-             * 没找到
-             */
-
             if(matches.length === 0){
 
                 suggestionsBox.innerHTML =
@@ -1217,10 +1338,6 @@ document.addEventListener(
 
             }
 
-
-            /*
-             * 找到剧本
-             */
 
             matches.forEach(
                 function(script){
@@ -1239,10 +1356,6 @@ document.addEventListener(
                         script.name;
 
 
-                    /*
-                     * 点击搜索结果
-                     */
-
                     item.addEventListener(
                         "click",
                         function(){
@@ -1260,10 +1373,6 @@ document.addEventListener(
                                 script.name
                             );
 
-
-                            /*
-                             * 平滑移动到剧本
-                             */
 
                             setTimeout(
                                 function(){
@@ -1311,47 +1420,39 @@ document.addEventListener(
                 findMatches(keyword);
 
 
-            /*
-             * 搜索为空
-             * 恢复全部
-             */
+            if(!keyword.trim()){
 
-           if(!keyword.trim()){
+                scripts.forEach(
+                    function(script){
 
-    scripts.forEach(
-        function(script){
+                        script.book.classList.remove(
+                            "search-hidden"
+                        );
 
-            script.book.classList.remove(
-                "search-hidden"
-            );
+                        script.book.classList.remove(
+                            "search-show"
+                        );
 
-            script.book.classList.remove(
-                "search-show"
-            );
-
-        }
-    );
+                    }
+                );
 
 
-    resultText.textContent = "";
+                resultText.textContent = "";
 
-    resultText.classList.remove(
-        "show"
-    );
-
-
-    resetSearchButton.classList.remove(
-        "show"
-    );
+                resultText.classList.remove(
+                    "show"
+                );
 
 
-    return;
+                resetSearchButton.classList.remove(
+                    "show"
+                );
 
-}
 
-            /*
-             * 隐藏不符合的剧本
-             */
+                return;
+
+            }
+
 
             scripts.forEach(
                 function(script){
@@ -1374,10 +1475,6 @@ document.addEventListener(
                         );
 
 
-                        /*
-                         * 重新触发动画
-                         */
-
                         void script.book.offsetWidth;
 
 
@@ -1396,10 +1493,6 @@ document.addEventListener(
                 }
             );
 
-
-            /*
-             * 搜索结果提示
-             */
 
             if(matches.length === 1){
 
@@ -1420,14 +1513,11 @@ document.addEventListener(
                 "show"
             );
 
-           resetSearchButton.classList.add(
+
+            resetSearchButton.classList.add(
                 "show"
             );
 
-
-            /*
-             * 自动滑到第一个结果
-             */
 
             if(matches.length > 0){
 
@@ -1455,14 +1545,6 @@ document.addEventListener(
 
         /*
          * 输入文字
-         *
-         * 例如：
-         *
-         * 十日
-         *
-         * 自动出现：
-         *
-         * 十日终焉
          */
 
         searchInput.addEventListener(
@@ -1507,7 +1589,7 @@ document.addEventListener(
 
 
         /*
-         * 按 Enter 搜索
+         * Enter 搜索
          */
 
         searchInput.addEventListener(
@@ -1565,8 +1647,7 @@ document.addEventListener(
 
 
         /*
-         * 点击搜索框以外的地方
-         * 自动关闭搜索提示
+         * 点击搜索框以外
          */
 
         document.addEventListener(
@@ -1587,32 +1668,37 @@ document.addEventListener(
 
             }
         );
-         /*
- * 返回全部剧本
- */
 
-resetSearchButton.addEventListener(
-    "click",
-    function(){
 
-        searchInput.value = "";
+        /*
+         * 返回全部剧本
+         */
 
-        suggestionsBox.classList.remove(
-            "show"
+        resetSearchButton.addEventListener(
+            "click",
+            function(){
+
+                searchInput.value = "";
+
+
+                suggestionsBox.classList.remove(
+                    "show"
+                );
+
+
+                showOnlyMatches("");
+
+
+                window.scrollTo({
+
+                    top:0,
+
+                    behavior:"smooth"
+
+                });
+
+            }
         );
-
-        showOnlyMatches("");
-
-        window.scrollTo({
-
-            top:0,
-
-            behavior:"smooth"
-
-        });
-
-    }
-);
 
     }
 );
