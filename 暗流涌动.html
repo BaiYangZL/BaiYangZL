@@ -171,8 +171,82 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 </script>
+<!-- 图片放大查看 -->
+
+<div id="imageLightbox" class="image-lightbox">
+
+    <button
+        id="imageLightboxClose"
+        class="image-lightbox-close">
+        ×
+    </button>
+
+    <img
+        id="lightboxImage"
+        src=""
+        alt="剧本图片">
+
+</div>
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const lightbox = document.getElementById("imageLightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const closeButton = document.getElementById("imageLightboxClose");
+
+    const galleryImages = document.querySelectorAll(".gallery img");
 
 
+    // 点击图片放大
+    galleryImages.forEach(function (image) {
+
+        image.addEventListener("click", function () {
+
+            lightboxImage.src = image.src;
+            lightboxImage.alt = image.alt || "剧本图片";
+
+            lightbox.classList.add("show");
+
+        });
+
+    });
+
+
+    // 点击 × 关闭
+    closeButton.addEventListener("click", function () {
+
+        lightbox.classList.remove("show");
+
+    });
+
+
+    // 点击黑色背景关闭
+    lightbox.addEventListener("click", function (event) {
+
+        if (event.target === lightbox) {
+
+            lightbox.classList.remove("show");
+
+        }
+
+    });
+
+
+    // 按 Esc 键关闭
+    document.addEventListener("keydown", function (event) {
+
+        if (event.key === "Escape") {
+
+            lightbox.classList.remove("show");
+
+        }
+
+    });
+
+});
+
+</script>
 </body>
 
 </html>
