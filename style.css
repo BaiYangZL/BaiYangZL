@@ -1832,3 +1832,80 @@ img{
 
 
 }
+
+/* =========================
+   返回全部剧本
+   ========================= */
+
+.reset-search-button{
+
+    display:none;
+
+    margin:0 auto 30px;
+
+    padding:10px 25px;
+
+    border:1px solid #9b712d;
+
+    border-radius:20px;
+
+    background:rgba(20,12,6,.85);
+
+    color:#d9b96c;
+
+    font-size:14px;
+
+    letter-spacing:2px;
+
+    cursor:pointer;
+
+    transition:
+        .25s ease;
+
+}
+
+
+.reset-search-button.show{
+
+    display:block;
+
+    animation:
+        resetButtonShow .35s ease;
+
+}
+
+
+.reset-search-button:hover{
+
+    background:
+        rgba(155,113,45,.25);
+
+    color:#f1d78f;
+
+    box-shadow:
+        0 0 15px rgba(198,154,69,.25);
+
+    transform:translateY(-2px);
+
+}
+
+
+@keyframes resetButtonShow{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-8px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
