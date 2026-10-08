@@ -427,50 +427,104 @@ padding:15px;
    ========================= */
 
 .back-home{
+    position:absolute;
 
-    display:inline-block;
+    left:40px;
+    top:35px;
 
-    margin-bottom:30px;
+    display:inline-flex;
 
-    padding:10px 22px;
+    align-items:center;
+    justify-content:center;
 
-    border:
-        1px solid rgba(220,190,120,.45);
+    padding:9px 18px;
 
-    border-radius:20px;
+    border:1px solid rgba(220,190,120,.35);
+    border-radius:3px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(35,48,42,.85),
+            rgba(12,20,17,.9)
+        );
 
     color:#cdb475;
 
-    text-decoration:none;
+    text-decoration:none !important;
+
+    font-family:
+        "Microsoft YaHei",
+        "Songti SC",
+        serif;
 
     font-size:14px;
 
     letter-spacing:2px;
 
-    background:
-        rgba(10,15,12,.45);
+    box-shadow:
+        0 5px 18px rgba(0,0,0,.35);
 
     transition:
-        .25s ease;
-
+        color .25s ease,
+        border-color .25s ease,
+        background .25s ease,
+        box-shadow .25s ease,
+        transform .25s ease;
 }
 
+
+/* 鼠标放上去 */
 
 .back-home:hover{
 
     color:#f0d58b;
 
     border-color:
-        rgba(230,200,120,.8);
+        rgba(230,200,120,.75);
 
     background:
-        rgba(50,40,20,.4);
+        linear-gradient(
+            135deg,
+            rgba(55,68,57,.9),
+            rgba(18,27,23,.95)
+        );
 
     box-shadow:
-        0 0 15px
-        rgba(230,200,120,.18);
+        0 5px 22px rgba(0,0,0,.55),
+        0 0 12px rgba(230,200,120,.12);
 
     transform:
         translateY(-2px);
+
+}
+
+
+/* 点击 */
+
+.back-home:active{
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* 手机 */
+
+@media(max-width:700px){
+
+    .back-home{
+
+        left:18px;
+        top:20px;
+
+        padding:8px 14px;
+
+        font-size:13px;
+
+        letter-spacing:1px;
+
+    }
 
 }
