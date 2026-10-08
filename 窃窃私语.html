@@ -103,9 +103,66 @@
 
 
 </section>
+ <!-- 这下面是播放音乐的代码 -->
+<audio id="bgMusic" loop preload="metadata">
+    <source src="牙是野兽 - 虫语.mp3" type="audio/mpeg">
+</audio>
 
+<button id="musicToggle" class="music-toggle">
+    🎵 音乐：开
+</button>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
+    const music = document.getElementById("bgMusic");
+    const button = document.getElementById("musicToggle");
 
+    // 默认音量 10%
+    music.volume = 0.1;
+
+    // 记住《窃窃私语》的音乐开关
+    const savedState = localStorage.getItem("music-qieqiesiyu");
+
+    if (savedState === "off") {
+        music.pause();
+        button.textContent = "🎵 音乐：关";
+    } else {
+        music.play().catch(function () {
+            // 如果浏览器阻止自动播放，
+            // 用户第一次点击页面时再播放
+            document.addEventListener("click", function startMusic() {
+                music.play().catch(function(){});
+                document.removeEventListener("click", startMusic);
+            }, { once: true });
+        });
+    }
+
+    // 点击按钮开 / 关
+    button.addEventListener("click", function (event) {
+
+        event.stopPropagation();
+
+        if (music.paused) {
+
+            music.play().catch(function(){});
+
+            localStorage.setItem("music-qieqiesiyu", "on");
+
+            button.textContent = "🎵 音乐：开";
+
+        } else {
+
+            music.pause();
+
+            localStorage.setItem("music-qieqiesiyu", "off");
+
+            button.textContent = "🎵 音乐：关";
+        }
+
+    });
+
+});
+</script>
 </body>
 
 </html>
