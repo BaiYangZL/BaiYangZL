@@ -96,149 +96,82 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const music = document.getElementById("bgMusic");
-    const button = document.getElementById("musicToggle");
+    const lightbox =
+        document.getElementById("imageLightbox");
 
-    // 音量 10%
-    music.volume = 0.1;
+    const lightboxImage =
+        document.getElementById("lightboxImage");
 
-    // 记住暗流涌动自己的音乐状态
-    const savedState = localStorage.getItem("music-anliu");
+    const closeButton =
+        document.getElementById("imageLightboxClose");
 
-    if (savedState === "off") {
+    const galleryImages =
+        document.querySelectorAll(".gallery img");
 
-        music.pause();
 
-        button.textContent = "🎵 音乐：关";
+    // 点击图片
+    galleryImages.forEach(function (image) {
 
-    } else {
+        image.addEventListener("click", function (event) {
 
-        music.play().catch(function () {
+            event.preventDefault();
 
-            // 浏览器禁止自动播放时，
-            // 第一次点击页面后尝试播放
-            document.addEventListener(
-                "click",
-                function startMusic() {
+            lightboxImage.src =
+                image.currentSrc || image.src;
 
-                    music.play().catch(function(){});
+            lightboxImage.alt =
+                image.alt || "剧本图片";
 
-                    document.removeEventListener(
-                        "click",
-                        startMusic
-                    );
+            lightbox.classList.add("show");
 
-                },
-                { once:true }
-            );
+            // 打开大图后，禁止背景页面滚动
+            document.body.style.overflow = "hidden";
 
         });
+
+    });
+
+
+    // 关闭图片
+    function closeLightbox() {
+
+        lightbox.classList.remove("show");
+
+        // 恢复页面滚动
+        document.body.style.overflow = "";
 
     }
 
 
-    // 点击音乐按钮
-    button.addEventListener("click", function (event) {
+    // 点击右上角 ×
+    closeButton.addEventListener("click", function (event) {
 
+        event.preventDefault();
         event.stopPropagation();
 
-        if (music.paused) {
-
-            music.play().catch(function(){});
-
-            localStorage.setItem(
-                "music-anliu",
-                "on"
-            );
-
-            button.textContent = "🎵 音乐：开";
-
-        } else {
-
-            music.pause();
-
-            localStorage.setItem(
-                "music-anliu",
-                "off"
-            );
-
-            button.textContent = "🎵 音乐：关";
-
-        }
-
-    });
-
-});
-
-</script>
-<!-- 图片放大查看 -->
-
-<div id="imageLightbox" class="image-lightbox">
-
-    <button
-        id="imageLightboxClose"
-        class="image-lightbox-close">
-        ×
-    </button>
-
-    <img
-        id="lightboxImage"
-        src=""
-        alt="剧本图片">
-
-</div>
-<script>
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const lightbox = document.getElementById("imageLightbox");
-    const lightboxImage = document.getElementById("lightboxImage");
-    const closeButton = document.getElementById("imageLightboxClose");
-
-    const galleryImages = document.querySelectorAll(".gallery img");
-
-
-    // 点击图片放大
-    galleryImages.forEach(function (image) {
-
-        image.addEventListener("click", function () {
-
-            lightboxImage.src = image.src;
-            lightboxImage.alt = image.alt || "剧本图片";
-
-            lightbox.classList.add("show");
-
-        });
+        closeLightbox();
 
     });
 
 
-    // 点击 × 关闭
-    closeButton.addEventListener("click", function () {
-
-        lightbox.classList.remove("show");
-
-    });
-
-
-    // 点击黑色背景关闭
+    // 点击黑色背景
     lightbox.addEventListener("click", function (event) {
 
         if (event.target === lightbox) {
 
-            lightbox.classList.remove("show");
+            closeLightbox();
 
         }
 
     });
 
 
-    // 按 Esc 键关闭
+    // 电脑按 Esc 关闭
     document.addEventListener("keydown", function (event) {
 
         if (event.key === "Escape") {
 
-            lightbox.classList.remove("show");
+            closeLightbox();
 
         }
 
