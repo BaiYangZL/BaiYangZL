@@ -8,10 +8,393 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>
-染·钟楼谜团｜血染钟楼图书馆
+染·钟楼谜团｜血染钟楼剧本查阅
 </title>
 
 <link rel="stylesheet" href="style.css">
+
+
+<style>
+
+/* =========================
+   BY 白羊
+   ========================= */
+
+.creator-credit{
+    margin-top:16px;
+
+    font-size:20px;
+    font-weight:bold;
+
+    letter-spacing:6px;
+
+    color:#e6c878;
+
+    text-shadow:
+        0 0 8px rgba(230,200,120,.55),
+        0 0 18px rgba(230,200,120,.35);
+
+}
+
+
+/* =========================
+   搜索区域
+   ========================= */
+
+.search-area{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:620px;
+
+    margin:32px auto 42px;
+
+    z-index:100;
+
+}
+
+
+.search-box{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+}
+
+
+.search-box input{
+
+    width:430px;
+
+    height:48px;
+
+    padding:0 18px;
+
+    border:2px solid #8d6728;
+
+    border-radius:25px;
+
+    outline:none;
+
+    background:rgba(10,7,4,.9);
+
+    color:#e6c878;
+
+    font-size:15px;
+
+    letter-spacing:2px;
+
+    box-shadow:
+        0 0 12px rgba(150,100,30,.25),
+        inset 0 0 12px rgba(0,0,0,.5);
+
+    transition:.25s ease;
+
+}
+
+
+.search-box input::placeholder{
+
+    color:#967d50;
+
+}
+
+
+.search-box input:focus{
+
+    border-color:#c69a45;
+
+    box-shadow:
+        0 0 18px rgba(198,154,69,.35),
+        inset 0 0 12px rgba(0,0,0,.5);
+
+}
+
+
+.search-box button{
+
+    height:48px;
+
+    padding:0 27px;
+
+    border:none;
+
+    border-radius:25px;
+
+    cursor:pointer;
+
+    background:
+        linear-gradient(
+            135deg,
+            #9b712d,
+            #d0a453
+        );
+
+    color:#fff4d2;
+
+    font-size:15px;
+
+    letter-spacing:2px;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,.35);
+
+    transition:.25s ease;
+
+}
+
+
+.search-box button:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 8px 22px rgba(0,0,0,.5);
+
+}
+
+
+/* =========================
+   自动搜索结果
+   ========================= */
+
+.search-suggestions{
+
+    position:absolute;
+
+    top:58px;
+
+    left:0;
+
+    right:75px;
+
+    display:none;
+
+    overflow:hidden;
+
+    background:
+        rgba(15,10,6,.98);
+
+    border:
+        1px solid rgba(198,154,69,.65);
+
+    border-radius:10px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.65);
+
+    backdrop-filter:blur(8px);
+
+}
+
+
+.search-suggestions.show{
+
+    display:block;
+
+}
+
+
+.search-suggestion{
+
+    padding:15px 20px;
+
+    color:#e5d2a0;
+
+    font-size:16px;
+
+    letter-spacing:2px;
+
+    cursor:pointer;
+
+    border-bottom:
+        1px solid rgba(198,154,69,.15);
+
+    transition:
+        background .2s ease,
+        padding-left .2s ease,
+        color .2s ease;
+
+}
+
+
+.search-suggestion:last-child{
+
+    border-bottom:none;
+
+}
+
+
+.search-suggestion:hover{
+
+    background:
+        rgba(160,115,45,.2);
+
+    color:#f1d78f;
+
+    padding-left:28px;
+
+}
+
+
+.search-no-result{
+
+    padding:16px 20px;
+
+    color:#967d50;
+
+    text-align:center;
+
+    font-size:14px;
+
+}
+
+
+/* =========================
+   搜索过滤动画
+   ========================= */
+
+.book.search-hidden{
+
+    display:none !important;
+
+}
+
+
+.book.search-show{
+
+    animation:
+        searchBookShow .45s ease;
+
+}
+
+
+@keyframes searchBookShow{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================
+   搜索时的提示
+   ========================= */
+
+.search-result-text{
+
+    text-align:center;
+
+    color:#bca978;
+
+    font-size:14px;
+
+    letter-spacing:2px;
+
+    margin-top:-25px;
+
+    margin-bottom:25px;
+
+    opacity:0;
+
+    transition:opacity .3s ease;
+
+}
+
+
+.search-result-text.show{
+
+    opacity:1;
+
+}
+
+
+/* =========================
+   手机端
+   ========================= */
+
+@media(max-width:700px){
+
+    .search-area{
+
+        padding:0 15px;
+
+        margin-top:25px;
+
+    }
+
+
+    .search-box{
+
+        gap:7px;
+
+    }
+
+
+    .search-box input{
+
+        width:100%;
+
+        height:44px;
+
+        font-size:14px;
+
+    }
+
+
+    .search-box button{
+
+        height:44px;
+
+        padding:0 18px;
+
+    }
+
+
+    .search-suggestions{
+
+        left:15px;
+
+        right:15px;
+
+        top:54px;
+
+    }
+
+
+    .creator-credit{
+
+        font-size:17px;
+
+        letter-spacing:4px;
+
+    }
+
+}
+
+</style>
 
 </head>
 
@@ -22,16 +405,9 @@
 <header class="library-header">
 
 
-<div class="author">
-BY 白羊
-</div>
-
-
-
 <div class="tower">
 ✦
 </div>
-
 
 
 <h1>
@@ -39,23 +415,22 @@ BY 白羊
 </h1>
 
 
-
 <div class="english">
 BLOOD ON THE CLOCKTOWER
 </div>
 
 
-
-
 <div class="gold-line"></div>
 
 
-
-
 <h2>
-血染钟楼图书馆
+血染钟楼剧本查阅
 </h2>
 
+
+<div class="creator-credit">
+BY 白羊
+</div>
 
 
 <p>
@@ -65,26 +440,50 @@ BLOOD ON THE CLOCKTOWER
 
 </header>
 
-<!-- 搜索框 -->
 
-<div class="search-box">
+<!-- =========================
+     搜索框
+     ========================= -->
 
-<input 
-id="searchInput"
-placeholder="搜索剧本名称..."
->
+<div class="search-area">
 
-<button>
-搜索
-</button>
+
+    <div class="search-box">
+
+        <input
+            id="searchInput"
+            type="text"
+            placeholder="搜索剧本名称..."
+            autocomplete="off"
+        >
+
+        <button id="searchButton">
+            搜索
+        </button>
+
+    </div>
+
+
+    <!-- 自动出现的搜索结果 -->
+
+    <div
+        id="searchSuggestions"
+        class="search-suggestions">
+    </div>
+
 
 </div>
 
 
+<!-- 搜索结果提示 -->
+
+<div
+    id="searchResultText"
+    class="search-result-text">
+</div>
 
 
 <main class="bookshelf">
-
 
 
 <!-- 1 -->
@@ -110,10 +509,6 @@ placeholder="搜索剧本名称..."
 </div>
 
 
-
-
-
-
 <!-- 2 -->
 
 <div class="book">
@@ -135,11 +530,6 @@ placeholder="搜索剧本名称..."
 </a>
 
 </div>
-
-
-
-
-
 
 
 <!-- 3 -->
@@ -165,11 +555,6 @@ placeholder="搜索剧本名称..."
 </div>
 
 
-
-
-
-
-
 <!-- 4 -->
 
 <div class="book">
@@ -191,12 +576,6 @@ placeholder="搜索剧本名称..."
 </a>
 
 </div>
-
-
-
-
-
-
 
 
 <!-- 5 -->
@@ -222,12 +601,6 @@ placeholder="搜索剧本名称..."
 </div>
 
 
-
-
-
-
-
-
 <!-- 6 -->
 
 <div class="book">
@@ -249,11 +622,6 @@ placeholder="搜索剧本名称..."
 </a>
 
 </div>
-
-
-
-
-
 
 
 <!-- 7 -->
@@ -279,12 +647,6 @@ placeholder="搜索剧本名称..."
 </div>
 
 
-
-
-
-
-
-
 <!-- 8 -->
 
 <div class="book">
@@ -306,11 +668,6 @@ placeholder="搜索剧本名称..."
 </a>
 
 </div>
-
-
-
-
-
 
 
 <!-- 9 -->
@@ -336,12 +693,6 @@ placeholder="搜索剧本名称..."
 </div>
 
 
-
-
-
-
-
-
 <!-- 10 -->
 
 <div class="book">
@@ -363,12 +714,6 @@ placeholder="搜索剧本名称..."
 </a>
 
 </div>
-
-
-
-
-
-
 
 
 <!-- 11 -->
@@ -394,11 +739,6 @@ placeholder="搜索剧本名称..."
 </div>
 
 
-
-
-
-
-
 <!-- 12 -->
 
 <div class="book">
@@ -420,11 +760,6 @@ placeholder="搜索剧本名称..."
 </a>
 
 </div>
-
-
-
-
-
 
 
 <!-- 13 -->
@@ -450,11 +785,6 @@ placeholder="搜索剧本名称..."
 </div>
 
 
-
-
-
-
-
 <!-- 14 -->
 
 <div class="book">
@@ -476,11 +806,6 @@ placeholder="搜索剧本名称..."
 </a>
 
 </div>
-
-
-
-
-
 
 
 <!-- 15 -->
@@ -506,13 +831,7 @@ placeholder="搜索剧本名称..."
 </div>
 
 
-
-
-
 </main>
-
-
-
 
 
 <footer>
@@ -531,6 +850,526 @@ placeholder="搜索剧本名称..."
 </footer>
 
 
+
+<!-- =========================
+     搜索功能
+     ========================= -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        const searchInput =
+            document.getElementById(
+                "searchInput"
+            );
+
+
+        const searchButton =
+            document.getElementById(
+                "searchButton"
+            );
+
+
+        const suggestionsBox =
+            document.getElementById(
+                "searchSuggestions"
+            );
+
+
+        const resultText =
+            document.getElementById(
+                "searchResultText"
+            );
+
+
+        /*
+         * 自动读取所有剧本
+         */
+
+        const books =
+            Array.from(
+                document.querySelectorAll(
+                    ".bookshelf .book"
+                )
+            );
+
+
+        /*
+         * 获取剧本名称
+         */
+
+        const scripts =
+            books.map(function(book){
+
+                const title =
+                    book.querySelector("h3");
+
+
+                return {
+
+                    name:
+                        title
+                        ? title.textContent.trim()
+                        : "",
+
+                    book:book
+
+                };
+
+            }).filter(function(script){
+
+                return script.name !== "";
+
+            });
+
+
+        /*
+         * 搜索
+         */
+
+        function findMatches(keyword){
+
+            keyword =
+                keyword
+                .trim()
+                .toLowerCase();
+
+
+            if(!keyword){
+
+                return [];
+
+            }
+
+
+            return scripts.filter(
+                function(script){
+
+                    return script.name
+                        .toLowerCase()
+                        .includes(keyword);
+
+                }
+            );
+
+        }
+
+
+        /*
+         * 显示自动搜索结果
+         */
+
+        function showSuggestions(keyword){
+
+            const matches =
+                findMatches(keyword);
+
+
+            suggestionsBox.innerHTML = "";
+
+
+            if(!keyword.trim()){
+
+                suggestionsBox.classList.remove(
+                    "show"
+                );
+
+                return;
+
+            }
+
+
+            /*
+             * 没找到
+             */
+
+            if(matches.length === 0){
+
+                suggestionsBox.innerHTML =
+                    '<div class="search-no-result">' +
+                    '没有找到相关剧本' +
+                    '</div>';
+
+
+                suggestionsBox.classList.add(
+                    "show"
+                );
+
+                return;
+
+            }
+
+
+            /*
+             * 找到剧本
+             */
+
+            matches.forEach(
+                function(script){
+
+                    const item =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    item.className =
+                        "search-suggestion";
+
+
+                    item.textContent =
+                        script.name;
+
+
+                    /*
+                     * 点击搜索结果
+                     */
+
+                    item.addEventListener(
+                        "click",
+                        function(){
+
+                            searchInput.value =
+                                script.name;
+
+
+                            suggestionsBox.classList.remove(
+                                "show"
+                            );
+
+
+                            showOnlyMatches(
+                                script.name
+                            );
+
+
+                            /*
+                             * 平滑移动到剧本
+                             */
+
+                            setTimeout(
+                                function(){
+
+                                    script.book.scrollIntoView({
+
+                                        behavior:
+                                            "smooth",
+
+                                        block:
+                                            "center"
+
+                                    });
+
+                                },
+                                100
+                            );
+
+                        }
+                    );
+
+
+                    suggestionsBox.appendChild(
+                        item
+                    );
+
+                }
+            );
+
+
+            suggestionsBox.classList.add(
+                "show"
+            );
+
+        }
+
+
+        /*
+         * 只显示符合搜索的剧本
+         */
+
+        function showOnlyMatches(keyword){
+
+            const matches =
+                findMatches(keyword);
+
+
+            /*
+             * 搜索为空
+             * 恢复全部
+             */
+
+            if(!keyword.trim()){
+
+                scripts.forEach(
+                    function(script){
+
+                        script.book.classList.remove(
+                            "search-hidden"
+                        );
+
+                        script.book.classList.remove(
+                            "search-show"
+                        );
+
+                    }
+                );
+
+
+                resultText.textContent = "";
+
+                resultText.classList.remove(
+                    "show"
+                );
+
+
+                return;
+
+            }
+
+
+            /*
+             * 隐藏不符合的剧本
+             */
+
+            scripts.forEach(
+                function(script){
+
+                    const isMatch =
+                        matches.includes(
+                            script
+                        );
+
+
+                    if(isMatch){
+
+                        script.book.classList.remove(
+                            "search-hidden"
+                        );
+
+
+                        script.book.classList.remove(
+                            "search-show"
+                        );
+
+
+                        /*
+                         * 重新触发动画
+                         */
+
+                        void script.book.offsetWidth;
+
+
+                        script.book.classList.add(
+                            "search-show"
+                        );
+
+                    }else{
+
+                        script.book.classList.add(
+                            "search-hidden"
+                        );
+
+                    }
+
+                }
+            );
+
+
+            /*
+             * 搜索结果提示
+             */
+
+            if(matches.length === 1){
+
+                resultText.textContent =
+                    "找到 1 个剧本";
+
+            }else{
+
+                resultText.textContent =
+                    "找到 " +
+                    matches.length +
+                    " 个相关剧本";
+
+            }
+
+
+            resultText.classList.add(
+                "show"
+            );
+
+
+            /*
+             * 自动滑到第一个结果
+             */
+
+            if(matches.length > 0){
+
+                setTimeout(
+                    function(){
+
+                        matches[0].book.scrollIntoView({
+
+                            behavior:
+                                "smooth",
+
+                            block:
+                                "center"
+
+                        });
+
+                    },
+                    120
+                );
+
+            }
+
+        }
+
+
+        /*
+         * 输入文字
+         *
+         * 例如：
+         *
+         * 十日
+         *
+         * 自动出现：
+         *
+         * 十日终焉
+         */
+
+        searchInput.addEventListener(
+            "input",
+            function(){
+
+                const keyword =
+                    searchInput.value;
+
+
+                showSuggestions(
+                    keyword
+                );
+
+            }
+        );
+
+
+        /*
+         * 点击搜索按钮
+         */
+
+        searchButton.addEventListener(
+            "click",
+            function(){
+
+                const keyword =
+                    searchInput.value;
+
+
+                suggestionsBox.classList.remove(
+                    "show"
+                );
+
+
+                showOnlyMatches(
+                    keyword
+                );
+
+            }
+        );
+
+
+        /*
+         * 按 Enter 搜索
+         */
+
+        searchInput.addEventListener(
+            "keydown",
+            function(event){
+
+                if(event.key === "Enter"){
+
+                    event.preventDefault();
+
+
+                    const keyword =
+                        searchInput.value;
+
+
+                    suggestionsBox.classList.remove(
+                        "show"
+                    );
+
+
+                    showOnlyMatches(
+                        keyword
+                    );
+
+                }
+
+            }
+        );
+
+
+        /*
+         * ESC 清空搜索
+         */
+
+        searchInput.addEventListener(
+            "keydown",
+            function(event){
+
+                if(event.key === "Escape"){
+
+                    searchInput.value = "";
+
+
+                    suggestionsBox.classList.remove(
+                        "show"
+                    );
+
+
+                    showOnlyMatches("");
+
+                }
+
+            }
+        );
+
+
+        /*
+         * 点击搜索框以外的地方
+         * 自动关闭搜索提示
+         */
+
+        document.addEventListener(
+            "click",
+            function(event){
+
+                if(
+                    !event.target.closest(
+                        ".search-area"
+                    )
+                ){
+
+                    suggestionsBox.classList.remove(
+                        "show"
+                    );
+
+                }
+
+            }
+        );
+
+
+    }
+);
+
+</script>
 
 
 </body>
