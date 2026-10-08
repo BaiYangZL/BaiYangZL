@@ -888,6 +888,11 @@ document.addEventListener(
                 "searchResultText"
             );
 
+       const resetSearchButton =
+             document.getElementById(
+               "resetSearchButton"
+            );
+
 
         /*
          * 自动读取所有剧本
@@ -1105,34 +1110,38 @@ document.addEventListener(
              * 恢复全部
              */
 
-            if(!keyword.trim()){
+           if(!keyword.trim()){
 
-                scripts.forEach(
-                    function(script){
+    scripts.forEach(
+        function(script){
 
-                        script.book.classList.remove(
-                            "search-hidden"
-                        );
+            script.book.classList.remove(
+                "search-hidden"
+            );
 
-                        script.book.classList.remove(
-                            "search-show"
-                        );
+            script.book.classList.remove(
+                "search-show"
+            );
 
-                    }
-                );
-
-
-                resultText.textContent = "";
-
-                resultText.classList.remove(
-                    "show"
-                );
+        }
+    );
 
 
-                return;
+    resultText.textContent = "";
 
-            }
+    resultText.classList.remove(
+        "show"
+    );
 
+
+    resetSearchButton.classList.remove(
+        "show"
+    );
+
+
+    return;
+
+}
 
             /*
              * 隐藏不符合的剧本
@@ -1202,6 +1211,10 @@ document.addEventListener(
 
 
             resultText.classList.add(
+                "show"
+            );
+
+           resetSearchButton.classList.add(
                 "show"
             );
 
@@ -1368,7 +1381,32 @@ document.addEventListener(
 
             }
         );
+         /*
+ * 返回全部剧本
+ */
 
+resetSearchButton.addEventListener(
+    "click",
+    function(){
+
+        searchInput.value = "";
+
+        suggestionsBox.classList.remove(
+            "show"
+        );
+
+        showOnlyMatches("");
+
+        window.scrollTo({
+
+            top:0,
+
+            behavior:"smooth"
+
+        });
+
+    }
+);
 
     }
 );
