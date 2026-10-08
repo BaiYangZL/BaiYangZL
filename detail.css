@@ -583,3 +583,101 @@ padding:15px;
     }
 
 }
+
+/* =========================
+   图片点击放大
+   ========================= */
+
+.gallery img{
+    cursor:zoom-in;
+    transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.gallery img:hover{
+    transform:scale(1.01);
+}
+
+
+/* 图片放大后的遮罩层 */
+
+.image-lightbox{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    background:rgba(0,0,0,.88);
+    align-items:center;
+    justify-content:center;
+    padding:40px;
+}
+
+.image-lightbox.show{
+    display:flex;
+}
+
+
+/* 放大的图片 */
+
+.image-lightbox img{
+    max-width:92vw;
+    max-height:90vh;
+    width:auto;
+    height:auto;
+    object-fit:contain;
+    border:1px solid rgba(220,190,120,.45);
+    box-shadow:
+        0 20px 70px rgba(0,0,0,.8),
+        0 0 30px rgba(220,190,120,.08);
+}
+
+
+/* 右上角关闭按钮 */
+
+.image-lightbox-close{
+    position:absolute;
+    top:25px;
+    right:35px;
+    width:42px;
+    height:42px;
+    border:1px solid rgba(220,190,120,.45);
+    border-radius:50%;
+    background:rgba(10,18,15,.9);
+    color:#d9bd78;
+    font-size:25px;
+    line-height:38px;
+    text-align:center;
+    cursor:pointer;
+    transition:.25s ease;
+}
+
+.image-lightbox-close:hover{
+    color:#f0d58b;
+    border-color:rgba(230,200,120,.8);
+    background:rgba(35,48,42,.95);
+    box-shadow:0 0 15px rgba(230,200,120,.15);
+}
+
+
+/* 手机 */
+
+@media(max-width:700px){
+
+    .image-lightbox{
+        padding:20px;
+    }
+
+    .image-lightbox img{
+        max-width:95vw;
+        max-height:85vh;
+    }
+
+    .image-lightbox-close{
+        top:15px;
+        right:15px;
+        width:38px;
+        height:38px;
+        font-size:22px;
+        line-height:34px;
+    }
+
+}
