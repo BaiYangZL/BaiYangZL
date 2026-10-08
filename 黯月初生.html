@@ -45,7 +45,9 @@
 
 <section class="intro">
 
-
+<button id="musicToggle" class="music-toggle">
+    🎵 音乐：开
+</button>
 
 
 
@@ -64,7 +66,9 @@
 黯月初升。
 
 </p>
-
+<audio id="bgMusic" loop preload="metadata">
+    <source src="暗流涌动.mp3" type="audio/mpeg">
+</audio>
 
 </section>
 
@@ -89,7 +93,85 @@
 
 
 </section>
+<script>
 
+document.addEventListener("DOMContentLoaded", function () {
+
+    const music = document.getElementById("bgMusic");
+    const button = document.getElementById("musicToggle");
+
+    // 音量 10%
+    music.volume = 0.1;
+
+    // 记住暗流涌动自己的音乐状态
+    const savedState = localStorage.getItem("music-anyue");
+
+    if (savedState === "off") {
+
+        music.pause();
+
+        button.textContent = "🎵 音乐：关";
+
+    } else {
+
+        music.play().catch(function () {
+
+            // 浏览器禁止自动播放时，
+            // 第一次点击页面后尝试播放
+            document.addEventListener(
+                "click",
+                function startMusic() {
+
+                    music.play().catch(function(){});
+
+                    document.removeEventListener(
+                        "click",
+                        startMusic
+                    );
+
+                },
+                { once:true }
+            );
+
+        });
+
+    }
+
+
+    // 点击音乐按钮
+    button.addEventListener("click", function (event) {
+
+        event.stopPropagation();
+
+        if (music.paused) {
+
+            music.play().catch(function(){});
+
+            localStorage.setItem(
+                "music-anliu",
+                "on"
+            );
+
+            button.textContent = "🎵 音乐：开";
+
+        } else {
+
+            music.pause();
+
+            localStorage.setItem(
+                "music-anliu",
+                "off"
+            );
+
+            button.textContent = "🎵 音乐：关";
+
+        }
+
+    });
+
+});
+
+</script>
 
 
 </body>
