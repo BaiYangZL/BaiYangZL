@@ -104,7 +104,7 @@
     id="bgMusic"
     src="陈悦 - 乱红.mp3"
     loop
-    preload="auto">
+    preload="none">
 </audio>
 
 
@@ -134,7 +134,7 @@
 <script>
 
 /* =========================
-   背景音乐
+背景音乐：点击后才加载
 ========================= */
 
 const bgMusic = document.getElementById("bgMusic");
@@ -142,98 +142,58 @@ const musicToggle = document.getElementById("musicToggle");
 
 const musicKey = "music-shanyulai";
 
-let musicEnabled =
-    localStorage.getItem(musicKey) !== "off";
+let musicEnabled = localStorage.getItem(musicKey) !== "off";
+let musicSourceLoaded = false;
 
 bgMusic.volume = 0.1;
 
+/* 更新按钮文字 */
+function updateMusicButton() {
+musicToggle.textContent = musicEnabled
+? "🎵 音乐：开"
+: "🎵 音乐：关";
+}
 
-function updateMusicButton(){
+/* 用户点击播放时，才开始加载音乐 */
+async function startMusic() {
+if (!musicEnabled) return;
 
-    if(musicEnabled){
+```
+if (!musicSourceLoaded) {
+    bgMusic.load();
+    musicSourceLoaded = true;
+}
 
-        musicToggle.textContent = "🎵 音乐：开";
-
-    }else{
-
-        musicToggle.textContent = "🎵 音乐：关";
-
-    }
+try {
+    await bgMusic.play();
+} catch (error) {
+    /* 如果浏览器阻止播放，用户可以再次点击音乐按钮 */
+}
+```
 
 }
 
-
-async function startMusic(){
-
-    if(!musicEnabled){
-
-        return;
-
-    }
-
-    try{
-
-        await bgMusic.play();
-
-    }catch(error){
-
-        /* 浏览器阻止自动播放时，
-           等待用户第一次点击页面 */
-
-    }
-
+/* 音乐按钮 */
+musicToggle.addEventListener("click", function() {
+if (!bgMusic.paused) {
+musicEnabled = false;
+localStorage.setItem(musicKey, "off");
+bgMusic.pause();
+} else {
+musicEnabled = true;
+localStorage.setItem(musicKey, "on");
+startMusic();
 }
 
-
-musicToggle.addEventListener("click", function(){
-
-    if(bgMusic.paused){
-
-        musicEnabled = true;
-
-        localStorage.setItem(musicKey, "on");
-
-        bgMusic.volume = 0.1;
-
-        bgMusic.play().catch(function(){});
-
-    }else{
-
-        musicEnabled = false;
-
-        localStorage.setItem(musicKey, "off");
-
-        bgMusic.pause();
-
-    }
-
-    updateMusicButton();
+```
+updateMusicButton();
+```
 
 });
 
-
-/* 浏览器禁止自动播放时，
-   用户第一次操作页面后尝试播放 */
-
-document.addEventListener("click", function startAfterInteraction(){
-
-    if(musicEnabled && bgMusic.paused){
-
-        bgMusic.play().catch(function(){});
-
-    }
-
-    document.removeEventListener(
-        "click",
-        startAfterInteraction
-    );
-
-}, { once:true });
-
-
+/* 页面打开时不自动播放，也不主动加载音乐 */
 updateMusicButton();
 
-startMusic();
 
 
 
