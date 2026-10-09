@@ -650,3 +650,40 @@ body::after{
     } 
 
 }
+
+```css
+/* 图片放大层的保存按钮 */
+
+.image-save-button {
+    position: absolute;
+    top: 24px;
+    right: 85px;
+    z-index: 100001;
+
+    padding: 10px 16px;
+    border: 1px solid rgba(220, 190, 120, .65);
+    border-radius: 6px;
+
+    background: rgba(15, 25, 20, .95);
+    color: #e6c878;
+
+    font-family: "Microsoft YaHei", "Songti SC", serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.image-save-button:hover {
+    background: rgba(45, 60, 48, .98);
+    color: #f0d58b;
+}
+
+@media (max-width: 700px) {
+    .image-save-button {
+        top: 16px;
+        right: 64px;
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+}
+```
+
