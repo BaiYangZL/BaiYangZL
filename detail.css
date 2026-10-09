@@ -430,14 +430,14 @@ body::after{
    
    ========================= */
 
-.image-lightbox img{ 
-    display:block; 
+.image-lightbox img{
+    display:block;
 
-    max-width:none; 
-    max-height:none; 
+    max-width:90vw;
+    max-height:85vh;
 
-    width:auto; 
-    height:auto; 
+    width:auto;
+    height:auto;
 
     object-fit:contain; 
 
@@ -629,10 +629,10 @@ body::after{
     /* 手机端同样取消尺寸限制，
        由 JS 控制缩放 */
 
-    .image-lightbox img{ 
-        max-width:none; 
-        max-height:none; 
-    } 
+   .image-lightbox img{
+    max-width:90vw;
+    max-height:85vh;
+}
 
 
     /* 关闭按钮 */
