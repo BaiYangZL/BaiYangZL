@@ -1,4 +1,3 @@
-```javascript
 document.addEventListener("DOMContentLoaded", function () {
     const lightbox = document.querySelector(".image-lightbox");
 
@@ -58,4 +57,3 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
-```
