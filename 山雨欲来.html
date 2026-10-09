@@ -11,50 +11,7 @@
 
 <link rel="stylesheet" href="detail.css">
 
-<style>
-#detail-loader {
-  position: fixed;
-  inset: 0;
-  z-index: 999999;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 18px;
-  padding: 24px;
-  background: #0b100d;
-  color: #d8c28a;
-  text-align: center;
-  transition: opacity .5s ease;
-}
-#detail-loader .loader-title {
-  font-size: 25px;
-  letter-spacing: 4px;
-}
-#detail-loader .loader-desc {
-  color: #b7b9ad;
-  font-size: 13px;
-}
-#detail-loader .loader-track {
-  width: min(280px, 75vw);
-  height: 6px;
-  overflow: hidden;
-  border-radius: 10px;
-  background: #29342c;
-}
-#detail-loader .loader-bar {
-  width: 0;
-  height: 100%;
-  background: #c8ad68;
-  transition: width .25s ease;
-}
-#detail-loader .loader-percent {
-  font-size: 13px;
-}
-body.detail-loading {
-  overflow: hidden;
-}
-</style>
+
 </head>
 
 
@@ -142,13 +99,12 @@ body.detail-loading {
 
 
 
-<!-- 背景音乐 -->
-
-<audio
-    id="bgMusic"
-    src="陈悦 - 乱红.mp3"
-    loop
-    preload="auto">
+<audio 
+id="bgMusic"
+src="陈悦 - 乱红.mp3"
+loop
+autoplay
+preload="auto">
 </audio>
 
 
@@ -179,7 +135,7 @@ body.detail-loading {
 
 
 /* =========================
-   背景音乐：梨园残梦同款逻辑
+   背景音乐 自动播放
 ========================= */
 
 const bgMusic = document.getElementById("bgMusic");
@@ -187,69 +143,83 @@ const musicToggle = document.getElementById("musicToggle");
 
 const musicKey = "music-shanyulai";
 
-/* 默认开启；如果用户之前关闭过，则保持关闭 */
 let musicEnabled = localStorage.getItem(musicKey) !== "off";
-let musicSourceLoaded = false;
 
-/* 音量 10% */
+
 bgMusic.volume = 0.1;
 
-/* 更新按钮文字 */
-function updateMusicButton() {
+
+/* 更新按钮 */
+
+function updateMusicButton(){
+
     musicToggle.textContent = musicEnabled
         ? "🎵 音乐：开"
         : "🔇 音乐：关";
+
 }
 
-/* 播放音乐 */
-function playMusic() {
-    if (!musicEnabled) return;
 
-    /* 第一次播放时加载音乐 */
-    if (!musicSourceLoaded) {
-        bgMusic.load();
-        musicSourceLoaded = true;
+/* 自动播放 */
+
+function playMusic(){
+
+    if(!musicEnabled){
+        return;
     }
 
-    bgMusic.play().catch(function () {
-        /* 浏览器禁止自动播放时，等待用户操作 */
+    bgMusic.play()
+    .catch(function(){
+
+        console.log("浏览器阻止自动播放");
+
     });
+
 }
 
-/* 页面加载 */
+
+/* 页面进入 */
+
 updateMusicButton();
+
 playMusic();
 
-/* 点击音乐按钮：开 / 关 */
-musicToggle.addEventListener("click", function () {
-    if (musicEnabled) {
+
+
+/* 点击按钮 */
+
+musicToggle.addEventListener(
+"click",
+function(){
+
+    if(musicEnabled){
+
         musicEnabled = false;
+
         bgMusic.pause();
-    } else {
+
+
+    }else{
+
+
         musicEnabled = true;
-        playMusic();
+
+        bgMusic.play();
+
+
     }
+
 
     localStorage.setItem(
         musicKey,
         musicEnabled ? "on" : "off"
     );
 
+
     updateMusicButton();
+
+
 });
-
-/* 浏览器禁止自动播放时，首次操作后再次尝试 */
-function tryStartMusic() {
-    if (musicEnabled && bgMusic.paused) {
-        playMusic();
-    }
-}
-
-document.addEventListener("click", tryStartMusic, { once: true });
-document.addEventListener("touchstart", tryStartMusic, { once: true });
-document.addEventListener("keydown", tryStartMusic, { once: true });
-
-
 
 updateMusicButton();
 
@@ -259,9 +229,7 @@ updateMusicButton();
 /* 页面打开时尝试自动播放音乐 */
 updateMusicButton();
 
-if (musicEnabled) {
-    startMusic();
-}
+
 /* =========================
    图片放大 / 缩放 / 拖动
 ========================= */
@@ -651,83 +619,6 @@ lightboxImage.addEventListener(
 </script>
 
 
-<div id="detail-loader">
-  <div class="loader-title">正在整理藏书</div>
-  <div class="loader-desc" id="detail-loader-desc">
-    正在加载高清图片，请稍候……
-  </div>
-  <div class="loader-track">
-    <div class="loader-bar" id="detail-loader-bar"></div>
-  </div>
-  <div class="loader-percent" id="detail-loader-percent">0%</div>
-</div>
-
-<script>
-(function () {
-  const loader = document.getElementById('detail-loader');
-  const bar = document.getElementById('detail-loader-bar');
-  const percent = document.getElementById('detail-loader-percent');
-  const desc = document.getElementById('detail-loader-desc');
-
-  document.body.classList.add('detail-loading');
-
-  // 收集详情页中的图片，包括原图地址
-  const images = [...new Set(
-    Array.from(document.images)
-      .map(img => img.currentSrc || img.src)
-      .filter(Boolean)
-  )];
-
-  if (!images.length) {
-    finish();
-    return;
-  }
-
-  let completed = 0;
-  let finished = false;
-
-  function update() {
-    const value = Math.round(completed / images.length * 100);
-    bar.style.width = value + '%';
-    percent.textContent = value + '%';
-  }
-
-  function finish() {
-    if (finished) return;
-    finished = true;
-    bar.style.width = '100%';
-    percent.textContent = '100%';
-    desc.textContent = '图片加载完成，正在进入……';
-
-    setTimeout(function () {
-      loader.style.opacity = '0';
-      setTimeout(function () {
-        loader.remove();
-        document.body.classList.remove('detail-loading');
-      }, 500);
-    }, 250);
-  }
-
-  images.forEach(function (url) {
-    const img = new Image();
-    let handled = false;
-
-    function done() {
-      if (handled) return;
-      handled = true;
-      completed++;
-      update();
-      if (completed >= images.length) finish();
-    }
-
-    img.onload = done;
-    img.onerror = done;
-    img.src = url;
-
-    if (img.complete) done();
-  });
-})();
-</script>
 </body>
 
 </html>
