@@ -122,160 +122,10 @@
 
 
 
+
+
+
 <script>
-
-/* =========================
-   背景音乐
-========================= */
-
-const bgMusic =
-    document.getElementById("bgMusic");
-
-const musicToggle =
-    document.getElementById("musicToggle");
-
-
-const musicKey =
-    "music-jiangchengjue";
-
-
-let musicEnabled =
-    localStorage.getItem(musicKey) !== "off";
-
-
-/* 音量 10% */
-
-bgMusic.volume = 0.1;
-
-
-
-/* 更新音乐按钮 */
-
-function updateMusicButton(){
-
-    if(musicEnabled){
-
-        musicToggle.textContent =
-            "🎵 音乐：开";
-
-    }else{
-
-        musicToggle.textContent =
-            "🎵 音乐：关";
-
-    }
-
-}
-
-
-
-/* 尝试自动播放 */
-
-async function startMusic(){
-
-    if(!musicEnabled){
-
-        return;
-
-    }
-
-
-    try{
-
-        await bgMusic.play();
-
-    }catch(error){
-
-        /*
-         浏览器禁止自动播放时，
-         等待用户第一次操作页面
-        */
-
-    }
-
-}
-
-
-
-/* 点击音乐按钮 */
-
-musicToggle.addEventListener(
-    "click",
-    function(){
-
-        if(bgMusic.paused){
-
-            musicEnabled = true;
-
-            localStorage.setItem(
-                musicKey,
-                "on"
-            );
-
-            bgMusic.volume = 0.1;
-
-            bgMusic.play().catch(
-                function(){}
-            );
-
-        }else{
-
-            musicEnabled = false;
-
-            localStorage.setItem(
-                musicKey,
-                "off"
-            );
-
-            bgMusic.pause();
-
-        }
-
-
-        updateMusicButton();
-
-    }
-);
-
-
-
-/*
- 浏览器禁止自动播放时，
- 用户第一次点击页面后尝试播放
-*/
-
-document.addEventListener(
-    "click",
-    function startAfterInteraction(){
-
-        if(
-            musicEnabled &&
-            bgMusic.paused
-        ){
-
-            bgMusic.play().catch(
-                function(){}
-            );
-
-        }
-
-        document.removeEventListener(
-            "click",
-            startAfterInteraction
-        );
-
-    },
-    { once:true }
-);
-
-
-
-updateMusicButton();
-
-startMusic();
-
-
-
 
 /* =========================
    图片放大 / 缩放 / 拖动
@@ -772,7 +622,7 @@ lightboxImage.addEventListener(
 );
 
 </script>
-
+<script src="music.js"></script>
 
 </body>
 
