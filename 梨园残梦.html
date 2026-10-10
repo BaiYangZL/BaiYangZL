@@ -128,123 +128,8 @@
 </div>
 
 
+
 <script>
-
-/* =========================
-   背景音乐
-========================= */
-
-const bgMusic = document.getElementById("bgMusic");
-const musicToggle = document.getElementById("musicToggle");
-
-/* 梨园残梦独立保存音乐状态 */
-const musicKey = "music-liyuancanmeng";
-
-/* 默认开启 */
-let musicEnabled = localStorage.getItem(musicKey);
-
-if (musicEnabled === null) {
-    musicEnabled = true;
-} else {
-    musicEnabled = musicEnabled === "true";
-}
-
-/* 音量 10% */
-bgMusic.volume = 0.1;
-
-
-/* 更新按钮 */
-
-function updateMusicButton() {
-
-    if (musicEnabled) {
-        musicToggle.textContent = "🎵 音乐：开";
-    } else {
-        musicToggle.textContent = "🔇 音乐：关";
-    }
-
-}
-
-
-/* 播放音乐 */
-
-function playMusic() {
-
-    if (!musicEnabled) {
-        return;
-    }
-
-    bgMusic.play().catch(() => {
-        /* 浏览器禁止自动播放时，等待用户操作 */
-    });
-
-}
-
-
-/* 页面加载 */
-
-updateMusicButton();
-playMusic();
-
-
-/* 点击音乐按钮 */
-
-musicToggle.addEventListener("click", function () {
-
-    if (musicEnabled) {
-
-        musicEnabled = false;
-        bgMusic.pause();
-
-    } else {
-
-        musicEnabled = true;
-
-        bgMusic.play().catch(() => {});
-
-    }
-
-    localStorage.setItem(
-        musicKey,
-        musicEnabled
-    );
-
-    updateMusicButton();
-
-});
-
-
-/* 浏览器禁止自动播放时，用户首次操作后尝试播放 */
-
-function tryStartMusic() {
-
-    if (musicEnabled && bgMusic.paused) {
-        bgMusic.play().catch(() => {});
-    }
-
-}
-
-
-/* 第一次点击 / 触摸 / 键盘操作 */
-
-document.addEventListener(
-    "click",
-    tryStartMusic,
-    { once: true }
-);
-
-document.addEventListener(
-    "touchstart",
-    tryStartMusic,
-    { once: true }
-);
-
-document.addEventListener(
-    "keydown",
-    tryStartMusic,
-    { once: true }
-);
-
 
 
 /* =========================
@@ -676,7 +561,7 @@ lightboxImage.addEventListener(
 );
 
 </script>
-
+<script src="music.js"></script>
 </body>
 </html>
 
