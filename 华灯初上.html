@@ -129,152 +129,9 @@
 
 
 
+
+
 <script>
-
-
-/* =========================
-   背景音乐
-========================= */
-
-const music =
-    document.getElementById("bgMusic");
-
-const musicToggle =
-    document.getElementById("musicToggle");
-
-
-/*
-   华灯初上单独保存音乐状态
-*/
-
-const savedState =
-    localStorage.getItem("music-huadengchushang");
-
-
-/*
-   音量 10%
-*/
-
-music.volume = 0.1;
-
-
-/*
-   默认开启
-*/
-
-let musicOn =
-    savedState !== "off";
-
-
-function updateMusicButton(){
-
-    if(musicOn){
-
-        musicToggle.textContent =
-            "🎵 音乐：开";
-
-    }else{
-
-        musicToggle.textContent =
-            "🔇 音乐：关";
-
-    }
-
-}
-
-
-/*
-   尝试自动播放
-*/
-
-function tryPlayMusic(){
-
-    if(!musicOn){
-
-        return;
-
-    }
-
-    music.play().catch(() => {
-
-        /*
-           如果浏览器阻止自动播放，
-           用户第一次点击页面后再播放
-        */
-
-        const startMusic =
-            () => {
-
-                if(musicOn){
-
-                    music.play().catch(() => {});
-
-                }
-
-                document.removeEventListener(
-                    "click",
-                    startMusic
-                );
-
-            };
-
-        document.addEventListener(
-            "click",
-            startMusic
-        );
-
-    });
-
-}
-
-
-/*
-   点击音乐按钮
-*/
-
-musicToggle.addEventListener(
-    "click",
-    function(event){
-
-        event.stopPropagation();
-
-
-        if(musicOn){
-
-            music.pause();
-
-            musicOn = false;
-
-            localStorage.setItem(
-                "music-huadengchushang",
-                "off"
-            );
-
-        }else{
-
-            musicOn = true;
-
-            music.play().catch(() => {});
-
-            localStorage.setItem(
-                "music-huadengchushang",
-                "on"
-            );
-
-        }
-
-
-        updateMusicButton();
-
-    }
-);
-
-
-updateMusicButton();
-
-tryPlayMusic();
-
-
 
 /* =========================
    图片放大 / 缩小 / 拖动
@@ -722,7 +579,7 @@ lightboxImage.addEventListener(
 
 
 </script>
-
+<script src="music.js"></script>
 
 </body>
 
