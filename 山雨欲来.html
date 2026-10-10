@@ -130,105 +130,7 @@ preload="auto">
 </div>
 
 
-
 <script>
-
-
-/* =========================
-   背景音乐 自动播放
-========================= */
-
-const bgMusic = document.getElementById("bgMusic");
-const musicToggle = document.getElementById("musicToggle");
-
-const musicKey = "music-shanyulai";
-
-let musicEnabled = localStorage.getItem(musicKey) !== "off";
-
-
-bgMusic.volume = 0.1;
-
-
-/* 更新按钮 */
-
-function updateMusicButton(){
-
-    musicToggle.textContent = musicEnabled
-        ? "🎵 音乐：开"
-        : "🔇 音乐：关";
-
-}
-
-
-/* 自动播放 */
-
-function playMusic(){
-
-    if(!musicEnabled){
-        return;
-    }
-
-    bgMusic.play()
-    .catch(function(){
-
-        console.log("浏览器阻止自动播放");
-
-    });
-
-}
-
-
-/* 页面进入 */
-
-updateMusicButton();
-
-playMusic();
-
-
-
-/* 点击按钮 */
-
-musicToggle.addEventListener(
-"click",
-function(){
-
-    if(musicEnabled){
-
-        musicEnabled = false;
-
-        bgMusic.pause();
-
-
-    }else{
-
-
-        musicEnabled = true;
-
-        bgMusic.play();
-
-
-    }
-
-
-    localStorage.setItem(
-        musicKey,
-        musicEnabled ? "on" : "off"
-    );
-
-
-    updateMusicButton();
-
-
-});
-
-updateMusicButton();
-
-
-});
-
-/* 页面打开时尝试自动播放音乐 */
-updateMusicButton();
-
 
 /* =========================
    图片放大 / 缩放 / 拖动
@@ -617,7 +519,7 @@ lightboxImage.addEventListener(
 );
 
 </script>
-
+<script src="music.js"></script>
 
 </body>
 
