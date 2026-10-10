@@ -156,147 +156,7 @@
 
 
 
-<!-- =========================
-     音乐
-     ========================= -->
 
-<script>
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
-
-
-    const music =
-        document.getElementById("bgMusic");
-
-
-    const button =
-        document.getElementById("musicToggle");
-
-
-    /* =========================
-       音量 10%
-       ========================= */
-
-    music.volume = 0.1;
-
-
-    /* =========================
-       记住“黯月初生”
-       自己的音乐状态
-       ========================= */
-
-    const savedState =
-        localStorage.getItem("music-anyue");
-
-
-    if (savedState === "off") {
-
-
-        music.pause();
-
-
-        button.textContent =
-            "🎵 音乐：关";
-
-
-    } else {
-
-
-        music.play().catch(function () {
-
-
-            /*
-            浏览器禁止自动播放时，
-            第一次点击页面后尝试播放
-            */
-
-            document.addEventListener(
-                "click",
-                function startMusic() {
-
-
-                    music.play().catch(
-                        function(){}
-                    );
-
-
-                    document.removeEventListener(
-                        "click",
-                        startMusic
-                    );
-
-
-                },
-                {
-                    once:true
-                }
-            );
-
-
-        });
-
-
-    }
-
-
-
-    /* =========================
-       音乐开关
-       ========================= */
-
-    button.addEventListener(
-        "click",
-        function (event) {
-
-
-        event.stopPropagation();
-
-
-        if (music.paused) {
-
-
-            music.play().catch(
-                function(){}
-            );
-
-
-            localStorage.setItem(
-                "music-anyue",
-                "on"
-            );
-
-
-            button.textContent =
-                "🎵 音乐：开";
-
-
-        } else {
-
-
-            music.pause();
-
-
-            localStorage.setItem(
-                "music-anyue",
-                "off"
-            );
-
-
-            button.textContent =
-                "🎵 音乐：关";
-
-
-        }
-
-
-    });
-
-
-});
-
-</script>
 
 
 
@@ -973,7 +833,7 @@ document.addEventListener(
 
 </script>
 
-
+<script src="music.js"></script>
 
 </body>
 
